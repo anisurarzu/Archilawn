@@ -32,4 +32,7 @@ body {
   }
 }
 
-
+/* Hide the default carousel dots */
+.ant-carousel .slick-dots {
+  display: none !important;
+}

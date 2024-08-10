@@ -1,11 +1,16 @@
 "use client";
 
-import React from "react";
+import React, { useRef } from "react";
 import { Carousel } from "antd";
 import Image from "next/image";
 import { LeftOutlined, RightOutlined } from "@ant-design/icons";
+import Icons from "./icons/Icons";
+
+import "../app/globals.css";
 
 export default function Slider() {
+  const carouselRef = useRef(null);
+
   const slides = [
     {
       id: 1,
@@ -30,21 +35,21 @@ export default function Slider() {
     },
   ];
 
+  const goToPrev = () => {
+    if (carouselRef.current) {
+      carouselRef.current.prev();
+    }
+  };
+
+  const goToNext = () => {
+    if (carouselRef.current) {
+      carouselRef.current.next();
+    }
+  };
+
   return (
     <div className="relative">
-      <Carousel
-        autoplay
-        arrows
-        prevArrow={
-          <button className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10">
-            <LeftOutlined className="text-black" />
-          </button>
-        }
-        nextArrow={
-          <button className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-white p-2 rounded-full shadow-md z-10">
-            <RightOutlined className="text-black" />
-          </button>
-        }>
+      <Carousel autoplay ref={carouselRef}>
         {slides.map((slide) => (
           <div key={slide.id} className="relative h-[85vh]">
             <Image
@@ -65,6 +70,38 @@ export default function Slider() {
           </div>
         ))}
       </Carousel>
+
+      {/* START CAROUSAL BOTTOM VIEW */}
+      <div className="container mx-auto flex justify-between items-center absolute bottom-4 left-0 right-0 px-4">
+        <div>
+          <Icons />
+        </div>
+        <div className="border border-red-700 w-[40px]"></div>
+
+        {/* Right Side Icon for carousal changing */}
+        <div className="flex">
+          <div className="border border-white rounded-l-full hover:bg-white hover:bg-opacity-20">
+            <button
+              className="bg-transparent px-6 py-5 rounded-full"
+              onClick={goToPrev}
+            >
+              <LeftOutlined className="text-white" />
+            </button>
+          </div>
+
+          <div className="border border-white rounded-r-full hover:bg-white hover:bg-opacity-20">
+            <button
+              className="bg-transparent px-6 py-5 rounded-full"
+              onClick={goToNext}
+            >
+              <RightOutlined className="text-white" />
+            </button>
+          </div>
+        </div>
+
+        {/* end */}
+      </div>
+      {/* END CAROUSAL BOTTOM VIEW */}
     </div>
   );
 }

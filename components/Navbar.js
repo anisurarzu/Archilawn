@@ -3,10 +3,40 @@
 import React, { useState } from "react";
 import { Drawer, Button } from "antd";
 import { MenuOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
+
 import Image from "next/image";
+
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
+
+const buttonStyle = {
+  border: "1px solid white",
+  borderRadius: "9999px",
+  backgroundColor: "white",
+  color: "black",
+  display: "flex",
+  alignItems: "center",
+  spaceX: "2",
+  transition: "background-color 0.2s, border-color 0.2s",
+};
+
+const iconStyle = {
+  color: "black",
+  transition: "color 0.2s",
+};
+
+const hoverStyle = {
+  backgroundColor: "black",
+  borderColor: "#8FE53E",
+};
+
+const hoverIconStyle = {
+  color: "white",
+};
 
 export default function Navbar() {
   const [visible, setVisible] = useState(false);
+  const [isHovered, setIsHovered] = React.useState(false);
 
   const showDrawer = () => {
     setVisible(true);
@@ -38,19 +68,37 @@ export default function Navbar() {
           <a href="#designers" className="text-white hover:text-[#8FE53E]">
             Our Designers
           </a>
+        </div>
+        <div className="hidden md:flex space-x-8">
           <a href="#login" className="text-white hover:text-[#8FE53E]">
             Login
           </a>
+
           <Button
             type="text"
-            icon={<PhoneOutlined />}
-            className="border rounded-full border-white text-white hover:text-[#8FE53E] hover:border-[#8FE53E] flex items-center space-x-2">
-            <span>Call Us</span>
+            icon={
+              <FontAwesomeIcon
+                icon={faPhone}
+                className="text-white hover:text-white hover:animate-pulse"
+              />
+            }
+            className="border rounded-full border-white text-white hover:text-white hover:border-[#8FE53E] flex items-center space-x-2"
+          >
+            <span className="text-white py-4">Call Us</span>
           </Button>
+
           <Button
             type="text"
-            icon={<MailOutlined />}
-            className="border rounded-full bg-white border-white text-black hover:text-[#8FE53E] hover:border-[#8FE53E] flex items-center space-x-2"></Button>
+            icon={
+              <MailOutlined style={isHovered ? hoverIconStyle : iconStyle} />
+            }
+            style={{
+              ...buttonStyle,
+              ...(isHovered ? hoverStyle : {}),
+            }}
+            onMouseEnter={() => setIsHovered(true)}
+            onMouseLeave={() => setIsHovered(false)}
+          ></Button>
         </div>
 
         {/* Mobile Menu Button */}
@@ -64,7 +112,8 @@ export default function Navbar() {
           placement="right"
           onClose={closeDrawer}
           open={visible}
-          className="text-gray-800">
+          className="text-gray-800"
+        >
           <a href="#packages" className="block mb-4">
             Packages
           </a>
@@ -83,13 +132,10 @@ export default function Navbar() {
           <Button
             type="text"
             icon={<PhoneOutlined />}
-            className="border border-white text-white hover:text-[#8FE53E] hover:border-[#8FE53E] flex items-center space-x-2 w-full">
+            className="border border-white text-white hover:text-[#8FE53E] hover:border-[#8FE53E] flex items-center space-x-2 w-full"
+          >
             <span>Call Us</span>
           </Button>
-          {/*  <Button
-            type="text"
-            icon={<MailOutlined />}
-            className="border border-white text-white hover:text-[#8FE53E] hover:border-[#8FE53E] flex items-center space-x-2 w-full"></Button> */}
         </Drawer>
       </div>
     </div>
