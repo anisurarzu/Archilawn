@@ -23,10 +23,10 @@ export default function OurPortfolio() {
   return (
     <section className="bg-white">
       <div className="mb-16 md:mb-16 lg:mb-40">
-        <div className="lg:pt-28 md:pt-16 pt-0 lg:pb-16 md:pb-16 pb-16 px-10 md:px-0 lg:px-0">
+        <div className="lg:pt-28 md:pt-16 pt-0 lg:pb-16 md:pb-16 pb-6 px-10 md:px-0 lg:px-0">
           <ContainerHeader containerHeader="Our Portfolio" />
           <p
-            className="text-center text-lg"
+            className="text-center lg:text-lg md:text-lg text-base"
             style={{
               fontFamily: "Tinos",
               lineHeight: "41px",
@@ -45,9 +45,9 @@ export default function OurPortfolio() {
             portfolioImage2={portfolioImage2}
           />
 
-          <div className="mt-12">
+          <div className="lg:mt-12 md:mt-12 mt-6 px-1 md:px-0 lg:px-0">
             {/* Start Video */}
-            <div className="relative w-full h-[70vh]">
+            <div className="relative w-full lg:h-[70vh] md:h-[25vh] h-[23vh]">
               {!isPlaying && (
                 <div className="relative w-full h-full">
                   <img
@@ -62,7 +62,7 @@ export default function OurPortfolio() {
                     >
                       <FontAwesomeIcon
                         icon={faCirclePlay}
-                        className="w-24 h-24"
+                        className="lg:w-24 md:w-24 w-12 lg:h-24 md:h-24 h-12"
                       />
                     </button>
                   </div>
@@ -84,11 +84,11 @@ export default function OurPortfolio() {
               )}
 
               {/* Overlay div */}
-              <div className="absolute bottom-0 w-full bg-[#8ABF55]/75 h-20 flex items-center justify-between px-6 z-30 rounded-bl-[30px] rounded-br-[30px]">
-                <p className="text-white font-bold text-[8px] md:text-base lg:text-xl">
+              <div className="absolute bottom-0 w-full bg-[#8ABF55]/75 lg:h-20 md:h-20 h-10 flex items-center justify-between px-6 z-30 rounded-bl-[30px] rounded-br-[30px]">
+                <p className="text-white font-bold text-[12px] md:text-base lg:text-xl">
                 Destination Weading Resort | Germany
                 </p>
-                <button className="text-[#8ABF55] font-semibold bg-transparent border border-white py-1 text-base px-5 rounded-full bg-white">
+                <button className="text-[#8ABF55] font-semibold bg-transparent border border-white py-1 lg:text-base md:text-base text-xs px-5 rounded-full bg-white">
                   SEE MORE
                 </button>
               </div>
