@@ -1,11 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Drawer, Button } from "antd";
 import { MenuOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
-
 import Image from "next/image";
-
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 
@@ -36,7 +34,8 @@ const hoverIconStyle = {
 
 export default function Navbar() {
   const [visible, setVisible] = useState(false);
-  const [isHovered, setIsHovered] = React.useState(false);
+  const [isHovered, setIsHovered] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(false);
 
   const showDrawer = () => {
     setVisible(true);
@@ -46,8 +45,27 @@ export default function Navbar() {
     setVisible(false);
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 0);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
   return (
-    <div className="absolute top-0 left-0 w-full z-10">
+    <div
+      className={`top-0 w-full z-50 transition-colors duration-300 ${
+        isScrolled ? "sticky bg-white border-b border-gray-200" : "absolute bg-transparent"
+      }`}
+      style={{
+        transition: "background-color 0.3s ease-in-out", // Adjust the duration for a slower transition
+      }}
+    >
       <div className="container mx-auto flex justify-between items-center p-4">
         {/* Logo */}
         <div className="flex items-center space-x-4">
@@ -56,21 +74,46 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex space-x-8">
-          <a href="#packages" className="text-white hover:text-[#8FE53E]">
+          <a
+            href="#packages"
+            className={` ${
+              isScrolled ? "text-black hover:text-[#8FE53E]" : "text-white hover:text-[#8FE53E]"
+            }`}
+          >
             Packages
           </a>
-          <a href="#how-it-works" className="text-white hover:text-[#8FE53E]">
+          <a
+            href="#how-it-works"
+            className={` ${
+              isScrolled ? "text-black hover:text-[#8FE53E]" : "text-white hover:text-[#8FE53E]"
+            }`}
+          >
             How it works
           </a>
-          <a href="#portfolio" className="text-white hover:text-[#8FE53E]">
+          <a
+            href="#portfolio"
+            className={` ${
+              isScrolled ? "text-black hover:text-[#8FE53E]" : "text-white hover:text-[#8FE53E]"
+            }`}
+          >
             Portfolio
           </a>
-          <a href="#designers" className="text-white hover:text-[#8FE53E]">
+          <a
+            href="#designers"
+            className={` ${
+              isScrolled ? "text-black hover:text-[#8FE53E]" : "text-white hover:text-[#8FE53E]"
+            }`}
+          >
             Our Designers
           </a>
         </div>
         <div className="hidden md:flex space-x-8">
-          <a href="#login" className="text-white hover:text-[#8FE53E]">
+          <a
+            href="#login"
+            className={` ${
+              isScrolled ? "text-black hover:text-[#8FE53E]" : "text-white hover:text-[#8FE53E]"
+            }`}
+          >
             Login
           </a>
 
@@ -79,12 +122,24 @@ export default function Navbar() {
             icon={
               <FontAwesomeIcon
                 icon={faPhone}
-                className="text-white hover:text-white hover:animate-pulse"
+                className={` hover:animate-pulse ${
+                  isScrolled
+                    ? "text-black hover:text-black"
+                    : "text-white hover:text-white"
+                }`}
               />
             }
-            className="border rounded-full border-white text-white hover:text-white hover:border-[#8FE53E] flex items-center space-x-2"
+            className={`border rounded-full flex items-center space-x-2 ${
+              isScrolled
+                ? " border-black text-black hover:text-black hover:border-[#8FE53E]"
+                : " border-white text-white hover:text-white hover:border-[#8FE53E]"
+            }`}
           >
-            <span className="text-white py-4">Call Us</span>
+            <span
+              className={` py-4 ${isScrolled ? "text-black" : "text-white"}`}
+            >
+              Call Us
+            </span>
           </Button>
 
           <Button
@@ -103,7 +158,12 @@ export default function Navbar() {
 
         {/* Mobile Menu Button */}
         <div className="md:hidden">
-          <Button type="text" icon={<MenuOutlined />} onClick={showDrawer} />
+          <Button
+            type="text"
+            icon={<MenuOutlined />}
+            onClick={showDrawer}
+            className={` ${isScrolled ? "text-black" : "text-white"}`}
+          />
         </div>
 
         {/* Mobile Drawer */}

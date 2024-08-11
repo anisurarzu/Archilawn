@@ -1,15 +1,12 @@
-import Navbar from "@/components/Navbar";
-import OurService from "@/components/OurService";
-import Packages from "@/components/Packages";
-import Slider from "@/components/Slider";
+import Home from '@/components/Home'
+import React from 'react'
 
-export default function Home() {
+const page = () => {
   return (
-    <main className=" ">
-      <Navbar />
-      <Slider />
-      <OurService />
-      <Packages />
-    </main>
-  );
+    <div className=''>
+      <Home/>
+    </div>
+  )
 }
+
+export default page

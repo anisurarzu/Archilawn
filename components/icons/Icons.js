@@ -9,7 +9,7 @@ import React from "react";
 
 const Icons = () => {
   return (
-    <div className="flex space-x-4">
+    <div className="flex lg:space-x-6 md:space-x-4 space-x-2 pl-4 md:pl-0 lg:pl-0">
       <a
         href="https://www.facebook.com"
         target="_blank"
@@ -18,7 +18,7 @@ const Icons = () => {
       >
         <FontAwesomeIcon
           icon={faFacebookF}
-          className="text-white text-xl hover:text-gray-300"
+          className="text-white hover:text-gray-300 lg:text-xl md:text-lg text-base"
         />
       </a>
       <a
@@ -29,7 +29,7 @@ const Icons = () => {
       >
         <FontAwesomeIcon
           icon={faLinkedinIn}
-          className="text-white text-2xl hover:text-gray-300"
+          className="text-white hover:text-gray-300 lg:text-xl md:text-lg text-base"
         />
       </a>
       <a
@@ -40,7 +40,7 @@ const Icons = () => {
       >
         <FontAwesomeIcon
           icon={faTwitter}
-          className="text-white text-2xl hover:text-gray-300"
+          className="text-white hover:text-gray-300 lg:text-xl md:text-lg text-base"
         />
       </a>
       <a
@@ -51,7 +51,7 @@ const Icons = () => {
       >
         <FontAwesomeIcon
           icon={faInstagram}
-          className="text-white text-2xl hover:text-gray-300"
+          className="text-white hover:text-gray-300 lg:text-xl md:text-lg text-base"
         />
       </a>
     </div>
