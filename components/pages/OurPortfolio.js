@@ -1,14 +1,25 @@
 "use client";
-import React from "react";
-
+import React, { useState } from "react";
 import ContainerHeader from "../containerHeader/ContainerHeader";
-import Image from "next/image";
 
-//Portfolio images
-import PortfolioImage1 from "../../public/images/portfolioImages/portfolio_Image1.png";
-import PortfolioImage2 from "../../public/images/portfolioImages/portfolio_Image2.png";
+// Portfolio images
+import portfolioImage1 from "../../public/images/portfolioImages/portfolio_Image1.png";
+import portfolioImage2 from "../../public/images/portfolioImages/portfolio_Image2.png";
+import OurPortfolioTopCard from "../cards/ourPortfolioTopCards/OurPortfolioTopCard";
+
+// video play icon
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCirclePlay } from "@fortawesome/free-regular-svg-icons";
+
+
 
 export default function OurPortfolio() {
+  const [isPlaying, setIsPlaying] = useState(false);
+
+  const handlePlayClick = () => {
+    setIsPlaying(true);
+  };
+
   return (
     <section className="bg-white">
       <div className="mb-16 md:mb-16 lg:mb-40">
@@ -23,53 +34,66 @@ export default function OurPortfolio() {
             }}
           >
             Explore our landscape design, building design and interior design
-            samples{" "}
+            samples
           </p>
         </div>
 
         {/* START PORTFOLIO */}
         <div className="container mx-auto">
-          <div className="flex justify-between items-center px-1 md:px-0 lg:px-0">
-            {/* Start 1st Image */}
-            <div className="relative w-[28vh] md:w-[30vh] lg:w-[95vh]">
-              <Image
-                src={PortfolioImage1}
-                alt="PortfolioImage2"
-                className="h-[20vh] md:h-[20vh] lg:h-[50vh] w-full rounded-tl-[30px] rounded-bl-[30px] z-10"
-              />
+          <OurPortfolioTopCard
+            portfolioImage1={portfolioImage1}
+            portfolioImage2={portfolioImage2}
+          />
+
+          <div className="mt-12">
+            {/* Start Video */}
+            <div className="relative w-full h-[70vh]">
+              {!isPlaying && (
+                <div className="relative w-full h-full">
+                  <img
+                    src="https://img.youtube.com/vi/q1k-dVaBhdo/hqdefault.jpg" // Use YouTube video thumbnail
+                    alt="Video Thumbnail"
+                    className="w-full h-full rounded-[30px] object-cover"
+                  />
+                  <div className="absolute inset-0 flex items-center justify-center z-20">
+                    <button
+                      onClick={handlePlayClick}
+                      className="text-white p-4 rounded-full"
+                    >
+                      <FontAwesomeIcon
+                        icon={faCirclePlay}
+                        className="w-24 h-24"
+                      />
+                    </button>
+                  </div>
+                </div>
+              )}
+
+              {isPlaying && (
+                <iframe
+                  width="100%"
+                  height="100%"
+                  src="https://www.youtube.com/embed/q1k-dVaBhdo?si=O_1gzBW83F8qruzD&autoplay=1"
+                  title="YouTube video player"
+                  className="rounded-[30px] z-10"
+                  frameBorder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerPolicy="strict-origin-when-cross-origin"
+                  allowFullScreen
+                ></iframe>
+              )}
 
               {/* Overlay div */}
-              <div className="absolute bottom-0 w-full bg-[#8ABF55]/75 h-10 md:h-16 lg:h-20 flex items-center justify-between px-4 md:px-6 lg:px-6 z-20 rounded-bl-[30px]">
-                <p className="text-white font-bold text-[8px] md:text-base lg:text-base">
-                  Food Truck Cafe | California
+              <div className="absolute bottom-0 w-full bg-[#8ABF55]/75 h-20 flex items-center justify-between px-6 z-30 rounded-bl-[30px] rounded-br-[30px]">
+                <p className="text-white font-bold text-[8px] md:text-base lg:text-xl">
+                Destination Weading Resort | Germany
                 </p>
-                <button className="text-[#8ABF55] font-semibold bg-transparent border border-white py-1 md:py-0 lg:py-1 text-[6px] md:text-sm lg:text-base px-2 md:px-2 lg:px-5 rounded-full bg-white">
+                <button className="text-[#8ABF55] font-semibold bg-transparent border border-white py-1 text-base px-5 rounded-full bg-white">
                   SEE MORE
                 </button>
               </div>
             </div>
-            {/* End 1st Image */}
-
-            {/* Start 2nd Image */}
-            <div className="relative w-[23vh] md:w-[30vh] lg:w-[68vh]">
-              <Image
-                src={PortfolioImage2}
-                alt="PortfolioImage2"
-                className="h-[20vh] md:h-[20vh] lg:h-[50vh] w-full rounded-br-[30px] rounded-tr-[30px] z-10"
-              />
-
-              {/* Overlay div */}
-              <div className="absolute bottom-0 w-full bg-[#8ABF55]/75 h-10 md:h-16 lg:h-20 flex items-center justify-between px-1 md:px-6 lg:px-6 z-20 rounded-br-[30px]">
-                <p className="text-white font-bold text-[8px] md:text-base lg:text-base">
-                  Building Exterior Design | LA
-                </p>
-                <button className="text-[#8ABF55] font-semibold bg-transparent border border-white py-1 md:py-0 lg:py-1 text-[6px] md:text-sm lg:text-base px-2 md:px-2 lg:px-5 rounded-full bg-white">
-                  SEE MORE
-                </button>
-              </div>
-            </div>
-
-            {/* End 2nd Image */}
+            {/* End Video */}
           </div>
         </div>
 

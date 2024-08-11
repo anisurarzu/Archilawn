@@ -6,6 +6,7 @@ import OurService from "./pages/OurService";
 import OurClients from "./pages/OurClients";
 import DesignProcess from "./pages/DesignProcess";
 import OurPortfolio from "./pages/OurPortfolio";
+import Footer from "./pages/Footer";
 
 const Home = () => {
   return (
@@ -16,7 +17,7 @@ const Home = () => {
       <DesignProcess />
       <OurService />
       <OurPortfolio />
-      {/* <Packages /> */}
+      <Footer/>
     </div>
   );
 };
