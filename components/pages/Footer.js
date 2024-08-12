@@ -246,6 +246,27 @@ const Footer = () => {
         </div>
         {/* Medium End */}
 
+        {/* start bottom  */}
+        <div className="border border-gray-600 w-full hidden md:flex lg:flex justify-between items-center lg:py-2 md px-6">
+          <p
+            className="text-white"
+            style={{
+              fontFamily: "Poppins",
+            }}
+          >
+            Copyright © 2024 All Rights Reserved by archilawn
+          </p>
+          <p
+            className="text-white"
+            style={{
+              fontFamily: "Poppins",
+            }}
+          >
+            Terms | Privacy | Cookies | Sitemap
+          </p>
+        </div>
+        {/* end  bottom  */}
+
         {/* Mobile Device Start */}
         <div className="flex flex-col md:hidden lg:hidden w-full h-full">
           {/* start 1st div */}
@@ -272,7 +293,7 @@ const Footer = () => {
                 mattis ante at massa aliquet consectetur.
               </p>
 
-              <div className="mt-4">
+              <div className="mt-3">
                 <IconsFooter />
               </div>
             </div>
@@ -368,10 +389,9 @@ const Footer = () => {
           </div>
           {/* end last div */}
         </div>
-        {/* Mobile Device End */}
 
         {/* start bottom  */}
-        <div className="w-full flex flex-col gap-1 justify-between items-center border border-gray-600 py-2 text-xs">
+        <div className="w-full flex md:hidden lg:hidden flex-col gap-1 justify-between items-center border border-gray-600 py-2 text-xs">
           <p
             className="text-white"
             style={{
@@ -390,6 +410,7 @@ const Footer = () => {
           </p>
         </div>
         {/* end  bottom  */}
+        {/* Mobile Device End */}
       </div>
       {/* end the footer */}
     </div>

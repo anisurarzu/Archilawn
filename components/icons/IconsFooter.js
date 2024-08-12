@@ -18,7 +18,7 @@ const IconsFooter = () => {
       >
         <FontAwesomeIcon
           icon={faFacebookF}
-          className="text-white hover:text-gray-300 lg:text-2xl md:text-xl text-xl"
+          className="text-white hover:text-gray-300 lg:text-2xl md:text-xl text-base"
         />
       </a>
       <a
@@ -29,7 +29,7 @@ const IconsFooter = () => {
       >
         <FontAwesomeIcon
           icon={faLinkedinIn}
-          className="text-white hover:text-gray-300 lg:text-2xl md:text-xl text-xl"
+          className="text-white hover:text-gray-300 lg:text-2xl md:text-xl text-base"
         />
       </a>
       <a
@@ -40,7 +40,7 @@ const IconsFooter = () => {
       >
         <FontAwesomeIcon
           icon={faTwitter}
-          className="text-white hover:text-gray-300 lg:text-2xl md:text-xl text-xl"
+          className="text-white hover:text-gray-300 lg:text-2xl md:text-xl text-base"
         />
       </a>
       <a
@@ -51,7 +51,7 @@ const IconsFooter = () => {
       >
         <FontAwesomeIcon
           icon={faInstagram}
-          className="text-white hover:text-gray-300 lg:text-2xl md:text-xl text-xl"
+          className="text-white hover:text-gray-300 lg:text-2xl md:text-xl text-base"
         />
       </a>
     </div>
