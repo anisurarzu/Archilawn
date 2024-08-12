@@ -9,7 +9,7 @@ import React from "react";
 
 const IconsFooter = () => {
   return (
-    <div className="flex lg:space-x-6 md:space-x-4 space-x-2 pl-4 md:pl-0 lg:pl-0">
+    <div className="flex lg:space-x-6 md:space-x-5 space-x-5 lg:pl-0 md:pl-0 pl-0">
       <a
         href="https://www.facebook.com"
         target="_blank"
@@ -18,7 +18,7 @@ const IconsFooter = () => {
       >
         <FontAwesomeIcon
           icon={faFacebookF}
-          className="text-white hover:text-gray-300 lg:text-3xl md:text-lg text-base"
+          className="text-white hover:text-gray-300 lg:text-2xl md:text-xl text-xl"
         />
       </a>
       <a
@@ -29,7 +29,7 @@ const IconsFooter = () => {
       >
         <FontAwesomeIcon
           icon={faLinkedinIn}
-          className="text-white hover:text-gray-300 lg:text-3xl md:text-lg text-base"
+          className="text-white hover:text-gray-300 lg:text-2xl md:text-xl text-xl"
         />
       </a>
       <a
@@ -40,7 +40,7 @@ const IconsFooter = () => {
       >
         <FontAwesomeIcon
           icon={faTwitter}
-          className="text-white hover:text-gray-300 lg:text-3xl md:text-lg text-base"
+          className="text-white hover:text-gray-300 lg:text-2xl md:text-xl text-xl"
         />
       </a>
       <a
@@ -51,7 +51,7 @@ const IconsFooter = () => {
       >
         <FontAwesomeIcon
           icon={faInstagram}
-          className="text-white hover:text-gray-300 lg:text-3xl md:text-lg text-base"
+          className="text-white hover:text-gray-300 lg:text-2xl md:text-xl text-xl"
         />
       </a>
     </div>

@@ -60,7 +60,7 @@ export default function Slider() {
     <div className="relative">
       <Carousel autoplay ref={carouselRef}>
         {slides.map((slide) => (
-          <div key={slide.id} className="relative h-[90vh]">
+          <div key={slide.id} className="relative lg:h-[92vh] md:h-[94vh] h-[94vh]">
             <Image
               src={slide.imageUrl}
               alt={slide.title}
@@ -81,21 +81,21 @@ export default function Slider() {
       </Carousel>
 
       {/* START CAROUSAL BOTTOM VIEW */}
-      <div className="grid grid-cols-3 col-span-1 container mx-auto absolute bottom-9 left-0 right-0">
+      <div className="grid grid-cols-3 col-span-1 container mx-auto absolute lg:bottom-9 md:bottom-9 bottom-7 left-0 right-0">
         <div className="flex justify-start items-center">
           <Icons />
         </div>
 
         {/* Start Middle Div  */}
         <div
-          className="flex justify-center items-center gap-4 -ml-[10px] animate-pulse cursor-pointer"
+          className="flex justify-center items-center lg:gap-4 md:gap-4 gap-2 lg:-ml-[10px] md:-ml-[10px] -ml-[7px] animate-pulse cursor-pointer"
           onClick={scrollToFooter}
         >
-          <p className="text-sm text-white">SCROLL</p>
+          <p className="lg:text-sm md:text-sm text-[9px] text-white">SCROLL</p>
           <div>
-            <Image src={ScrollBtn} alt="ScrollBtn" width={20} height={20} />
+            <Image src={ScrollBtn} alt="ScrollBtn" width={16} height={16} />
           </div>
-          <p className="text-sm text-white">DOWN</p>
+          <p className="lg:text-sm md:text-sm text-[9px] text-white">DOWN</p>
         </div>
 
         {/* End Middle Div  */}
@@ -104,7 +104,7 @@ export default function Slider() {
         <div className="flex justify-end items-center pr-3 md:pr-3 lg:pr-0">
           <div className="border border-white rounded-l-full hover:bg-white hover:bg-opacity-20">
             <button
-              className="bg-transparent lg:px-5 lg:py-3 md:px-5 md:py-3 px-3 py-2 rounded-full"
+              className="bg-transparent rounded-full lg:px-5 md:px-5 px-4 lg:py-3 md:py-3 py-1"
               onClick={goToPrev}
             >
               <LeftOutlined className="text-white" />
@@ -113,7 +113,7 @@ export default function Slider() {
 
           <div className="border border-white rounded-r-full hover:bg-white hover:bg-opacity-20">
             <button
-              className="bg-transparent lg:px-5 lg:py-3 md:px-5 md:py-3 px-3 py-2 rounded-full"
+              className="bg-transparent rounded-full lg:px-5 md:px-5 px-4 lg:py-3 md:py-3 py-1"
               onClick={goToNext}
             >
               <RightOutlined className="text-white" />
@@ -123,6 +123,7 @@ export default function Slider() {
 
         {/* end */}
       </div>
+      
       <div
         ref={footerRef}
         className="container mx-auto flex justify-center items-center absolute bottom-0 left-0 right-0"
@@ -130,7 +131,7 @@ export default function Slider() {
         <Image
           src={ScrollLineBotom}
           alt="ScrollLineBotom"
-          className="w-[2px] h-10"
+          className="w-[2px] lg:h-10 md:h-10 h-8"
         />
       </div>
 

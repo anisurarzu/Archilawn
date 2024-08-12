@@ -19,7 +19,7 @@ const OurClients = () => {
   `;
 
   return (
-    <div className="bg-[#8ABF55] h-[10vh] overflow-hidden relative">
+    <div className="bg-[#8ABF55] lg:h-[8vh] md:h-[6vh] h-[6vh] overflow-hidden relative">
       {/* Add the keyframes inline */}
       <style>{scrollAnimation}</style>
       <div
@@ -31,18 +31,25 @@ const OurClients = () => {
       >
         {/* Duplicate the list of clients to create a seamless scroll effect */}
         <div className="flex justify-between items-center gap-6 h-full w-full">
-          <Image src={ClientOne} alt="ClientOne" />
-          <Image src={ClientTwo} alt="ClientTwo" />
-          <Image src={ClientThree} alt="ClientThree" />
-          <Image src={ClientFour} alt="ClientFour" />
-          <Image src={ClientFive} alt="ClientFive" />
+          <Image src={ClientOne} alt="ClientOne" className="lg:w-28 md:w-24 w-24 lg:h-8 md:h-7 h-5" />
+          <Image src={ClientTwo} alt="ClientTwo" className="lg:w-28 md:w-24 w-24 lg:h-8 md:h-7 h-5" />
+          <Image src={ClientThree} alt="ClientThree" className="lg:w-28 md:w-24 w-24 lg:h-8 md:h-7 h-5" />
+          <Image src={ClientFour} alt="ClientFour" className="lg:w-28 md:w-24 w-24 lg:h-8 md:h-7 h-5" />
+          <Image src={ClientFive} alt="ClientFive" className="lg:w-28 md:w-24 w-24 lg:h-8 md:h-7 h-5" />
         </div>
-        <div className="flex justify-between items-center gap-6 h-full w-full">
-          <Image src={ClientOne} alt="ClientOne" />
-          <Image src={ClientTwo} alt="ClientTwo" />
-          <Image src={ClientThree} alt="ClientThree" />
-          <Image src={ClientFour} alt="ClientFour" />
-          <Image src={ClientFive} alt="ClientFive" />
+        <div className="flex justify-between items-center gap-6 h-full w-full pl-6">
+          <Image src={ClientOne} alt="ClientOne" className="lg:w-28 md:w-24 w-24 lg:h-8 md:h-7 h-5" />
+          <Image src={ClientTwo} alt="ClientTwo" className="lg:w-28 md:w-24 w-24 lg:h-8 md:h-7 h-5" />
+          <Image src={ClientThree} alt="ClientThree" className="lg:w-28 md:w-24 w-24 lg:h-8 md:h-7 h-5" />
+          <Image src={ClientFour} alt="ClientFour" className="lg:w-28 md:w-24 w-24 lg:h-8 md:h-7 h-5" />
+          <Image src={ClientFive} alt="ClientFive" className="lg:w-28 md:w-24 w-24 lg:h-8 md:h-7 h-5" />
+        </div>
+        <div className="hidden md:flex lg:flex justify-between items-center gap-6 h-full w-full pl-6">
+          <Image src={ClientOne} alt="ClientOne" className="lg:w-28 md:w-24 w-24 lg:h-8 md:h-7 h-5" />
+          <Image src={ClientTwo} alt="ClientTwo" className="lg:w-28 md:w-24 w-24 lg:h-8 md:h-7 h-5" />
+          <Image src={ClientThree} alt="ClientThree" className="lg:w-28 md:w-24 w-24 lg:h-8 md:h-7 h-5" />
+          <Image src={ClientFour} alt="ClientFour" className="lg:w-28 md:w-24 w-24 lg:h-8 md:h-7 h-5" />
+          <Image src={ClientFive} alt="ClientFive" className="lg:w-28 md:w-24 w-24 lg:h-8 md:h-7 h-5" />
         </div>
       </div>
     </div>

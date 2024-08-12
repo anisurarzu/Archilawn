@@ -60,24 +60,32 @@ export default function Navbar() {
   return (
     <div
       className={`top-0 w-full z-50 transition-colors duration-300 ${
-        isScrolled ? "sticky bg-white border-b border-gray-200" : "absolute bg-transparent"
+        isScrolled
+          ? "sticky bg-white border-b border-gray-200"
+          : "absolute bg-transparent"
       }`}
       style={{
         transition: "background-color 0.3s ease-in-out", // Adjust the duration for a slower transition
       }}
     >
-      <div className="container mx-auto flex justify-between items-center p-4">
+      <div className="container mx-auto flex justify-between items-center  lg:py-4 md:py-4 py-2 lg:pb-4 md:pb-4 pb-1">
         {/* Logo */}
-        <div className="flex items-center space-x-4">
-          <Image src="/images/logo.png" alt="Logo" width={100} height={100} />
+        <div
+          className={` hidden md:flex lg:flex items-center rounded-md ${
+            isScrolled ? "border border-gray-200" : "border-none"
+          }`}
+        >
+          <Image src="/images/logo.png" alt="Logo" width={100} height={100} className="rounded-md"/>
         </div>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex lg:space-x-8 md:space-x-4 space-x-8 lg:text-base md:text-sm text-sm">
           <a
             href="#packages"
             className={` ${
-              isScrolled ? "text-black hover:text-[#8FE53E]" : "text-white hover:text-[#8FE53E]"
+              isScrolled
+                ? "text-black hover:text-[#8FE53E]"
+                : "text-white hover:text-[#8FE53E]"
             }`}
           >
             Packages
@@ -85,7 +93,9 @@ export default function Navbar() {
           <a
             href="#how-it-works"
             className={` ${
-              isScrolled ? "text-black hover:text-[#8FE53E]" : "text-white hover:text-[#8FE53E]"
+              isScrolled
+                ? "text-black hover:text-[#8FE53E]"
+                : "text-white hover:text-[#8FE53E]"
             }`}
           >
             How it works
@@ -93,7 +103,9 @@ export default function Navbar() {
           <a
             href="#portfolio"
             className={` ${
-              isScrolled ? "text-black hover:text-[#8FE53E]" : "text-white hover:text-[#8FE53E]"
+              isScrolled
+                ? "text-black hover:text-[#8FE53E]"
+                : "text-white hover:text-[#8FE53E]"
             }`}
           >
             Portfolio
@@ -101,59 +113,78 @@ export default function Navbar() {
           <a
             href="#designers"
             className={` ${
-              isScrolled ? "text-black hover:text-[#8FE53E]" : "text-white hover:text-[#8FE53E]"
+              isScrolled
+                ? "text-black hover:text-[#8FE53E]"
+                : "text-white hover:text-[#8FE53E]"
             }`}
           >
             Our Designers
           </a>
         </div>
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex lg:space-x-4 md:space-x-4 space-x-8 lg:text-base md:text-sm text-sm">
           <a
             href="#login"
-            className={` ${
-              isScrolled ? "text-black hover:text-[#8FE53E]" : "text-white hover:text-[#8FE53E]"
+            className={`py-4 ${
+              isScrolled
+                ? "text-black hover:text-[#8FE53E]"
+                : "text-white hover:text-[#8FE53E]"
             }`}
           >
             Login
           </a>
 
-          <Button
-            type="text"
-            icon={
-              <FontAwesomeIcon
-                icon={faPhone}
-                className={` hover:animate-pulse ${
-                  isScrolled
-                    ? "text-black hover:text-black"
-                    : "text-white hover:text-white"
-                }`}
-              />
-            }
-            className={`border rounded-full flex items-center space-x-2 ${
-              isScrolled
-                ? " border-black text-black hover:text-black hover:border-[#8FE53E]"
-                : " border-white text-white hover:text-white hover:border-[#8FE53E]"
-            }`}
-          >
-            <span
-              className={` py-4 ${isScrolled ? "text-black" : "text-white"}`}
+          <div className="flex justify-center items-center gap-4">
+            <Button
+              type="text"
+              icon={
+                <FontAwesomeIcon
+                  icon={faPhone}
+                  className={` hover:animate-pulse ${
+                    isScrolled
+                      ? "text-black hover:text-black"
+                      : "text-white hover:text-white"
+                  }`}
+                />
+              }
+              className={`border rounded-full flex items-center justify-center space-x-2 ${
+                isScrolled
+                  ? " border-black text-black hover:text-black hover:border-[#8FE53E]"
+                  : " border-white text-white hover:text-white hover:border-[#8FE53E]"
+              }`}
             >
-              Call Us
-            </span>
-          </Button>
+              <span
+                className={` py-4 ${isScrolled ? "text-black" : "text-white"}`}
+              >
+                Call Us
+              </span>
+            </Button>
 
-          <Button
-            type="text"
-            icon={
-              <MailOutlined style={isHovered ? hoverIconStyle : iconStyle} />
-            }
-            style={{
-              ...buttonStyle,
-              ...(isHovered ? hoverStyle : {}),
-            }}
-            onMouseEnter={() => setIsHovered(true)}
-            onMouseLeave={() => setIsHovered(false)}
-          ></Button>
+            <Button
+              type="text"
+              icon={
+                <MailOutlined style={isHovered ? hoverIconStyle : iconStyle} />
+              }
+              style={{
+                ...buttonStyle,
+                ...(isHovered ? hoverStyle : {}),
+              }}
+              onMouseEnter={() => setIsHovered(true)}
+              onMouseLeave={() => setIsHovered(false)}
+            ></Button>
+          </div>
+        </div>
+
+        {/* Mobile Design Start */}
+        <div className="flex md:hidden lg:hidden items-center pl-2">
+          <Image
+            src="/images/logo.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className={` rounded-md ${
+              isScrolled ? "border border-gray-400" : "border-none"
+            }`}
+          />
         </div>
 
         {/* Mobile Menu Button */}
@@ -172,7 +203,7 @@ export default function Navbar() {
           placement="right"
           onClose={closeDrawer}
           open={visible}
-          className="text-gray-800"
+          className="text-gray-800 text-base"
         >
           <a href="#packages" className="block mb-4">
             Packages
@@ -197,6 +228,8 @@ export default function Navbar() {
             <span>Call Us</span>
           </Button>
         </Drawer>
+
+        {/* Mobile Design Start */}
       </div>
     </div>
   );
