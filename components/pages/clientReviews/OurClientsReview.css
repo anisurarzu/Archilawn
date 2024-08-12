@@ -1,0 +1,15 @@
+/* Ensure Swiper pagination is positioned at the bottom */
+.mySwiper .swiper-pagination {
+    bottom: 30px; /* Move pagination to the bottom */
+    transform: translateY(50%); /* Optional: adjust vertical alignment */
+}
+
+/* Style the pagination bullets */
+.swiper-pagination-bullet {
+    background-color: black !important; /* Change bullet color to black */
+}
+
+/* Style the active pagination bullet */
+.swiper-pagination-bullet-active {
+    background-color: black !important; /* Change active bullet color to black */
+}

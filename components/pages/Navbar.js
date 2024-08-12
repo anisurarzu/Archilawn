@@ -75,7 +75,13 @@ export default function Navbar() {
             isScrolled ? "border border-gray-200" : "border-none"
           }`}
         >
-          <Image src="/images/logo.png" alt="Logo" width={100} height={100} className="rounded-md"/>
+          <Image
+            src="/images/logo.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="rounded-md"
+          />
         </div>
 
         {/* Desktop Menu */}
@@ -223,7 +229,7 @@ export default function Navbar() {
           <Button
             type="text"
             icon={<PhoneOutlined />}
-            className="border border-white text-white hover:text-[#8FE53E] hover:border-[#8FE53E] flex items-center space-x-2 w-full"
+            className="w-full border border-gray-400 hover:border-gray-600 text-black hover:text-[#8FE53E] flex justify-center items-center gap-1 text-lg font-semibold mt-4"
           >
             <span>Call Us</span>
           </Button>

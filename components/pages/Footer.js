@@ -247,7 +247,7 @@ const Footer = () => {
         {/* Medium End */}
 
         {/* start bottom  */}
-        <div className="border border-gray-600 w-full hidden md:flex lg:flex justify-between items-center lg:py-2 md px-6">
+        <div className="border border-gray-600 w-full hidden md:flex lg:flex justify-between items-center lg:py-2 md:py-2 px-6">
           <p
             className="text-white"
             style={{

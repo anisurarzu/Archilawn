@@ -31,3 +31,13 @@ body {
 .ant-carousel .slick-dots {
   display: none !important;
 }
+
+/* Add this to your global CSS file or as inline styles in your component */
+.swiper-pagination-bullet {
+  background-color: #000; /* Change to your desired color */
+  opacity: 1; /* Ensure the bullets are visible */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #ff0000; /* Change to your active bullet color */
+}
