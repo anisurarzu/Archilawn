@@ -87,7 +87,7 @@ export default function OurPortfolio() {
               <p className="text-white font-bold text-[12px] md:text-base lg:text-xl">
                 Destination Weading Resort | Germany
               </p>
-              <button className="text-[#8ABF55] font-semibold bg-transparent border border-white py-1 lg:text-base md:text-base text-xs px-5 rounded-full bg-white">
+              <button className="text-[#8ABF55] font-semibold bg-transparent border border-white py-1 lg:text-base md:text-base text-[10px] lg:px-5 md:px-5 px-3 rounded-full bg-white">
                 SEE MORE
               </button>
             </div>

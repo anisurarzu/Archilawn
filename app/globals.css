@@ -41,3 +41,14 @@ body {
 .swiper-pagination-bullet-active {
   background-color: #ff0000; /* Change to your active bullet color */
 }
+
+
+/* In your CSS file */
+.custom-drop-shadow {
+  box-shadow: 0 20px 25px -5px rgba(230, 238, 241, 1), 0 10px 10px -5px rgba(230, 238, 241, 1);
+}
+
+
+.custom-light-shadow {
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1), 0px 6px 6px rgba(0, 0, 0, 0.05);
+}

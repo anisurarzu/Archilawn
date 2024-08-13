@@ -23,11 +23,14 @@ const Home = () => {
       <OurService />
       <OurPortfolio />
 
+
+      <div className="my-20">
+        <StillHaveQuestions />
+      </div>
+
       <div className="my-40">
         <OurClientsReview />
       </div>
-
-      <StillHaveQuestions />
 
       <div className="my-20">
         <FeelingInspired />
