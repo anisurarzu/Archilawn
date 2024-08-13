@@ -11,6 +11,7 @@ import OurPortfolioTopCard from "../cards/ourPortfolioTopCards/OurPortfolioTopCa
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-regular-svg-icons";
 import PackageCard from "../cards/packageCard/PackageCard";
+import GalleryCard from "../cards/galleryCard/GalleryCard";
 
 export default function OurPortfolio() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -115,6 +116,10 @@ export default function OurPortfolio() {
           packageCardheaderbg3="#636304"
         />
       </div> */}
+
+      <div className="my-20">
+        <GalleryCard />
+      </div>
     </section>
   );
 }
