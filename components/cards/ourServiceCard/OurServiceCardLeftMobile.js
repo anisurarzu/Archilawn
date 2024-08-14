@@ -23,7 +23,7 @@ const OurServiceCardLeftMobile = ({
       >
         <div className="flex items-end justify-end w-36">
           <p
-            className="text-lg font-bold text-white text-right pt-12 -rotate-90"
+            className="text-lg font-bold text-white text-right pt-14 -rotate-90"
             style={{
               fontFamily: "Tinos",
             }}
