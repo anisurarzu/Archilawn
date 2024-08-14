@@ -98,7 +98,7 @@ const OurClientsReview = () => {
 
   return (
     <div className="flex items-center justify-center">
-      <div className="w-[190vh] lg:mx-0 md:mx-4 mx-1 rounded-[30px] bg-[#F3F3F9]">
+      <div className="w-[190vh] lg:mx-0 md:mx-4 mx-3 rounded-[30px] bg-[#F3F3F9]">
         <div className="lg:px-20 md:px-4 px-3 lg:py-12 md:py-8 py-6 text-center rounded-lg">
           <h2
             className="lg:text-4xl md:text-3xl text-[22px] text-center text-[#123747] tracking-wide"
@@ -134,7 +134,7 @@ const OurClientsReview = () => {
                     ))}
                   </div>
 
-                  <p className="text-left text-lg my-6">{review.review}</p>
+                  <p className="text-left text-lg my-6 text-black">{review.review}</p>
 
                   <div className="">
                     <hr
@@ -152,7 +152,7 @@ const OurClientsReview = () => {
                         height={50}
                       />
 
-                      <div className="text-left">
+                      <div className="text-left text-black">
                         <h4 className="font-semibold">{review.name}</h4>
                         <p className="">{review.role}</p>
                       </div>

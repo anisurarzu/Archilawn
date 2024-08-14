@@ -32,11 +32,11 @@ const Home = () => {
         <OurClientsReview />
       </div>
 
-      <div className="py-20">
+      <div className="py-8">
         <FeelingInspired />
       </div>
 
-      <div className="my-24">
+      <div className="py-8">
         <AboutUs />
       </div>
       <Footer />
