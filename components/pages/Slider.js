@@ -65,7 +65,7 @@ export default function Slider() {
 
   return (
     <div className="relative">
-      <Carousel autoplay ref={carouselRef}>
+      <Carousel  ref={carouselRef}>
         {slides.map((slide) => (
           <div key={slide.id} className="relative lg:h-[92vh] md:h-[94vh] h-[88vh]">
             <Image

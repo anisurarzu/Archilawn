@@ -14,7 +14,7 @@ const OurPortfolioTopCard = ({portfolioImage1, portfolioImage2}) => {
         />
 
         {/* Overlay div */}
-        <div className="absolute bottom-0 w-full bg-[#8ABF55]/75 h-10 md:h-16 lg:h-20 flex items-center justify-between px-4 md:px-6 lg:px-6 z-20 rounded-bl-[30px]">
+        <div className="absolute bottom-0 w-full bg-[#8ABF55]/75 h-10 md:h-12 lg:h-20 flex items-center justify-between px-4 md:px-6 lg:px-6 z-20 rounded-bl-[30px]">
           <p className="text-white font-bold text-[8px] md:text-base lg:text-xl">
             Food Truck Cafe | California
           </p>
@@ -34,7 +34,7 @@ const OurPortfolioTopCard = ({portfolioImage1, portfolioImage2}) => {
         />
 
         {/* Overlay div */}
-        <div className="absolute bottom-0 w-full bg-[#8ABF55]/75 h-10 md:h-16 lg:h-20 flex items-center justify-between px-1 md:px-6 lg:px-6 z-20 rounded-br-[30px]">
+        <div className="absolute bottom-0 w-full bg-[#8ABF55]/75 h-10 md:h-12 lg:h-20 flex items-center justify-between px-1 md:px-6 lg:px-6 z-20 rounded-br-[30px]">
           <p className="text-white font-bold text-[8px] md:text-base lg:text-xl">
             Building Exterior Design | LA
           </p>

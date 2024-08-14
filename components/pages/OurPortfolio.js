@@ -83,7 +83,7 @@ export default function OurPortfolio() {
             )}
 
             {/* Overlay div */}
-            <div className="absolute bottom-0 w-full bg-[#8ABF55]/75 lg:h-20 md:h-20 h-10 flex items-center justify-between px-6 z-30 rounded-bl-[30px] rounded-br-[30px]">
+            <div className="absolute bottom-0 w-full bg-[#8ABF55]/75 lg:h-20 md:h-16 h-10 flex items-center justify-between px-6 z-30 rounded-bl-[30px] rounded-br-[30px]">
               <p className="text-white font-bold text-[12px] md:text-base lg:text-xl">
                 Destination Weading Resort | Germany
               </p>
