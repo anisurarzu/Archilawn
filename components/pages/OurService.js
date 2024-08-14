@@ -14,7 +14,7 @@ import ContainerHeader from "../containerHeader/ContainerHeader";
 export default function OurService() {
   return (
     <section className="bg-white">
-      <div className="mb-16 md:mb-16 lg:mb-0">
+      <div className="pb-16 md:pb-16 lg:pb-0">
         <div className="lg:pt-16 md:pt-16 pt-8 lg:pb-20 md:pb-16 pb-8 px-10 md:px-0 lg:px-0">
           <ContainerHeader containerHeader="Our Service Packages"/>
         </div>

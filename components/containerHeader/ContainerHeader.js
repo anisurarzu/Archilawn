@@ -11,7 +11,7 @@ const ContainerHeader = ({ containerHeader }) => {
           textAlign: "center",
         }}
       >
-        {containerHeader} K
+        {containerHeader}
       </p>
     </>
   );

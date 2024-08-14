@@ -25,7 +25,7 @@ export default function OurPortfolio() {
       <div className="lg:pt-28 md:pt-16 pt-0 lg:pb-16 md:pb-16 pb-6 px-10 md:px-0 lg:px-0">
         <ContainerHeader containerHeader="Our Portfolio" />
         <p
-          className="text-center lg:text-lg md:text-lg text-base"
+          className="text-center lg:text-lg md:text-lg text-base text-black"
           style={{
             fontFamily: "Tinos",
             lineHeight: "41px",

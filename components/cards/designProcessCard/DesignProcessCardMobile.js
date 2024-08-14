@@ -22,7 +22,7 @@ const DesignProcessCardMobile = ({
         />
       </div>
 
-      <p className="pt-2 pb-2 text-xl text-center font-semibold">
+      <p className="pt-2 pb-2 text-xl text-center font-semibold text-black">
         {HeaderText}
       </p>
 
@@ -31,7 +31,7 @@ const DesignProcessCardMobile = ({
       </div>
 
       <p
-        className="pt-2 text-lg text-center"
+        className="pt-2 text-lg text-center text-black"
         style={{
           fontFamily: "Poppins",
         }}
