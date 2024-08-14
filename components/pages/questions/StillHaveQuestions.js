@@ -117,7 +117,7 @@ const StillHaveQuestions = () => {
               <div className="flex flex-col lg:gap-3 md:gap-3 gap-2">
                 <div className="flex justify-start items-end h-[17vh]">
                   <Image
-                    className="lg:h-[12vh] md:h-[10vh] h-[14vh]"
+                    className="lg:h-[12vh] md:h-[10vh] h-[11vh] lg:w-[12vh] md:w-[10vh] w-[11vh]"
                     src={questionImage3}
                     alt="Feeling Inspired"
                     w={40}
