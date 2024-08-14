@@ -6,7 +6,7 @@ import AboutImage from "../../../public/images/aboutUsImage/about_us.png";
 const AboutUs = () => {
   return (
     <div className="flex items-center justify-center">
-      <div className="lg:w-[190vh] md:w-[62vh] w-[51vh] lg:mx-0 md:mx-4 mx-1 rounded-[30px] bg-[#F3F3F9]">
+      <div className="lg:w-[190vh] md:w-[62vh] w-[48vh] lg:mx-0 md:mx-4 mx-1 rounded-[30px] bg-[#F3F3F9]">
         <div className="lg:px-16 md:px-4 px-3 lg:py-12 md:py-8 py-6 text-center rounded-lg">
           {/* start top text */}
           <h2 className="lg:text-2xl md:text-2xl text-2xl text-center text-[#8ABF55] font-medium uppercase">
@@ -14,7 +14,7 @@ const AboutUs = () => {
           </h2>
           <div className="flex justify-center items-center">
             <h2
-              className="lg:text-4xl md:text-3xl text-[22px] text-center text-[#383737] lg:py-6 md:py-6 py-2 lg:w-[105vh] md:w-[50vh] w-[105vh]"
+              className="lg:text-4xl md:text-3xl text-[17px] text-center text-[#383737] lg:py-6 md:py-6 py-2 lg:w-[105vh] md:w-[50vh] w-[105vh]"
               style={{
                 fontFamily: "Tinos",
               }}
@@ -43,12 +43,12 @@ const AboutUs = () => {
                   fontFamily: "Poppins",
                 }}
               >
-                <p className="font-medium lg:text-2xl md:text-2xl text-[20px] lg:tracking-wide md:tracking-wide tracking-normal text-justify sm:text-left">
+                <p className="font-medium lg:text-2xl md:text-2xl text-[20px] lg:tracking-wide md:tracking-wide tracking-normal text-justify sm:text-left text-[#383737]">
                   We develop a modern architectural design for each house and at
                   the same time use high quality and environmentally friendly
                   materials in our work.{" "}
                 </p>
-                <p className="lg:text-xl md:text-2xl text-[20px] lg:tracking-wide md:tracking-wide tracking-normal text-justify sm:text-left">
+                <p className="lg:text-xl md:text-2xl text-[20px] lg:tracking-wide md:tracking-wide tracking-normal text-justify sm:text-left text-[#383737]">
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Quisque ipsum lorem, tempor ut ex aliquam, fringilla lacinia
                   quam. Sed mattis ante at massa aliquet consectetur. Nullam
@@ -94,15 +94,15 @@ const AboutUs = () => {
             </div>
             {/* End Know me Medium */}
             {/* Start Know me Small */}
-            <div className="mx-1">
+            <div className="mx-5">
               <div
-                className="container mx-auto rounded-2xl bg-white flex flex-col gap-3 lg:hidden md:hidden justify-between items-center py-3 px-2"
+                className="container rounded-2xl bg-white flex flex-col gap-1 lg:hidden md:hidden justify-center items-center py-2 pb-3 px-2"
                 style={{
                   fontFamily: "Tinos",
                 }}
               >
-                <p className="text-[22px]">Want to know more about us</p>
-                <button className="border border-[#383737] text-white py-1 px-5 rounded-2xl flex items-center animate-pulse">
+                <p className="text-[22px] text-[#383737]">Want to know more about us</p>
+                <button className="border border-[#383737] text-white py-1 px-5 rounded-2xl flex items-center">
                   <div className="text-[#383737] text-[18px]">Know More</div>
                   <div className="pi pi-chevron-right ml-2 text-[12px] text-[#383737]"></div>
                 </button>
