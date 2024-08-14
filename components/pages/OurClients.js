@@ -19,7 +19,7 @@ const OurClients = () => {
   `;
 
   return (
-    <div className="bg-[#8ABF55] lg:h-[8vh] md:h-[6vh] h-[6vh] overflow-hidden relative">
+    <div className="bg-[#8ABF55] lg:h-[8vh] md:h-[6vh] h-[8vh] overflow-hidden relative">
       {/* Add the keyframes inline */}
       <style>{scrollAnimation}</style>
       <div
