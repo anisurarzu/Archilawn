@@ -32,7 +32,7 @@ const hoverIconStyle = {
   color: "white",
 };
 
-export default function Navbar() {
+export default function Navbar({ scrollToOurService }) {
   const [visible, setVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -65,13 +65,13 @@ export default function Navbar() {
           : "absolute bg-transparent"
       }`}
       style={{
-        transition: "background-color 0.3s ease-in-out", // Adjust the duration for a slower transition
+        transition: "background-color 0.3s ease-in-out",
       }}
     >
-      <div className="container mx-auto flex justify-between items-center  lg:py-4 md:py-4 py-2 lg:pb-4 md:pb-4 pb-1">
+      <div className="container mx-auto flex justify-between items-center lg:py-4 md:py-4 py-2 lg:pb-4 md:pb-4 pb-1">
         {/* Logo */}
         <div
-          className={` hidden md:flex lg:flex items-center rounded-md ${
+          className={`hidden md:flex lg:flex items-center rounded-md ${
             isScrolled ? "border border-gray-200" : "border-none"
           }`}
         >
@@ -87,7 +87,11 @@ export default function Navbar() {
         {/* Desktop Menu */}
         <div className="hidden md:flex lg:space-x-8 md:space-x-4 space-x-8 lg:text-base md:text-sm text-sm">
           <a
-            href="#packages"
+            href="#our-service"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToOurService();
+            }}
             className={` ${
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
@@ -95,16 +99,6 @@ export default function Navbar() {
             }`}
           >
             Packages
-          </a>
-          <a
-            href="#how-it-works"
-            className={` ${
-              isScrolled
-                ? "text-black hover:text-[#8FE53E]"
-                : "text-white hover:text-[#8FE53E]"
-            }`}
-          >
-            How it works
           </a>
           <a
             href="#portfolio"
@@ -117,16 +111,27 @@ export default function Navbar() {
             Portfolio
           </a>
           <a
-            href="#designers"
+            href="#how-it-works"
             className={` ${
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
             }`}
           >
-            Our Designers
+            How it works
+          </a>
+          <a
+            href="#about-us"
+            className={` ${
+              isScrolled
+                ? "text-black hover:text-[#8FE53E]"
+                : "text-white hover:text-[#8FE53E]"
+            }`}
+          >
+            About Us
           </a>
         </div>
+
         <div className="hidden md:flex lg:space-x-4 md:space-x-4 space-x-8 lg:text-base md:text-sm text-sm">
           <a
             href="#login"
@@ -211,17 +216,20 @@ export default function Navbar() {
           open={visible}
           className="text-gray-800 text-base"
         >
-          <a href="#packages" className="block mb-4">
+          <a href="#our-service" className="block mb-4" onClick={(e) => {
+            e.preventDefault();
+            scrollToOurService();
+          }}>
             Packages
-          </a>
-          <a href="#how-it-works" className="block mb-4">
-            How it works
           </a>
           <a href="#portfolio" className="block mb-4">
             Portfolio
           </a>
-          <a href="#designers" className="block mb-4">
-            Our Designers
+          <a href="#how-it-works" className="block mb-4">
+            How it works
+          </a>
+          <a href="#about-us" className="block mb-4">
+            About Us
           </a>
           <a href="#login" className="block mb-4">
             Login

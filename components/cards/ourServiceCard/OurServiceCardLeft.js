@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PackageText from "@/components/packageText/PackageText";
 import Image from "next/image";
 import React from "react";
@@ -33,16 +34,18 @@ const OurServiceCardLeft = ({
         className={`h-full rounded-[30px] flex justify-end items-center lg:ml-[370px] md:ml-[330px] ml-[370px] group-hover:ml-[550px] lg:group-hover:ml-[1120px] z-3 absolute transition-all duration-1000`}
         style={{ backgroundColor: forthDivBgColor }}
       >
-        <div className="flex items-end justify-end w-56">
-          <p
-            className="text-4xl font-bold text-white text-right pt-28 -rotate-90"
-            style={{
-              fontFamily: "Tinos",
-            }}
-          >
-            View Details
-          </p>
-        </div>
+        <Link href="/DetailsPageOne">
+          <div className="flex items-end justify-end w-56 cursor-pointer">
+            <p
+              className="text-4xl font-bold text-white text-right pt-28 -rotate-90"
+              style={{
+                fontFamily: "Tinos",
+              }}
+            >
+              View Details
+            </p>
+          </div>
+        </Link>
       </div>
 
       {/* 2nd */}

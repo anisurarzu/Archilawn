@@ -1,3 +1,4 @@
+'use client'
 import React, { useState } from "react";
 
 import questionImage1 from "../../../public/images/questionsImage/question_Image1.png";

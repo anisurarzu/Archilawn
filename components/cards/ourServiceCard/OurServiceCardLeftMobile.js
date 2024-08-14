@@ -1,3 +1,4 @@
+import Link from "next/link";
 import PackageText from "@/components/packageText/PackageText";
 import Image from "next/image";
 import React from "react";
@@ -21,16 +22,18 @@ const OurServiceCardLeftMobile = ({
         className={`h-full rounded-[30px] flex justify-end items-center ml-[60px] group-hover:ml-[180px] z-3 absolute transition-all duration-1000`}
         style={{ backgroundColor: forthDivBgColor }}
       >
-        <div className="flex items-end justify-end w-36">
-          <p
-            className="text-lg font-bold text-white text-right pt-14 -rotate-90"
-            style={{
-              fontFamily: "Tinos",
-            }}
-          >
-            View Details
-          </p>
-        </div>
+        <Link href="/detailsPages/DetailsPageOne">
+          <div className="flex items-end justify-end w-36 cursor-pointer">
+            <p
+              className="text-lg font-bold text-white text-right pt-14 -rotate-90"
+              style={{
+                fontFamily: "Tinos",
+              }}
+            >
+              View Details
+            </p>
+          </div>
+        </Link>
       </div>
 
       {/* 1st */}

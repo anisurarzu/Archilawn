@@ -21,6 +21,11 @@ body {
   background: rgb(var(--background-start-rgb)); /* Set to white */
 }
 
+/* Smooth scrolling for the entire document */
+html {
+  scroll-behavior: smooth;
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
@@ -32,23 +37,22 @@ body {
   display: none !important;
 }
 
-/* Add this to your global CSS file or as inline styles in your component */
+/* Custom swiper pagination bullets */
 .swiper-pagination-bullet {
-  background-color: #000; /* Change to your desired color */
-  opacity: 1; /* Ensure the bullets are visible */
+  background-color: #000;
+  opacity: 1;
 }
 
 .swiper-pagination-bullet-active {
-  background-color: #ff0000; /* Change to your active bullet color */
+  background-color: #ff0000;
 }
 
-
-/* In your CSS file */
+/* Custom drop shadow */
 .custom-drop-shadow {
   box-shadow: 0 20px 25px -5px rgba(230, 238, 241, 1), 0 10px 10px -5px rgba(230, 238, 241, 1);
 }
 
-
+/* Custom light shadow */
 .custom-light-shadow {
   box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.1), 0px 6px 6px rgba(0, 0, 0, 0.05);
 }
