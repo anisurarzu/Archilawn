@@ -23,7 +23,7 @@ export default function DesignProcess() {
         {/* Start div  */}
 
         {/* Large Medium Device Start */}
-        <div className="hidden lg:grid md:grid grid-cols-1 gap-3 bg-white shadow-2xl py-12 px-10 rounded-[30px] md:grid-cols-2 lg:grid-cols-3">
+        <div className="hidden lg:grid md:grid grid-cols-1 gap-3 bg-white drop-shadow-md py-12 px-10 rounded-[30px] md:grid-cols-2 lg:grid-cols-3">
           <div className="border-r border-[#D2D2D2]">
             <DesignProcessCard
               serviceImage={ServiceOne}
@@ -51,7 +51,7 @@ export default function DesignProcess() {
         {/* Large Medium Device Start */}
 
         {/* Mobile Device Start */}
-        <div className="flex flex-col md:hidden lg:hidden gap-12 bg-white shadow-sm mx-3 py-8 px-8 rounded-[30px] md:grid-cols-2 lg:grid-cols-3">
+        <div className="flex flex-col md:hidden lg:hidden gap-12 bg-white drop-shadow-md mx-3 py-8 px-8 rounded-[30px] md:grid-cols-2 lg:grid-cols-3">
           <div className="">
             <DesignProcessCardMobile
               serviceImage={ServiceOne}

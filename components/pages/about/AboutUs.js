@@ -9,7 +9,7 @@ const AboutUs = () => {
       <div className="lg:w-[190vh] md:w-[62vh] w-[45vh] lg:mx-0 md:mx-4 mx-1 rounded-[30px] bg-[#F3F3F9]">
         <div className="lg:px-16 md:px-4 px-3 lg:py-12 md:py-8 py-6 text-center rounded-lg">
           {/* start top text */}
-          <h2 className="lg:text-2xl md:text-2xl text-2xl text-center text-[#8ABF55] font-medium uppercase">
+          <h2 className="lg:text-xl md:text-2xl text-xl text-center text-[#8ABF55] font-semibold uppercase">
             About Us
           </h2>
           <div className="flex justify-center items-center">
@@ -32,18 +32,13 @@ const AboutUs = () => {
               <Image
                 src={AboutImage}
                 alt="About Us Image"
-                className="w-full lg:h-[50vh] md:h-[50vh] h-[30vh] lg:px-6 md:px-6 px-1"
+                className="w-full lg:h-[50vh] md:h-[30vh] h-[30vh] lg:px-6 md:px-16 px-1"
               />
             </div>
 
             <div className="col-span-1 flex flex-col lg:gap-0 md:gap-8 gap-0 justify-between items-end lg:px-6 md:px-16 px-1">
-              <div
-                className="flex flex-col lg:gap-8 md:gap-8 gap-5 justify-start items-start text-left"
-                style={{
-                  fontFamily: "Poppins",
-                }}
-              >
-                <p className="font-medium lg:text-2xl md:text-2xl text-[17px] lg:tracking-wide md:tracking-wide tracking-normal text-justify sm:text-left text-[#383737]">
+              <div className="flex flex-col lg:gap-8 md:gap-8 gap-5 justify-start items-start text-left">
+                <p className="font-medium lg:text-xl md:text-2xl text-[17px] lg:tracking-wide md:tracking-wide tracking-normal text-justify sm:text-left text-[#383737]">
                   We develop a modern architectural design for each house and at
                   the same time use high quality and environmentally friendly
                   materials in our work.{" "}
@@ -101,7 +96,9 @@ const AboutUs = () => {
                   fontFamily: "Tinos",
                 }}
               >
-                <p className="text-[17px] text-[#383737]">Want to know more about us</p>
+                <p className="text-[17px] text-[#383737]">
+                  Want to know more about us
+                </p>
                 <button className="border border-[#383737] text-white py-1 px-3 drop-shadow-md rounded-xl flex items-center">
                   <div className="text-[#383737] text-[15px]">Know More</div>
                   <div className="pi pi-chevron-right ml-2 text-[12px] text-[#383737]"></div>

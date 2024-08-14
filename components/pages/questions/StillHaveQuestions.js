@@ -144,12 +144,12 @@ const StillHaveQuestions = () => {
               <div className="flex justify-center items-center bg-white lg:p-5 md:p-3 p-3 rounded-full custom-drop-shadow">
                 <FontAwesomeIcon
                   icon={faPhone}
-                  className="text-[#908B89] lg:w-7 md:w-6 w-5 lg:h-7 md:h-6 h-5"
+                  className="text-[#8ABF55] lg:w-7 md:w-6 w-5 lg:h-7 md:h-6 h-5"
                 />
               </div>
 
               <div className="lg:text-base md:text-base text-xs">
-                <p className="uppercase text-[#908B89]">for any inquire</p>
+                <p className="uppercase text-[#8ABF55]">for any inquire</p>
                 <p className="font-semibold uppercase text-[#0C1017]">
                   +01 5527 6045 or +01-7-5527 6045
                 </p>
@@ -169,7 +169,7 @@ const StillHaveQuestions = () => {
                   }`}
                 >
                   <div
-                    className={`cursor-pointer py-4 flex justify-between items-center lg:rounded-none md:rounded-none rounded-lg transition-all duration-100 lg:px-8 md:px-8 px-2 ${
+                    className={`cursor-pointer py-4 flex justify-between items-center rounded-lg transition-all duration-100 lg:px-8 md:px-8 px-2 ${
                       openIndex === index
                         ? "text-gray-900 bg-white border-b-2 border-[#D2D2D2]"
                         : "bg-[#F3F3F9]"

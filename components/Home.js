@@ -10,7 +10,6 @@ import Footer from "./pages/Footer";
 import OurClientsReview from "./pages/clientReviews/OurClientsReview";
 import StillHaveQuestions from "./pages/questions/StillHaveQuestions";
 import FeelingInspired from "./pages/feelingInspired/FeelingInspired";
-import PackageCard from "./cards/packageCard/PackageCard";
 import AboutUs from "./pages/about/AboutUs";
 
 const Home = () => {
@@ -26,18 +25,17 @@ const Home = () => {
         <OurPortfolio />
       </div>
       <div className="py-8">
+        <OurClientsReview />
+      </div>
+      <div className="py-12">
         <StillHaveQuestions />
       </div>
 
-      <div className="py-8">
-        <OurClientsReview />
-      </div>
-
-      <div className="py-8">
+      <div className="py-12">
         <FeelingInspired />
       </div>
 
-      <div className="py-8">
+      <div className="py-12">
         <AboutUs />
       </div>
       <Footer />

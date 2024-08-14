@@ -109,10 +109,10 @@ const OurClientsReview = () => {
             Our clients reviews
           </h2>
           <div
-            className={`flex lg:gap-8 md:gap-4 gap-2 lg:mt-10 md:mt-10 mt-5 ${
+            className={`flex lg:gap-8 md:gap-4 gap-0 lg:mt-10 md:mt-10 mt-5 ${
               isLargeReview
-                ? "lg:h-[50vh] md:h-[20vh] h-[50vh]"
-                : "lg:h-[45vh] md:h-[35vh] h-[60vh]"
+                ? "lg:h-[45vh] md:h-[20vh] h-[40vh]"
+                : "lg:h-[40vh] md:h-[35vh] h-[52vh]"
             }`}
           >
             {displayedReviews.length > 0 ? (
@@ -134,7 +134,7 @@ const OurClientsReview = () => {
                     ))}
                   </div>
 
-                  <p className="text-left text-lg my-6 text-black">{review.review}</p>
+                  <p className="text-left text-base lg:my-6 md:my-6 my-2 text-black">{review.review}</p>
 
                   <div className="">
                     <hr
@@ -152,7 +152,7 @@ const OurClientsReview = () => {
                         height={50}
                       />
 
-                      <div className="text-left text-black">
+                      <div className="text-left text-black text-sm">
                         <h4 className="font-semibold">{review.name}</h4>
                         <p className="">{review.role}</p>
                       </div>
@@ -175,7 +175,7 @@ const OurClientsReview = () => {
                 className="flex justify-center items-center"
               >
                 <div
-                  className={`cursor-pointer lg:mx-1 md:mx-1 mx-2 lg:text-2xl md:text-2xl text-3xl ${
+                  className={`cursor-pointer lg:mx-1 md:mx-1 mx-2 lg:text-2xl md:text-2xl text-2xl ${
                     currentReview === index ? "text-black" : "text-gray-300"
                   }`}
                 >
