@@ -125,7 +125,7 @@ const StillHaveQuestions = () => {
                   />
                 </div>
 
-                <div className="lg:h-[35vh] md:h-[32vh] h-[30vh] lg:w-[27vh] md:w-[29vh] w-[25vh]">
+                <div className="lg:h-[35vh] md:h-[32vh] h-[30vh] lg:w-[27vh] md:w-[29vh] w-[23vh]">
                   <Image
                     className="h-full w-full"
                     src={questionImage2}
@@ -169,14 +169,14 @@ const StillHaveQuestions = () => {
                   }`}
                 >
                   <div
-                    className={`cursor-pointer py-4 flex justify-between items-center transition-all duration-100 lg:px-8 md:px-8 px-2 ${
+                    className={`cursor-pointer py-4 flex justify-between items-center lg:rounded-none md:rounded-none rounded-sm transition-all duration-100 lg:px-8 md:px-8 px-2 ${
                       openIndex === index
                         ? "text-gray-900 bg-white border-b-2 border-[#D2D2D2]"
                         : "bg-[#F3F3F9]"
                     }`}
                     onClick={() => toggleFAQ(index)}
                   >
-                    <span className="lg:text-lg md:text-lg text-sm font-medium">{faq.question}</span>
+                    <span className="lg:text-lg md:text-lg text-sm font-medium text-gray-800">{faq.question}</span>
                     <span
                       className={`lg:text-xl md:text-xl text-base pi ${
                         openIndex === index
