@@ -17,7 +17,7 @@ export default function Slider() {
   const slides = [
     {
       id: 1,
-      title: "Visualize your project with Realistic 3D Rendering",
+      title: "isualize your project with Realistic 3D Rendering",
       description:
         "Partne designer for customized plans and 3d visualization. All Online.",
       imageUrl: "/images/slider-image.png",
@@ -67,7 +67,7 @@ export default function Slider() {
     <div className="relative">
       <Carousel autoplay ref={carouselRef}>
         {slides.map((slide) => (
-          <div key={slide.id} className="relative lg:h-[92vh] md:h-[94vh] h-[90vh]">
+          <div key={slide.id} className="relative lg:h-[92vh] md:h-[94vh] h-[87vh]">
             <Image
               src={slide.imageUrl}
               alt={slide.title}
