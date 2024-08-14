@@ -15,7 +15,7 @@ import AboutUs from "./pages/about/AboutUs";
 
 const Home = () => {
   return (
-    <div>
+    <div className="bg-white">
       <Navbar />
       <Slider />
       <OurClients />
