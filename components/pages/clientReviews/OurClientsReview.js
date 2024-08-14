@@ -97,7 +97,7 @@ const OurClientsReview = () => {
   );
 
   return (
-    <div className="flex items-center justify-center">
+    <div className="flex items-center justify-center bg-white">
       <div className="w-[190vh] lg:mx-0 md:mx-4 mx-3 rounded-[30px] bg-[#F3F3F9]">
         <div className="lg:px-20 md:px-4 px-3 lg:py-12 md:py-8 py-6 text-center rounded-lg">
           <h2
