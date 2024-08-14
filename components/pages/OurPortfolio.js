@@ -46,7 +46,7 @@ export default function OurPortfolio() {
 
         <div className="lg:mt-12 md:mt-12 mt-6 px-1 md:px-0 lg:px-0">
           {/* Start Video */}
-          <div className="relative w-full lg:h-[70vh] md:h-[25vh] h-[23vh]">
+          <div className="relative w-full lg:h-[70vh] md:h-[25vh] h-[21vh]">
             {!isPlaying && (
               <div className="relative w-full h-full">
                 <img
@@ -61,7 +61,7 @@ export default function OurPortfolio() {
                   >
                     <FontAwesomeIcon
                       icon={faCirclePlay}
-                      className="lg:w-24 md:w-24 w-12 lg:h-24 md:h-24 h-12"
+                      className="lg:w-24 md:w-24 w-10 lg:h-24 md:h-24 h-10"
                     />
                   </button>
                 </div>
