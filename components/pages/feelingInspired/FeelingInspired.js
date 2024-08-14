@@ -5,7 +5,7 @@ import FeelingInspiredImage from "../../../public/images/feelingInspired/feeling
 
 const FeelingInspired = () => {
   return (
-    <div className="lg:w-[185vh] md:w-[60vh] w-[47vh]">
+    <div className="lg:w-[185vh] md:w-[60vh] w-[45vh]">
       <div className="bg-[#383737] flex items-center justify-between rounded-tr-3xl rounded-br-3xl">
         <div className="">
           <p
@@ -64,7 +64,7 @@ const FeelingInspired = () => {
 
       {/* start bottom design small device */}
       <div className="flex md:hidden lg:hidden justify-end items-start">
-        <div className="bg-[#8ABF55] rounded-2xl w-[42vh] mr-7 -mt-10">
+        <div className="bg-[#8ABF55] rounded-2xl w-[42vh] mr-3 -mt-10">
           <div
             className="rounded-2xl flex flex-col gap-1 justify-between items-center py-3 px-2"
             style={{

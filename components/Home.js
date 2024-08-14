@@ -21,21 +21,21 @@ const Home = () => {
       <DesignProcess />
       <OurService />
 
-      <div className="py-8">
+      <div className="lg:py-8 md:py-8 py-0">
         <OurPortfolio />
       </div>
-      <div className="py-8">
+      <div className="lg:py-8 md:py-8 py-16">
         <OurClientsReview />
       </div>
-      <div className="py-12">
+      <div className="lg:py-12 md:py-12 py-0">
         <StillHaveQuestions />
       </div>
 
-      <div className="py-12">
+      <div className="lg:py-12 md:py-12 py-8">
         <FeelingInspired />
       </div>
 
-      <div className="py-12">
+      <div className="py-8">
         <AboutUs />
       </div>
       <Footer />
