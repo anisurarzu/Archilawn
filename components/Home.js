@@ -24,15 +24,15 @@ const Home = () => {
       <OurPortfolio />
 
 
-      <div className="my-20">
+      <div className="py-8">
         <StillHaveQuestions />
       </div>
 
-      <div className="my-40">
+      <div className="py-8">
         <OurClientsReview />
       </div>
 
-      <div className="my-20">
+      <div className="py-20">
         <FeelingInspired />
       </div>
 

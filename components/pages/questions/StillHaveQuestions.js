@@ -178,7 +178,7 @@ const StillHaveQuestions = () => {
                   >
                     <span className="lg:text-lg md:text-lg text-sm font-medium text-gray-800">{faq.question}</span>
                     <span
-                      className={`lg:text-xl md:text-xl text-base pi ${
+                      className={`lg:text-xl md:text-xl text-base pi text-gray-800 ${
                         openIndex === index
                           ? "pi-chevron-up bg-white"
                           : "pi-chevron-down"
