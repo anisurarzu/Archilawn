@@ -47,7 +47,7 @@ export default function Slider() {
   const scrollToFooter = () => {
     const scrollHeight = document.documentElement.scrollHeight;
     const scrollStep = 10; // Amount to scroll per step
-    const scrollInterval = 5; // Time between each scroll step in milliseconds
+    const scrollInterval = 20; // Time between each scroll step in milliseconds
 
     // Function to perform the scrolling
     const scroll = () => {
