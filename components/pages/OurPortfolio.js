@@ -98,7 +98,7 @@ export default function OurPortfolio() {
 
       {/* END PORTFOLIO */}
 
-      <div className="my-20">
+      <div className="py-20">
         <PackageCard
           headerText="Building Exterior 3d rendering Package"
           bgColor="#A3C1D3"

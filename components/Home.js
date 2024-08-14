@@ -21,9 +21,10 @@ const Home = () => {
       <OurClients />
       <DesignProcess />
       <OurService />
-      <OurPortfolio />
 
-
+      <div className="py-8">
+        <OurPortfolio />
+      </div>
       <div className="py-8">
         <StillHaveQuestions />
       </div>

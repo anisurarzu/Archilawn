@@ -25,7 +25,7 @@ const GalleryCard = () => {
       <div className="grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 lg:gap-4 md:gap-1 gap-4">
         <div className="col-span-1">
           <div className="flex flex-col lg:justify-start md:justify-start justify-center items-center">
-            <h2 className="lg:text-2xl md:text-xl text-xl font-semibold lg:mb-6 md:mb-3 mb-3">
+            <h2 className="lg:text-2xl md:text-xl text-xl font-semibold lg:mb-6 md:mb-3 mb-3 text-black">
               We can bring your ideas to life
             </h2>
             <p
