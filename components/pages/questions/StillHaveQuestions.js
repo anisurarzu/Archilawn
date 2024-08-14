@@ -125,7 +125,7 @@ const StillHaveQuestions = () => {
                   />
                 </div>
 
-                <div className="lg:h-[35vh] md:h-[32vh] h-[30vh] lg:w-[27vh] md:w-[29vh] w-[23vh]">
+                <div className="lg:h-[35vh] md:h-[32vh] h-[30vh] lg:w-[27vh] md:w-[29vh] w-[21vh]">
                   <Image
                     className="h-full w-full"
                     src={questionImage2}
@@ -169,7 +169,7 @@ const StillHaveQuestions = () => {
                   }`}
                 >
                   <div
-                    className={`cursor-pointer py-4 flex justify-between items-center lg:rounded-none md:rounded-none rounded-sm transition-all duration-100 lg:px-8 md:px-8 px-2 ${
+                    className={`cursor-pointer py-4 flex justify-between items-center lg:rounded-none md:rounded-none rounded-lg transition-all duration-100 lg:px-8 md:px-8 px-2 ${
                       openIndex === index
                         ? "text-gray-900 bg-white border-b-2 border-[#D2D2D2]"
                         : "bg-[#F3F3F9]"

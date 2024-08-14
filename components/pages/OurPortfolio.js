@@ -117,7 +117,7 @@ export default function OurPortfolio() {
         />
       </div> */}
 
-      <div className="my-20">
+      <div className="py-8">
         <GalleryCard />
       </div>
     </section>
