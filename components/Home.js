@@ -11,6 +11,7 @@ import StillHaveQuestions from "./pages/questions/StillHaveQuestions";
 import FeelingInspired from "./pages/feelingInspired/FeelingInspired";
 import AboutUs from "./pages/about/AboutUs";
 import Navbar from "./pages/Navbar";
+import ProjectGallery from "./pages/projectGallery/ProjectGallery";
 
 const Home = () => {
   const ourServiceRef = useRef(null);
@@ -42,6 +43,9 @@ const Home = () => {
       </div>
       <div className="py-8">
         <AboutUs id="about-us" />
+      </div>
+      <div className="py-8">
+        <ProjectGallery id="about-us" />
       </div>
       <Footer />
     </div>

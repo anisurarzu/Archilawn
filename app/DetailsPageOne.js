@@ -1,9 +1,10 @@
+import GalleryCard from "@/components/cards/galleryCard/GalleryCard";
+import PackageCard from "@/components/cards/packageCard/PackageCard";
+import Footer from "@/components/pages/Footer";
+import Navbar from "@/components/pages/Navbar";
+import OurService from "@/components/pages/OurService";
+import Slider from "@/components/pages/Slider";
 import React from "react";
-import Navbar from "../pages/Navbar";
-import Slider from "../pages/Slider";
-import OurService from "../pages/OurService";
-import PackageCard from "../cards/packageCard/PackageCard";
-import GalleryCard from "../cards/galleryCard/GalleryCard";
 
 const DetailsPageOne = () => {
   const ourServiceRef = useRef(null);

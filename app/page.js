@@ -9,6 +9,7 @@ const page = () => {
   return (
     <div className=''>
       <Home/>
+      
     </div>
   )
 }
