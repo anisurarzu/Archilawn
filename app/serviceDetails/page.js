@@ -9,7 +9,7 @@ import Slider from "@/components/pages/Slider";
 import { useRef } from "react";
 
 const page = () => {
-  const ourServiceRef = useRef(null);
+  // const ourServiceRef = useRef(null);
   const scrollToOurService = () => {
     if (ourServiceRef.current) {
       ourServiceRef.current.scrollIntoView({ behavior: "smooth" });

@@ -5,19 +5,11 @@ import React from "react";
 import "primereact/resources/themes/saga-blue/theme.css"; // Choose the theme you want
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
-import Navbar from "@/components/pages/Navbar";
 
 const page = () => {
-  const scrollToOurService = () => {
-    if (ourServiceRef.current) {
-      ourServiceRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
   return (
-
     <div className="">
       <Home />
-
     </div>
   );
 };
