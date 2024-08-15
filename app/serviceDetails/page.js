@@ -9,11 +9,11 @@ import Slider from "@/components/pages/Slider";
 
 const page = () => {
   // const ourServiceRef = useRef(null);
-  const scrollToOurService = () => {
-    if (ourServiceRef.current) {
-      ourServiceRef.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  // const scrollToOurService = () => {
+  //   if (ourServiceRef.current) {
+  //     ourServiceRef.current.scrollIntoView({ behavior: "smooth" });
+  //   }
+  // };
 
   return (
     <div className="bg-white">
@@ -33,7 +33,7 @@ const page = () => {
         />
       </div>
 
-      <OurService ref={ourServiceRef} id="our-service" />
+      <OurService /* ref={ourServiceRef} */ id="our-service" />
 
       <Footer />
     </div>
