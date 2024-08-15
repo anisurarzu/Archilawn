@@ -1,16 +1,23 @@
-import Home from '@/components/Home'
-import React from 'react'
+"use client";
+import Home from "@/components/Home";
+import React from "react";
 
-import "primereact/resources/themes/saga-blue/theme.css";  // Choose the theme you want
+import "primereact/resources/themes/saga-blue/theme.css"; // Choose the theme you want
 import "primereact/resources/primereact.min.css";
 import "primeicons/primeicons.css";
+import Navbar from "@/components/pages/Navbar";
 
 const page = () => {
+  const scrollToOurService = () => {
+    if (ourServiceRef.current) {
+      ourServiceRef.current.scrollIntoView({ behavior: "smooth" });
+    }
+  };
   return (
-    <div className=''>
-      <Home/>
+    <div className="">
+      <Home />
     </div>
-  )
-}
+  );
+};
 
-export default page
+export default page;

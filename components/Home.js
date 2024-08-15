@@ -17,31 +17,36 @@ const Home = () => {
 
   const scrollToOurService = () => {
     if (ourServiceRef.current) {
-      ourServiceRef.current.scrollIntoView({ behavior: 'smooth' });
+      ourServiceRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
 
   return (
     <div className="bg-white">
       <Navbar scrollToOurService={scrollToOurService} />
-      <Slider />
-      <OurClients />
-      <DesignProcess />
-      <OurService ref={ourServiceRef} id="our-service" />
-      <div className="lg:py-8 md:py-8 py-0">
-        <OurPortfolio id="portfolio" />
+      <div className="lg:py-8 md:py-8 py-0 " id="home">
+        <Slider />
+        <OurClients />
+        <DesignProcess />
+      </div>
+
+      <div className="lg:py-8 md:py-8 py-0 " id="service">
+        <OurService ref={ourServiceRef} />
+      </div>
+      <div className="lg:py-8 md:py-8 py-0 " id="portfolio">
+        <OurPortfolio />
       </div>
       <div className="lg:py-8 md:py-8 py-16">
         <OurClientsReview />
       </div>
-      <div className="lg:py-12 md:py-12 py-0">
-        <StillHaveQuestions id="how-it-works" />
+      <div className="lg:py-12 md:py-12 py-8" id="how-it-works">
+        <StillHaveQuestions />
       </div>
       <div className="lg:py-12 md:py-12 py-8">
         <FeelingInspired />
       </div>
-      <div className="py-8">
-        <AboutUs id="about-us" />
+      <div className="lg:py-12 md:py-12 py-8" id="about-us">
+        <AboutUs />
       </div>
       <Footer />
     </div>

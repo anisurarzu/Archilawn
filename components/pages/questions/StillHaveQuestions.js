@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 
 import questionImage1 from "../../../public/images/questionsImage/question_Image1.png";
@@ -52,7 +52,7 @@ const StillHaveQuestions = () => {
   };
 
   return (
-    <div className="container mx-auto bg-white">
+    <div className="container mx-auto bg-white pt-12">
       {/* Start Top Text */}
       {/* Large Device Header Text */}
       <div className="hidden md:hidden lg:grid grid-cols-2 mb-3">
@@ -62,8 +62,7 @@ const StillHaveQuestions = () => {
             className="text-4xl uppercase"
             style={{
               fontFamily: "Proxima Nova",
-            }}
-          >
+            }}>
             Still Have Questions?
           </h2>
         </div>
@@ -76,8 +75,7 @@ const StillHaveQuestions = () => {
           className="lg:text-4xl md:text-3xl text-[22px] text-center text-[#123747] tracking-wide"
           style={{
             fontFamily: "Proxima Nova",
-          }}
-        >
+          }}>
           Still Have Questions?
         </h2>
       </div>
@@ -167,32 +165,30 @@ const StillHaveQuestions = () => {
                 <div
                   className={` ${
                     openIndex === index ? "bg-white drop-shadow-md" : ""
-                  }`}
-                >
+                  }`}>
                   <div
                     className={`cursor-pointer py-4 flex justify-between items-center rounded-lg transition-all duration-100 lg:px-8 md:px-8 px-2 ${
                       openIndex === index
                         ? "text-gray-900 bg-white border-b-2 border-[#D2D2D2]"
                         : "bg-[#F3F3F9]"
                     }`}
-                    onClick={() => toggleFAQ(index)}
-                  >
-                    <span className="lg:text-lg md:text-lg text-sm font-medium text-gray-800">{faq.question}</span>
+                    onClick={() => toggleFAQ(index)}>
+                    <span className="lg:text-lg md:text-lg text-sm font-medium text-gray-800">
+                      {faq.question}
+                    </span>
                     <span
                       className={`lg:text-xl md:text-xl text-base pi text-gray-800 ${
                         openIndex === index
                           ? "pi-chevron-up bg-white"
                           : "pi-chevron-down"
-                      }`}
-                    ></span>
+                      }`}></span>
                   </div>
 
                   {openIndex === index && (
                     <div
                       className={`lg:py-4 md:py-4 py-2 lg:pb-6 md:pb-6 pb-3 text-gray-600 text-sm lg:px-8 md:px-8 px-3 tracking-normal sm:tracking-wider text-justify sm:text-left ${
                         openIndex === index ? "bg-white text-[#383737]" : ""
-                      }`}
-                    >
+                      }`}>
                       {faq.answer}
                     </div>
                   )}

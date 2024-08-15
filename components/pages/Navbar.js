@@ -6,6 +6,7 @@ import { MenuOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { Link } from "react-scroll"; // Import the Link component from react-scroll
 
 const buttonStyle = {
   border: "1px solid white",
@@ -32,7 +33,7 @@ const hoverIconStyle = {
   color: "white",
 };
 
-export default function Navbar({ scrollToOurService }) {
+export default function Navbar() {
   const [visible, setVisible] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -66,85 +67,94 @@ export default function Navbar({ scrollToOurService }) {
       }`}
       style={{
         transition: "background-color 0.3s ease-in-out",
-      }}
-    >
+      }}>
       <div className="container mx-auto flex justify-between items-center lg:py-4 md:py-4 py-2 lg:pb-4 md:pb-4 pb-1">
         {/* Logo */}
-        <div
-          className={`hidden md:flex lg:flex items-center rounded-md ${
-            isScrolled ? "border border-gray-200" : "border-none"
-          }`}
-        >
-          <Image
-            src="/images/logo.png"
-            alt="Logo"
-            width={100}
-            height={100}
-            className="rounded-md"
-          />
-        </div>
+        <Link
+          to="home"
+          smooth={true}
+          duration={500}
+          className={` ${
+            isScrolled
+              ? "text-black hover:text-[#8FE53E]"
+              : "text-white hover:text-[#8FE53E]"
+          } `}>
+          <div
+            className={`hidden md:flex lg:flex items-center rounded-md cursor-pointer ${
+              isScrolled ? "border border-gray-200" : "border-none"
+            }`}>
+            <Image
+              src="/images/logo.png"
+              alt="Logo"
+              width={100}
+              height={100}
+              className="rounded-md"
+            />
+          </div>
+        </Link>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex lg:space-x-8 md:space-x-4 space-x-8 lg:text-base md:text-sm text-sm">
-          <a
-            href="#our-service"
-            onClick={(e) => {
-              e.preventDefault();
-              scrollToOurService();
-            }}
+        <div className="hidden md:flex lg:space-x-8 md:space-x-4 space-x-8 lg:text-base md:text-sm text-sm cursor-pointer">
+          <Link
+            to="service"
+            smooth={true}
+            duration={500}
             className={` ${
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
-            }`}
-          >
+            }`}>
             Packages
-          </a>
-          <a
-            href="#portfolio"
+          </Link>
+          <Link
+            to="portfolio"
+            smooth={true}
+            duration={500}
             className={` ${
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
-            }`}
-          >
+            } cursor-pointer`}>
             Portfolio
-          </a>
-          <a
-            href="#how-it-works"
+          </Link>
+          <Link
+            to="how-it-works"
+            smooth={true}
+            duration={500}
             className={` ${
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
-            }`}
-          >
+            } cursor-pointer`}>
             How it works
-          </a>
-          <a
-            href="#about-us"
+          </Link>
+          <Link
+            to="about-us"
+            smooth={true}
+            duration={500}
             className={` ${
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
-            }`}
-          >
+            } cursor-pointer`}>
             About Us
-          </a>
+          </Link>
         </div>
 
-        <div className="hidden md:flex lg:space-x-4 md:space-x-4 space-x-8 lg:text-base md:text-sm text-sm">
-          <a
-            href="#login"
+        <div className="hidden md:flex lg:space-x-4 md:space-x-4 space-x-8 lg:text-base md:text-sm text-sm cursor-pointer">
+          <Link
+            to="login"
+            smooth={true}
+            duration={500}
             className={`py-4 ${
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
-            }`}
-          >
+            }`}>
             Login
-          </a>
+          </Link>
 
-          <div className="flex justify-center items-center gap-4">
+          <div className="flex justify-center items-center gap-4 cursor-pointer">
             <Button
               type="text"
               icon={
@@ -161,11 +171,9 @@ export default function Navbar({ scrollToOurService }) {
                 isScrolled
                   ? " border-black text-black hover:text-black hover:border-[#8FE53E]"
                   : " border-white text-white hover:text-white hover:border-[#8FE53E]"
-              }`}
-            >
+              }`}>
               <span
-                className={` py-4 ${isScrolled ? "text-black" : "text-white"}`}
-              >
+                className={` py-4 ${isScrolled ? "text-black" : "text-white"}`}>
                 Call Us
               </span>
             </Button>
@@ -180,8 +188,7 @@ export default function Navbar({ scrollToOurService }) {
                 ...(isHovered ? hoverStyle : {}),
               }}
               onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            ></Button>
+              onMouseLeave={() => setIsHovered(false)}></Button>
           </div>
         </div>
 
@@ -214,31 +221,42 @@ export default function Navbar({ scrollToOurService }) {
           placement="right"
           onClose={closeDrawer}
           open={visible}
-          className="text-gray-800 text-base"
-        >
-          <a href="#our-service" className="block mb-4" onClick={(e) => {
-            e.preventDefault();
-            scrollToOurService();
-          }}>
+          className="text-gray-800 text-base">
+          <Link
+            to="our-service"
+            smooth={true}
+            duration={500}
+            className="block mb-4">
             Packages
-          </a>
-          <a href="#portfolio" className="block mb-4">
+          </Link>
+          <Link
+            to="portfolio"
+            smooth={true}
+            duration={500}
+            className="block mb-4">
             Portfolio
-          </a>
-          <a href="#how-it-works" className="block mb-4">
+          </Link>
+          <Link
+            to="how-it-works"
+            smooth={true}
+            duration={500}
+            className="block mb-4">
             How it works
-          </a>
-          <a href="#about-us" className="block mb-4">
+          </Link>
+          <Link
+            to="about-us"
+            smooth={true}
+            duration={500}
+            className="block mb-4">
             About Us
-          </a>
-          <a href="#login" className="block mb-4">
+          </Link>
+          <Link to="login" smooth={true} duration={500} className="block mb-4">
             Login
-          </a>
+          </Link>
           <Button
             type="text"
             icon={<PhoneOutlined />}
-            className="w-full border border-gray-400 hover:border-gray-600 text-black hover:text-[#8FE53E] flex justify-center items-center gap-1 text-lg font-semibold mt-4"
-          >
+            className="w-full border border-gray-400 hover:border-gray-600 text-black hover:text-[#8FE53E] flex justify-center items-center gap-1 text-lg font-semibold mt-4">
             <span>Call Us</span>
           </Button>
         </Drawer>
