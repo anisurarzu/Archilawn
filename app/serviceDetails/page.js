@@ -6,7 +6,6 @@ import Footer from "@/components/pages/Footer";
 import Navbar from "@/components/pages/Navbar";
 import OurService from "@/components/pages/OurService";
 import Slider from "@/components/pages/Slider";
-import { useRef } from "react";
 
 const page = () => {
   // const ourServiceRef = useRef(null);
