@@ -14,14 +14,10 @@ const page = () => {
     }
   };
   return (
-<<<<<<< HEAD
+
     <div className="">
       <Home />
-=======
-    <div className=''>
-      <Home/>
-      
->>>>>>> 805e87398bfac2fa9eb2425a15b23d5657900c59
+
     </div>
   );
 };
