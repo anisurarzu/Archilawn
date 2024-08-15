@@ -11,8 +11,10 @@ import StillHaveQuestions from "./pages/questions/StillHaveQuestions";
 import FeelingInspired from "./pages/feelingInspired/FeelingInspired";
 import AboutUs from "./pages/about/AboutUs";
 import Navbar from "./pages/Navbar";
+import ProjectGallery from "./pages/projectGallery/ProjectGallery";
 
 const Home = () => {
+  const footerRef = useRef(null); // Add this ref for the footer
   const ourServiceRef = useRef(null);
 
   const scrollToOurService = () => {
@@ -48,7 +50,10 @@ const Home = () => {
       <div className="lg:py-12 md:py-12 py-8" id="about-us">
         <AboutUs />
       </div>
-      <Footer />
+      <div className="py-8">
+        <ProjectGallery id="about-us" />
+      </div>
+      <Footer ref={footerRef} />
     </div>
   );
 };

@@ -46,18 +46,6 @@ export default function Navbar() {
     setVisible(false);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <div
       className={`top-0 w-full z-50 transition-colors duration-300 ${
