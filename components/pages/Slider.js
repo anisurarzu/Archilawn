@@ -12,21 +12,21 @@ import Icons from "../icons/Icons";
 
 export default function Slider() {
   const carouselRef = useRef(null);
-  const footerRef = useRef(null); // Add this ref for the footer
+  const footerRef = useRef(null);
 
   const slides = [
     {
       id: 1,
-      title: "isualize your project with Realistic 3D Rendering",
+      title: "Visualize your project with Realistic 3D Rendering",
       description:
-        "Partne designer for customized plans and 3d visualization. All Online.",
+        "Partner with a designer for customized plans and 3D visualization. All Online.",
       imageUrl: "/images/slider-image.png",
     },
     {
-      id: 1,
-      title: "Designer take a break for rest",
+      id: 2,
+      title: "Designer takes a break for rest",
       description:
-        "Partner with a professional Architect & landscape designer for customized plans and 3d visualization. All Online.",
+        "Partner with a professional Architect & landscape designer for customized plans and 3D visualization. All Online.",
       imageUrl: "/images/slider-image.png",
     },
     // Additional slides...
@@ -45,29 +45,17 @@ export default function Slider() {
   };
 
   const scrollToFooter = () => {
-    const scrollHeight = document.documentElement.scrollHeight;
-    const scrollStep = 10; // Amount to scroll per step
-    const scrollInterval = 5; // Time between each scroll step in milliseconds
-
-    // Function to perform the scrolling
-    const scroll = () => {
-      if (window.scrollY + window.innerHeight < scrollHeight) {
-        window.scrollBy(0, scrollStep);
-      } else {
-        window.scrollTo(0, scrollHeight); // Ensure it scrolls to the exact bottom
-        clearInterval(scrollIntervalId);
-      }
-    };
-
-    // Set an interval to scroll the page in small steps
-    const scrollIntervalId = setInterval(scroll, scrollInterval);
+    footerRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
   return (
     <div className="relative">
-      <Carousel  ref={carouselRef}>
+      <Carousel ref={carouselRef}>
         {slides.map((slide) => (
-          <div key={slide.id} className="relative lg:h-[92vh] md:h-[94vh] h-[88vh]">
+          <div
+            key={slide.id}
+            className="relative lg:h-[92vh] md:h-[94vh] h-[88vh]"
+          >
             <Image
               src={slide.imageUrl}
               alt={slide.title}
@@ -87,7 +75,7 @@ export default function Slider() {
         ))}
       </Carousel>
 
-      {/* START CAROUSAL BOTTOM VIEW */}
+      {/* START CAROUSEL BOTTOM VIEW */}
       <div className="grid grid-cols-3 col-span-1 container mx-auto absolute lg:bottom-9 md:bottom-9 bottom-7 left-0 right-0">
         <div className="flex justify-start items-center">
           <Icons />
@@ -130,7 +118,7 @@ export default function Slider() {
 
         {/* end */}
       </div>
-      
+
       <div
         ref={footerRef}
         className="container mx-auto flex justify-center items-center absolute bottom-0 left-0 right-0"
@@ -142,7 +130,7 @@ export default function Slider() {
         />
       </div>
 
-      {/* END CAROUSAL BOTTOM VIEW */}
+      {/* END CAROUSEL BOTTOM VIEW */}
     </div>
   );
 }

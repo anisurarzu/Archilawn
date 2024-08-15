@@ -45,18 +45,6 @@ export default function Navbar({ scrollToOurService }) {
     setVisible(false);
   };
 
-  useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 0);
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
   return (
     <div
       className={`top-0 w-full z-50 transition-colors duration-300 ${
@@ -216,10 +204,14 @@ export default function Navbar({ scrollToOurService }) {
           open={visible}
           className="text-gray-800 text-base"
         >
-          <a href="#our-service" className="block mb-4" onClick={(e) => {
-            e.preventDefault();
-            scrollToOurService();
-          }}>
+          <a
+            href="#our-service"
+            className="block mb-4"
+            onClick={(e) => {
+              e.preventDefault();
+              scrollToOurService();
+            }}
+          >
             Packages
           </a>
           <a href="#portfolio" className="block mb-4">

@@ -14,17 +14,12 @@ import Navbar from "./pages/Navbar";
 import ProjectGallery from "./pages/projectGallery/ProjectGallery";
 
 const Home = () => {
+  const footerRef = useRef(null); // Add this ref for the footer
   const ourServiceRef = useRef(null);
-
-  const scrollToOurService = () => {
-    if (ourServiceRef.current) {
-      ourServiceRef.current.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
 
   return (
     <div className="bg-white">
-      <Navbar scrollToOurService={scrollToOurService} />
+      <Navbar />
       <Slider />
       <OurClients />
       <DesignProcess />
@@ -47,7 +42,7 @@ const Home = () => {
       <div className="py-8">
         <ProjectGallery id="about-us" />
       </div>
-      <Footer />
+      <Footer ref={footerRef} />
     </div>
   );
 };
