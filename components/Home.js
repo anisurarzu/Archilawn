@@ -26,7 +26,7 @@ const Home = () => {
   return (
     <div className="bg-white">
       <Navbar scrollToOurService={scrollToOurService} />
-      <div className="lg:py-8 md:py-8 py-0 " id="home">
+      <div className="lg:pb-0 md:pb-8 py-0 " id="home">
         <Slider />
         <OurClients />
         <DesignProcess />
