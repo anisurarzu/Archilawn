@@ -17,7 +17,7 @@ export default function Slider() {
   const slides = [
     {
       id: 1,
-      title: "Visualize your project with Realistic 3D Rendering",
+      title: "isualize your project with Realistic 3D Rendering",
       description:
         "Partner with a designer for customized plans and 3D visualization. All Online.",
       imageUrl: "/images/slider-image.png",
