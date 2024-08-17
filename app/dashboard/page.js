@@ -166,7 +166,7 @@ const Dashboard = ({ sliders }) => {
             key="1"
             icon={<DashboardOutlined style={{ color: "#8ABF55" }} />}
             className="bg-white">
-            <span className="text-[#8ABF55] font-medium">Dashboard</span>
+            <span className="text-[#8ABF55] font-medium ">Dashboard</span>
           </Menu.Item>
           <Menu.Item
             key="2"
@@ -208,12 +208,26 @@ const Dashboard = ({ sliders }) => {
             className="lg:hidden"
             onClick={showDrawer}
           />
-          <h1 className="text-2xl font-bold text-[#8ABF55]">Dashboard</h1>
+          <h1 className="text-2xl font-bold text-[#8ABF55] px-2">Dashboard</h1>
           <div className="flex items-center space-x-4">
             {userInfo && (
-              <div className="flex items-center space-x-2">
-                <Avatar src={userInfo.image} alt={userInfo.username} size={40} />
-                <span className="text-[#8ABF55]">{userInfo.username}</span>
+              <div className="relative flex items-center space-x-2">
+                <Avatar
+                  src={userInfo.image}
+                  alt={userInfo.username}
+                  size={40}
+                  className="lg:hidden"
+                />
+                <div className="hidden lg:block">
+                  <Avatar
+                    src={userInfo.image}
+                    alt={userInfo.username}
+                    size={40}
+                  />
+                </div>
+                <div className="lg:hidden absolute top-0 left-0 mt-12 ml-2 bg-white text-[#8ABF55] rounded-md p-2 opacity-0 transition-opacity duration-300 hover:opacity-100">
+                  {userInfo.username}
+                </div>
               </div>
             )}
             <Button
@@ -221,7 +235,7 @@ const Dashboard = ({ sliders }) => {
               type="primary"
               className="bg-[#8ABF55] text-white border-none hover:bg-[#7DA54E]"
               onClick={handleLogout}>
-              Logout
+           
             </Button>
           </div>
         </Header>

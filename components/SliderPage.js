@@ -1,3 +1,5 @@
+"use client";
+
 import { useState, useEffect } from "react";
 import {
   Button,
@@ -6,8 +8,8 @@ import {
   Table,
   message,
   Popconfirm,
-  Pagination,
   Spin,
+  Pagination,
 } from "antd";
 import {
   UploadOutlined,
@@ -18,37 +20,29 @@ import { useFormik } from "formik";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 
-const SliderPage = ({ initialSliders }) => {
+const SliderPage = () => {
   const [visible, setVisible] = useState(false);
-  const [editVisible, setEditVisible] = useState(false);
-  const [sliders, setSliders] = useState(initialSliders);
-  const [editingSlider, setEditingSlider] = useState(null);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [pageSize] = useState(10);
-  const [loading, setLoading] = useState(false); // Loading state
+  const [isEditing, setIsEditing] = useState(false);
+  const [editingKey, setEditingKey] = useState(null);
+  const [sliders, setSliders] = useState([]);
+  const [pagination, setPagination] = useState({ current: 1, pageSize: 10 });
+  const [loading, setLoading] = useState(false);
 
-  const imgbbAPIKey = "0d928e97225b72fcd198fa40d99a15d5";
+  const token = localStorage.getItem("token"); // Retrieve the token from localStorage
 
+  // Fetch portfolios from API
   const fetchSliders = async () => {
     setLoading(true);
     try {
-      // Retrieve the token from localStorage
-      const token = localStorage.getItem("token");
-
-      // Perform the GET request with the token included in the headers
-
       const response = await axios.get(
         "https://archilawn-server.onrender.com/api/sliders",
         {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { Authorization: `Bearer ${token}` },
         }
       );
-      // Update the sliders state with the response data
       setSliders(response.data);
     } catch (error) {
-      message.error("Failed to fetch sliders. Please try again.");
+      message.error("Failed to fetch portfolios. Please try again.");
     } finally {
       setLoading(false);
     }
@@ -62,135 +56,91 @@ const SliderPage = ({ initialSliders }) => {
     initialValues: {
       image: null,
       title: "",
-      subtitle: "",
+      details: "",
     },
     onSubmit: async (values, { resetForm }) => {
-      setLoading(true); // Start loading
+      setLoading(true);
       try {
         const formData = new FormData();
         formData.append("image", values.image);
 
-        // Upload the image to Imgbb
-        const imgbbResponse = await axios.post(
-          `https://api.imgbb.com/1/upload?key=${imgbbAPIKey}`,
+        const imageUploadResponse = await axios.post(
+          "https://api.imgbb.com/1/upload?key=0d928e97225b72fcd198fa40d99a15d5",
           formData
         );
 
-        const imageUrl = imgbbResponse.data.data.url;
-
-        const sliderData = {
-          image: imageUrl,
+        const newSlider = {
+          key: uuidv4(),
+          image: imageUploadResponse.data.data.url,
           title: values.title,
-          subtitle: values.subtitle,
+          details: values.details,
         };
 
-        // Token from local storage (or wherever it's stored)
-        const token = localStorage.getItem("token"); // Adjust this if needed
+        if (isEditing) {
+          await axios.put(
+            `https://archilawn-server.onrender.com/api/slider/${editingKey}`,
+            newSlider,
+            {
+              headers: { Authorization: `Bearer ${token}` },
+            }
+          );
+          setSliders((prev) =>
+            prev.map((slider) =>
+              slider.key === editingKey ? newSlider : slider
+            )
+          );
+          message.success("Slider updated successfully!");
+        } else {
+          await axios.post(
+            "https://archilawn-server.onrender.com/api/slider",
+            newSliders,
+            {
+              headers: { Authorization: `Bearer ${token}` },
+            }
+          );
+          setSliders((prev) => [...prev, newSliders]);
+          message.success("Slider added successfully!");
+        }
 
-        // Post the slider data with token in the headers
-        await axios.post(
-          "https://archilawn-server.onrender.com/api/sliders",
-          sliderData,
-          {
-            headers: {
-              Authorization: `Bearer ${token}`,
-            },
-          }
-        );
-
-        // Refetch sliders to update the list
-        fetchSliders();
-
-        message.success("Slider added successfully!");
         resetForm();
         setVisible(false);
+        setIsEditing(false);
+        setEditingKey(null);
       } catch (error) {
-        message.error("Failed to add slider. Please try again.");
+        message.error("Failed to add/update slider. Please try again.");
       } finally {
-        setLoading(false); // End loading
+        setLoading(false);
       }
     },
   });
 
-  const handleUpdate = async (values) => {
-    setLoading(true); // Start loading
-    try {
-      let imageUrl = editingSlider.image;
-
-      if (values.image) {
-        const formData = new FormData();
-        formData.append("image", values.image);
-
-        const imgbbResponse = await axios.post(
-          `https://api.imgbb.com/1/upload?key=${imgbbAPIKey}`,
-          formData
-        );
-
-        imageUrl = imgbbResponse.data.data.url;
-      }
-
-      const updatedSlider = {
-        ...editingSlider,
-        title: values.title,
-        subtitle: values.subtitle,
-        image: imageUrl,
-      };
-
-      const token = localStorage.getItem("token"); // Adjust this if needed
-
-      // Send update request to the server with the updated slider data
-      await axios.put(
-        `https://archilawn-server.onrender.com/api/sliders/${editingSlider.key}`,
-        updatedSlider,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        }
-      );
-
-      // Refetch sliders to update the list
-      fetchSliders();
-
-      message.success("Slider updated successfully!");
-      setEditVisible(false);
-      setEditingSlider(null);
-      formik.resetForm();
-    } catch (error) {
-      message.error("Failed to update slider. Please try again.");
-    } finally {
-      setLoading(false); // End loading
-    }
+  const handleEdit = (record) => {
+    setEditingKey(record.key);
+    formik.setValues({
+      image: null,
+      title: record.title,
+      details: record.details,
+    });
+    setVisible(true);
+    setIsEditing(true);
   };
 
   const handleDelete = async (key) => {
-    setLoading(true); // Start loading
+    setLoading(true);
     try {
-      const token = localStorage.getItem("token"); // Adjust this if needed
-
-      // Send delete request to the server
       await axios.delete(
-        `https://archilawn-server.onrender.com/sliders/${key}`,
+        `https://archilawn-server.onrender.com/api/slider/${key}`,
         {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
+          headers: { Authorization: `Bearer ${token}` },
         }
       );
-
-      // Refetch sliders to update the list
-      fetchSliders();
-
-      message.success("Slider deleted successfully!");
+      setSliders((prev) => prev.filter((slider) => slider.key !== key));
+      message.success("Slider item deleted successfully!");
     } catch (error) {
       message.error("Failed to delete slider. Please try again.");
     } finally {
-      setLoading(false); // End loading
+      setLoading(false);
     }
-  };
-
-  const handlePageChange = (page) => {
-    setCurrentPage(page);
   };
 
   const columns = [
@@ -198,7 +148,6 @@ const SliderPage = ({ initialSliders }) => {
       title: "Image",
       dataIndex: "image",
       key: "image",
-      width: 120,
       render: (image) => (
         <img src={image} alt="Slider" style={{ width: 100, height: 60 }} />
       ),
@@ -207,36 +156,25 @@ const SliderPage = ({ initialSliders }) => {
       title: "Title",
       dataIndex: "title",
       key: "title",
-      width: 150,
     },
     {
-      title: "Subtitle",
+      title: "SubTiltle",
       dataIndex: "subtitle",
       key: "subtitle",
-      width: 200,
     },
     {
       title: "Actions",
       key: "actions",
-      width: 150,
       render: (_, record) => (
         <div className="flex space-x-2">
           <Button
             icon={<EditOutlined />}
-            onClick={() => {
-              setEditingSlider(record);
-              formik.setValues({
-                title: record.title,
-                subtitle: record.subtitle,
-                image: null, // Ensure image is reset for editing
-              });
-              setEditVisible(true);
-            }}
-            className="text-[#8ABF55]"
+            onClick={() => handleEdit(record)}
+            className="text-blue-500"
           />
           <Popconfirm
             title="Are you sure you want to delete this slider?"
-            onConfirm={() => handleDelete(record?._id)}>
+            onConfirm={() => handleDelete(record.key)}>
             <Button icon={<DeleteOutlined />} className="text-red-500" />
           </Popconfirm>
         </div>
@@ -244,41 +182,46 @@ const SliderPage = ({ initialSliders }) => {
     },
   ];
 
-  const paginatedData = sliders?.slice(
-    (currentPage - 1) * pageSize,
-    currentPage * pageSize
-  );
+  const handleTableChange = (pagination) => {
+    setPagination(pagination);
+  };
 
   return (
-    <div className="p-6">
+    <div className="">
       <Button
         type="primary"
-        onClick={() => setVisible(true)}
+        onClick={() => {
+          formik.resetForm();
+          setVisible(true);
+          setIsEditing(false);
+        }}
         className="mb-4 bg-[#8ABF55] hover:bg-[#7DA54E] text-white">
         Add New Slider
       </Button>
       <Spin spinning={loading}>
         <Table
           columns={columns}
-          dataSource={paginatedData}
+          dataSource={sliders}
           pagination={false}
           rowKey="key"
+          onChange={handleTableChange}
+          scroll={{ x: true }}
         />
         <Pagination
-          current={currentPage}
-          pageSize={pageSize}
+          current={pagination.current}
+          pageSize={pagination.pageSize}
           total={sliders?.length}
-          onChange={handlePageChange}
+          onChange={(page) => setPagination({ ...pagination, current: page })}
           className="mt-4"
         />
       </Spin>
 
       <Modal
-        title="Create Slider"
+        title={isEditing ? "Edit Slider" : "Create Slider"}
         visible={visible}
         onCancel={() => setVisible(false)}
         footer={null}>
-        <form onSubmit={formik?.handleSubmit}>
+        <form onSubmit={formik.handleSubmit}>
           <div className="mb-4">
             <label className="block text-gray-700">Image</label>
             <Upload
@@ -292,7 +235,7 @@ const SliderPage = ({ initialSliders }) => {
             </Upload>
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Title</label>
+            <label className="block text-gray-700">Slider Name</label>
             <input
               type="text"
               name="title"
@@ -302,97 +245,28 @@ const SliderPage = ({ initialSliders }) => {
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Subtitle</label>
-            <input
-              type="text"
+            <label className="block text-gray-700">Details</label>
+            <textarea
               name="subtitle"
               onChange={formik.handleChange}
-              value={formik.values.subtitle}
-              className="border p-2 w-full"
-            />
-          </div>
-          <Button
-            loading={loading}
-            type="primary"
-            htmlType="submit"
-            className="bg-[#8ABF55] hover:bg-[#7DA54E] text-white">
-            Create
-          </Button>
-        </form>
-      </Modal>
-
-      <Modal
-        title="Update Slider"
-        visible={editVisible}
-        onCancel={() => setEditVisible(false)}
-        footer={null}>
-        <form
-          onSubmit={(e) => {
-            e.preventDefault();
-            handleUpdate(formik.values);
-          }}>
-          <div className="mb-4">
-            <label className="block text-gray-700">Image</label>
-            <Upload
-              listType="picture"
-              maxCount={1}
-              beforeUpload={(file) => {
-                formik.setFieldValue("image", file);
-                return false;
-              }}>
-              <Button icon={<UploadOutlined />}>Upload</Button>
-            </Upload>
-          </div>
-          <div className="mb-4">
-            <label className="block text-gray-700">Title</label>
-            <input
-              type="text"
-              name="title"
-              onChange={formik.handleChange}
-              value={formik.values.title}
+              value={formik.values.details}
+              rows={4}
               className="border p-2 w-full"
             />
           </div>
           <div className="mb-4">
-            <label className="block text-gray-700">Subtitle</label>
-            <input
-              type="text"
-              name="subtitle"
-              onChange={formik.handleChange}
-              value={formik.values.subtitle}
-              className="border p-2 w-full"
-            />
+            <Button
+              loading={loading}
+              type="primary"
+              htmlType="submit"
+              className="bg-[#8ABF55] hover:bg-[#7DA54E] text-white">
+              {isEditing ? "Update" : "Create"}
+            </Button>
           </div>
-          <Button
-            loading={loading}
-            type="primary"
-            htmlType="submit"
-            className="bg-[#8ABF55] hover:bg-[#7DA54E] text-white">
-            Update
-          </Button>
         </form>
       </Modal>
     </div>
   );
 };
-
-export async function getServerSideProps() {
-  try {
-    const response = await axios.get(
-      "https://archilawn-server.onrender.com/api/sliders"
-    );
-    return {
-      props: {
-        initialSliders: response.data,
-      },
-    };
-  } catch (error) {
-    return {
-      props: {
-        initialSliders: [],
-      },
-    };
-  }
-}
 
 export default SliderPage;

@@ -33,7 +33,7 @@ const DashboardHome = () => {
   };
 
   return (
-    <div className="p-4 lg:p-6">
+    <div className="">
       {/* Title */}
       <Title
         level={2}

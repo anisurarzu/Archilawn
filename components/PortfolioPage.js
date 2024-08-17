@@ -189,7 +189,7 @@ const PortfolioPage = () => {
   };
 
   return (
-    <div className="p-6">
+    <div className="">
       <Button
         type="primary"
         onClick={() => {
