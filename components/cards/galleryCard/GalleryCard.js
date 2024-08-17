@@ -4,8 +4,8 @@ import Image from "next/image"; // Import Next.js Image component
 
 const GalleryCard = () => {
   const images = [
-    "/images/slider-image.png",
     "/images/bringYourIdea/bring_Your_Idea1.png",
+    "/images/slider-image.png",
   ];
 
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -62,7 +62,7 @@ const GalleryCard = () => {
             </div>
 
             <div className="absolute bottom-6">
-              <div className="flex justify-end items-center pr-3 md:pr-3 lg:pr-0">
+              <div className="flex justify-end items-center">
                 <div className="border border-white rounded-l-full bg-white hover:bg-white bg-opacity-30 hover:bg-opacity-20">
                   <button
                     className="bg-transparent rounded-full lg:px-5 md:px-4 px-4 lg:py-3 md:py-2 py-1"

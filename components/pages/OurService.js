@@ -10,15 +10,15 @@ import ServiceImageThree from "../../public/images/serviceImage/Service_Image3.p
 import OurServiceCardLeft from "../cards/ourServiceCard/OurServiceCardLeft";
 import OurServiceCardLeftMobile from "../cards/ourServiceCard/OurServiceCardLeftMobile";
 import ContainerHeader from "../containerHeader/ContainerHeader";
-
-
+import OurServiceCardRight from "../cards/ourServiceCard/OurServiceCardRight";
+import OurServiceCardRightMobile from "../cards/ourServiceCard/OurServiceCardRightMobile";
 
 export default function OurService() {
   return (
     <section className="bg-white">
       <div className="pb-16 md:pb-16 lg:pb-0">
         <div className="lg:pt-16 md:pt-16 pt-8 lg:pb-20 md:pb-16 pb-8 px-10 md:px-0 lg:px-0">
-          <ContainerHeader containerHeader="Our Service Packages"/>
+          <ContainerHeader containerHeader="Our Service Packages" />
         </div>
 
         {/* START SERVICE */}
@@ -43,6 +43,27 @@ export default function OurService() {
             thirdPackageColor3="#88C0DF"
             forthDivBgColor="#123747"
           />
+          <div>
+            <OurServiceCardRight
+              ServiceImage={ServiceImagetwo}
+              secondDivBgColor="#CFC857"
+              secondDivText="Landscape <br /> 2d site plan & <br /> 3d rendering"
+              thirdDivBgColor="#7A8015"
+              thirdDivHeaderText1="Package 1"
+              thirdDivDescriptionText1="Front Yard 2D Site Plan & 3D Rendering
+              $280/ 1 Week Delivery"
+              thirdPackageColor1="#AAB126"
+              firsthrColor="#969D17"
+              thirdDivHeaderText2="Package 2"
+              thirdDivDescriptionText2="Back Yard 2D Site Plan & 3D Rendering $480/ 2 Week Delivery"
+              thirdPackageColor2="#AAB126"
+              secondhrColor="#969D17"
+              thirdDivHeaderText3="Package 3"
+              thirdDivDescriptionText3="Full Yard 2D Site Plan & 3D Rendering "
+              thirdPackageColor3="#AAB126"
+              forthDivBgColor="#636304"
+            />
+          </div>
           <OurServiceCardLeft
             ServiceImage={ServiceImageThree}
             secondDivBgColor="#C69C62"
@@ -73,6 +94,12 @@ export default function OurService() {
             secondDivBgColor="#A3C1D3"
             secondDivText="Building <br /> Exterior <br /> 3d rendering"
             forthDivBgColor="#123747"
+          />
+          <OurServiceCardRightMobile
+            ServiceImage={ServiceImagetwo}
+            secondDivBgColor="#CFC857"
+            secondDivText="Landscape <br /> 2d site plan & <br/> 3d rendering"
+            forthDivBgColor="#636304"
           />
           <OurServiceCardLeftMobile
             ServiceImage={ServiceImageThree}
