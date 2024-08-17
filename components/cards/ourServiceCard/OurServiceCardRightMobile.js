@@ -32,7 +32,7 @@ const OurServiceCardRightMobile = ({
 
       {/* 1st */}
       <div
-        className={`h-full flex justify-center items-center rounded-[30px] ml-[230px] group-hover:ml-[110px] z-5 absolute transition-all duration-1000 overflow-hidden`}
+        className={`h-full flex justify-center items-center rounded-[30px] ml-[240px] group-hover:ml-[110px] z-5 absolute transition-all duration-1000 overflow-hidden`}
         style={{ backgroundColor: secondDivBgColor }}
       >
         <p
