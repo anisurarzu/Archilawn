@@ -10,7 +10,7 @@ const OurServiceCardRightMobile = ({
   forthDivBgColor,
 }) => {
   return (
-    <div className="h-[20vh] flex relative group">
+    <div className="h-[20vh] flex relative group overflow-hidden">
       {/* 3rd */}
       <div
         className={`h-full rounded-[30px] flex justify-end items-center ml-[185px] group-hover:ml-[60px] z-3 absolute transition-all duration-1000`}
