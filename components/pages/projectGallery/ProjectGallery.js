@@ -15,7 +15,7 @@ import GalleryCard from "@/components/cards/galleryCard/GalleryCard";
 export default function ProjectGallery() {
   return (
     <section className="bg-white">
-      <GalleryCard />
+      {/* <GalleryCard /> */}
 
       <div className="lg:pt-28 md:pt-16 pt-0 lg:pb-12 md:pb-10 pb-6">
         <ContainerHeader containerHeader="Project Gallery" />

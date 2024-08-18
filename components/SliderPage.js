@@ -174,7 +174,7 @@ const SliderPage = () => {
           />
           <Popconfirm
             title="Are you sure you want to delete this slider?"
-            onConfirm={() => handleDelete(record.key)}>
+            onConfirm={() => handleDelete(record?._id)}>
             <Button icon={<DeleteOutlined />} className="text-red-500" />
           </Popconfirm>
         </div>

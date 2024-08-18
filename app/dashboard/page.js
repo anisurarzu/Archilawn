@@ -212,20 +212,21 @@ const Dashboard = ({ sliders }) => {
           <div className="flex items-center space-x-4">
             {userInfo && (
               <div className="relative flex items-center space-x-2">
-                <Avatar
+                {/* <Avatar
                   src={userInfo.image}
                   alt={userInfo.username}
                   size={40}
                   className="lg:hidden"
-                />
-                <div className="hidden lg:block">
+                /> */}
+               
+                <div className="hidden lg:block xl:block">
                   <Avatar
                     src={userInfo.image}
                     alt={userInfo.username}
                     size={40}
                   />
                 </div>
-                <div className="lg:hidden absolute top-0 left-0 mt-12 ml-2 bg-white text-[#8ABF55] rounded-md p-2 opacity-0 transition-opacity duration-300 hover:opacity-100">
+                <div className="hidden lg:block xl:lg:block absolute top-0 left-0 mt-12 ml-2 bg-white text-[#8ABF55] rounded-md p-2 opacity-0 transition-opacity duration-300 hover:opacity-100">
                   {userInfo.username}
                 </div>
               </div>

@@ -3,6 +3,7 @@ import React from "react";
 import PackageImage from "../../../public/images/packageImage/package_Image1.png";
 import Image from "next/image";
 import PackageSmallCards from "./PackageSmallCards";
+import Link from "next/link";
 
 const PackageCard = ({
   headerText,
@@ -15,14 +16,12 @@ const PackageCard = ({
     <div className="flex items-center justify-center">
       <div
         className="w-[190vh] rounded-3xl shadow-lg lg:mx-0 md:mx-4 mx-1 lg:p-8 md:p-6 p-2 lg:pb-24 md:pb-10 pb-8"
-        style={{ backgroundColor: bgColor }}
-      >
+        style={{ backgroundColor: bgColor }}>
         <h2
           className="lg:text-4xl md:text-3xl text-[22px] text-center text-[#123747] tracking-wide lg:pt-0 md:pt-0 pt-3"
           style={{
             fontFamily: "Tinos",
-          }}
-        >
+          }}>
           {headerText}
         </h2>
 
@@ -71,15 +70,16 @@ const PackageCard = ({
           className="container mx-auto rounded-2xl bg-white hidden lg:flex md:flex justify-between items-center lg:text-xl md:text-xl text-base py-5 px-lg:6 md:px-6 px-3"
           style={{
             fontFamily: "Tinos",
-          }}
-        >
+          }}>
           <p className="text-[#383737]">
             Speak with a Specialist for Package details.
           </p>
-          <button className="bg-[#8ABF55] text-white lg:py-3 md:py-2 py-1 lg:px-6 md:px-4 px-1 rounded-xl flex items-center">
-            <div>Talk to a Specialist</div>
-            <div className="pi pi-chevron-right ml-2 lg:text-[10px] md:text-[12px] text-[8px]"></div>
-          </button>
+          <Link href="/serviceDetails/packageDetails">
+            <button className="bg-[#8ABF55] text-white lg:py-3 md:py-2 py-1 lg:px-6 md:px-4 px-1 rounded-xl flex items-center">
+              <div>Talk to a Specialist</div>
+              <div className="pi pi-chevron-right ml-2 lg:text-[10px] md:text-[12px] text-[8px]"></div>
+            </button>
+          </Link>
         </div>
         {/* End Large and Medium  */}
         {/* Start Small  */}
@@ -87,15 +87,16 @@ const PackageCard = ({
           className="container mx-auto rounded-2xl bg-white lg:hidden md:hidden flex flex-col justify-between items-center gap-3 lg:text-xl md:text-xl text-base py-5 px-lg:6 md:px-6 px-3"
           style={{
             fontFamily: "Tinos",
-          }}
-        >
+          }}>
           <p className="text-[#383737]">
             Speak with a Specialist for Package details.
           </p>
-          <button className="bg-[#8ABF55] text-white lg:py-3 md:py-2 py-2 lg:px-6 md:px-4 px-4 rounded-xl flex items-center">
-            <div>Talk to a Specialist</div>
-            <div className="pi pi-chevron-right ml-2 lg:text-[10px] md:text-[12px] text-[12px]"></div>
-          </button>
+          <Link href="/serviceDetails/packageDetails">
+            <button className="bg-[#8ABF55] text-white lg:py-3 md:py-2 py-2 lg:px-6 md:px-4 px-4 rounded-xl flex items-center">
+              <div>Talk to a Specialist</div>
+              <div className="pi pi-chevron-right ml-2 lg:text-[10px] md:text-[12px] text-[12px]"></div>
+            </button>
+          </Link>
         </div>
         {/* End Small  */}
       </div>
