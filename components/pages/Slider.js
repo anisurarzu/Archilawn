@@ -36,15 +36,11 @@ export default function Slider() {
   }, []);
 
   const goToPrev = () => {
-    if (carouselRef.current) {
-      carouselRef.current.prev();
-    }
+    carouselRef.current?.prev();
   };
 
   const goToNext = () => {
-    if (carouselRef.current) {
-      carouselRef.current.next();
-    }
+    carouselRef.current?.next();
   };
 
   const scrollToFooter = () => {
