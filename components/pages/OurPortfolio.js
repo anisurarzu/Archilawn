@@ -12,6 +12,10 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faCirclePlay } from "@fortawesome/free-regular-svg-icons";
 import PackageCard from "../cards/packageCard/PackageCard";
 import GalleryCard from "../cards/galleryCard/GalleryCard";
+import { useEffect } from "react";
+import axios from "axios";
+
+const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export default function OurPortfolio() {
   const [isPlaying, setIsPlaying] = useState(false);
@@ -19,6 +23,27 @@ export default function OurPortfolio() {
   const handlePlayClick = () => {
     setIsPlaying(true);
   };
+
+
+  const [slides, setSlides] = useState([]);
+
+  useEffect(() => {
+    // Fetch slider data from API
+    const fetchSlides = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/portfolios`);
+        setSlides(response.data);
+      } catch (error) {
+        console.error("Error fetching slider data:", error);
+      }
+    };
+
+    fetchSlides();
+  }, []);
+
+  console.log("Here Portfolio Data: ", slides)
+
+  
 
   return (
     <section className="bg-white">

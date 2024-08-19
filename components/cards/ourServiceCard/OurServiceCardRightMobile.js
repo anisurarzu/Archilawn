@@ -13,7 +13,7 @@ const OurServiceCardRightMobile = ({
     <div className="h-[20vh] flex relative group overflow-hidden">
       {/* 3rd */}
       <div
-        className={`h-full rounded-[30px] flex justify-end items-center ml-[190px] group-hover:ml-[60px] z-3 absolute transition-all duration-1000`}
+        className={`h-full rounded-[30px] flex justify-end items-center ml-[110px] z-3 absolute transition-all duration-1000`}
         style={{ backgroundColor: forthDivBgColor }}
       >
         <Link href="/detailsPages/DetailsPageOne">
@@ -32,7 +32,7 @@ const OurServiceCardRightMobile = ({
 
       {/* 1st */}
       <div
-        className={`h-full flex justify-center items-center rounded-[30px] ml-[245px] group-hover:ml-[110px] z-5 absolute transition-all duration-1000 overflow-hidden`}
+        className={`h-full flex justify-center items-center rounded-[30px] ml-[160px] z-5 absolute transition-all duration-1000 overflow-hidden`}
         style={{ backgroundColor: secondDivBgColor }}
       >
         <p
