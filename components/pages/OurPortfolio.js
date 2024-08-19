@@ -1,31 +1,25 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import ContainerHeader from "../containerHeader/ContainerHeader";
+import axios from "axios";
+import OurPortfolioTopCard from "../cards/ourPortfolioTopCards/OurPortfolioTopCard";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCirclePlay } from "@fortawesome/free-regular-svg-icons";
 
 // Portfolio images
 import portfolioImage1 from "../../public/images/portfolioImages/portfolio_Image1.png";
 import portfolioImage2 from "../../public/images/portfolioImages/portfolio_Image2.png";
-import OurPortfolioTopCard from "../cards/ourPortfolioTopCards/OurPortfolioTopCard";
 
-// video play icon
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faCirclePlay } from "@fortawesome/free-regular-svg-icons";
-import PackageCard from "../cards/packageCard/PackageCard";
-import GalleryCard from "../cards/galleryCard/GalleryCard";
-import { useEffect } from "react";
-import axios from "axios";
-
+// API URL
 const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
-export default function OurPortfolio() {
+const OurPortfolio = () => {
   const [isPlaying, setIsPlaying] = useState(false);
+  const [slides, setSlides] = useState([]);
 
   const handlePlayClick = () => {
     setIsPlaying(true);
   };
-
-
-  const [slides, setSlides] = useState([]);
 
   useEffect(() => {
     // Fetch slider data from API
@@ -41,9 +35,7 @@ export default function OurPortfolio() {
     fetchSlides();
   }, []);
 
-  console.log("Here Portfolio Data: ", slides)
-
-  
+  console.log("Here Portfolio Data: ", slides);
 
   return (
     <section className="bg-white">
@@ -57,7 +49,7 @@ export default function OurPortfolio() {
             textAlign: "center",
           }}
         >
-          Explore our landscape design, building design and interior design
+          Explore our landscape design, building design, and interior design
           samples
         </p>
       </div>
@@ -110,7 +102,7 @@ export default function OurPortfolio() {
             {/* Overlay div */}
             <div className="absolute bottom-0 w-full bg-[#8ABF55]/75 lg:h-20 md:h-16 h-10 flex items-center justify-between px-6 z-30 rounded-bl-[30px] rounded-br-[30px]">
               <p className="text-white font-bold text-[12px] md:text-base lg:text-xl">
-                Destination Weading Resort | Germany
+                Destination Wedding Resort | Germany
               </p>
               <button className="text-[#8ABF55] font-semibold bg-transparent border border-white py-1 lg:text-base md:text-base text-[10px] lg:px-5 md:px-5 px-3 rounded-full bg-white">
                 SEE MORE
@@ -122,29 +114,11 @@ export default function OurPortfolio() {
       </div>
 
       {/* END PORTFOLIO */}
-
-      {/* <div className="py-20">
-        <PackageCard
-          headerText="Building Exterior 3d rendering Package"
-          bgColor="#A3C1D3"
-          packageCardheaderbg1="#5E7987"
-          packageCardheaderbg2="#2E5469"
-          packageCardheaderbg3="#0A3446"
-        />
-      </div> */}
-      {/* <div className="my-20">
-        <PackageCard
-          headerText="Landscape 2d site plan & 3d rendering"
-          bgColor="#CFC857"
-          packageCardheaderbg1="#CFC857"
-          packageCardheaderbg2="#7A8015"
-          packageCardheaderbg3="#636304"
-        />
-      </div> */}
-
-      {/* <div className="py-8">
-        <GalleryCard />
-      </div> */}
     </section>
   );
-}
+};
+
+// Add a display name for the component
+OurPortfolio.displayName = "OurPortfolio";
+
+export default OurPortfolio;
