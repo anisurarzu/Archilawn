@@ -69,11 +69,10 @@ export default function Slider() {
   return (
     <div className="relative">
       <Carousel ref={carouselRef}>
-        {slides.map((slide) => (
+        {slides?.map((slide) => (
           <div
             key={slide._id} // Use the unique ID from the API
-            className="relative lg:h-[92vh] md:h-[94vh] h-[88vh]"
-          >
+            className="relative lg:h-[92vh] md:h-[94vh] h-[88vh]">
             <Image
               src={slide.image}
               alt={slide.title}
@@ -103,8 +102,7 @@ export default function Slider() {
         {/* Start Middle Div */}
         <div
           className="flex justify-center items-center lg:gap-4 md:gap-4 gap-2 lg:-ml-[10px] md:-ml-[10px] -ml-[7px] animate-pulse cursor-pointer"
-          onClick={scrollToFooter}
-        >
+          onClick={scrollToFooter}>
           <p className="lg:text-sm md:text-sm text-[9px] text-white">SCROLL</p>
           <div>
             <Image src={ScrollBtn} alt="ScrollBtn" width={16} height={16} />
@@ -117,8 +115,7 @@ export default function Slider() {
           <div className="border border-white rounded-l-full hover:bg-white hover:bg-opacity-20">
             <button
               className="bg-transparent rounded-full lg:px-5 md:px-5 px-4 lg:py-3 md:py-3 py-1"
-              onClick={goToPrev}
-            >
+              onClick={goToPrev}>
               <LeftOutlined className="text-white" />
             </button>
           </div>
@@ -126,8 +123,7 @@ export default function Slider() {
           <div className="border border-white rounded-r-full hover:bg-white hover:bg-opacity-20">
             <button
               className="bg-transparent rounded-full lg:px-5 md:px-5 px-4 lg:py-3 md:py-3 py-1"
-              onClick={goToNext}
-            >
+              onClick={goToNext}>
               <RightOutlined className="text-white" />
             </button>
           </div>
@@ -136,8 +132,7 @@ export default function Slider() {
 
       <div
         ref={footerRef}
-        className="container mx-auto flex justify-center items-center absolute bottom-0 left-0 right-0"
-      >
+        className="container mx-auto flex justify-center items-center absolute bottom-0 left-0 right-0">
         <Image
           src={ScrollLineBotom}
           alt="ScrollLineBotom"

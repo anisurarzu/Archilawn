@@ -72,8 +72,7 @@ const OurService = forwardRef((props, ref) => {
             thirdDivDescriptionText2="Medium Space Design (Living room, Bed Room) $280/ 2 Week Delivery"
             thirdPackageColor2="#C2874E"
             secondhrColor="#A16C39"
-            thirdDivHeaderText3="Package 3"
-            thirdDivDescriptionText3="Big Space Design (Commercial Office, Big Living) $380/ 3 Week Delivery"
+            thirdDivHeaderText3="Big Space Design (Commercial Office, Big Living) $380/ 3 Week Delivery"
             thirdPackageColor3="#C2874E"
             forthDivBgColor="#59300E"
           />
@@ -105,5 +104,7 @@ const OurService = forwardRef((props, ref) => {
     </section>
   );
 });
+
+OurService.displayName = "OurService";
 
 export default OurService;
