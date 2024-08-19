@@ -25,7 +25,7 @@ const OurServiceCardRight = ({
     <div className="h-[40vh] md:h-[30vh] lg:h-[40vh] flex relative group overflow-hidden">
       {/* 4th */}
       <div
-        className={`h-full rounded-[30px] flex justify-end items-center lg:ml-[1315px] md:ml-[250px] ml-[40px] lg:group-hover:ml-[545px] md:group-hover:ml-[32px] group-hover:ml-[45px] z-3 absolute transition-all duration-1000`}
+        className={`h-full rounded-[30px] flex justify-end items-center lg:ml-[545px] md:ml-[32px] ml-[45px] z-3 absolute transition-all duration-1000`}
         style={{ backgroundColor: forthDivBgColor }}
       >
         <Link href="/serviceDetails">
@@ -44,7 +44,7 @@ const OurServiceCardRight = ({
 
       {/* 2nd */}
       <div
-        className={`hidden h-full lg:flex justify-center items-center rounded-[30px] ml-[1400px] group-hover:ml-[650px] z-2 absolute transition-all duration-1000`}
+        className={`hidden h-full lg:flex justify-center items-center rounded-[30px] ml-[650px] z-2 absolute transition-all duration-1000`}
         style={{ backgroundColor: thirdDivBgColor }}
       >
         <div className="pr-36 pl-12">
@@ -82,7 +82,7 @@ const OurServiceCardRight = ({
 
       {/* 1st */}
       <div
-        className={`h-full flex justify-center items-center rounded-[30px] lg:ml-[1435px] md:ml-[335px] ml-[1435px] lg:group-hover:ml-[1200px] md:group-hover:ml-[110px] group-hover:ml-[1200px] z-5 absolute transition-all duration-1000`}
+        className={`h-full flex justify-center items-center rounded-[30px] lg:ml-[1200px] md:ml-[110px] ml-[1200px] z-5 absolute transition-all duration-1000`}
         style={{ backgroundColor: secondDivBgColor }}
       >
         <p
