@@ -1,5 +1,3 @@
-// components/Slider.js
-
 "use client"; // Ensure this is the first line in the file
 
 import React, { useRef, useEffect, useState } from "react";
@@ -19,6 +17,7 @@ export default function Slider() {
   const carouselRef = useRef(null);
   const footerRef = useRef(null);
   const [slides, setSlides] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Fetch slider data from API
@@ -28,6 +27,8 @@ export default function Slider() {
         setSlides(response.data);
       } catch (error) {
         console.error("Error fetching slider data:", error);
+      } finally {
+        setLoading(false); // Hide the loader once data is fetched
       }
     };
 
@@ -49,6 +50,25 @@ export default function Slider() {
   const scrollToFooter = () => {
     footerRef.current?.scrollIntoView({ behavior: "smooth" });
   };
+
+  // Full-page loading animation
+  if (loading) {
+    return (
+      <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-600 z-50">
+        <div className="h-10 w-10 border-t-4 border-b-4 border-white rounded-full animate-spin"></div>
+        <p className="text-white mt-4 text-lg animate-pulse">Loading...</p>
+        <div className="mt-6">
+          <Image
+            src="/images/logo.png"
+            alt="Logo"
+            width={100}
+            height={100}
+            className="rounded-md"
+          />
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="relative">
@@ -84,7 +104,7 @@ export default function Slider() {
           <Icons />
         </div>
 
-        {/* Start Middle Div  */}
+        {/* Start Middle Div */}
         <div
           className="flex justify-center items-center lg:gap-4 md:gap-4 gap-2 lg:-ml-[10px] md:-ml-[10px] -ml-[7px] animate-pulse cursor-pointer"
           onClick={scrollToFooter}
@@ -95,8 +115,6 @@ export default function Slider() {
           </div>
           <p className="lg:text-sm md:text-sm text-[9px] text-white">DOWN</p>
         </div>
-
-        {/* End Middle Div  */}
 
         {/* Right Side Icon for carousel changing */}
         <div className="flex justify-end items-center pr-3 md:pr-3 lg:pr-0">
@@ -118,8 +136,6 @@ export default function Slider() {
             </button>
           </div>
         </div>
-
-        {/* end */}
       </div>
 
       <div
