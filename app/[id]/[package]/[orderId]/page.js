@@ -19,23 +19,24 @@ export default function OrderDetails() {
         />
       </div>
       <div className="grid grid-cols-3 mx-16">
-        <div className="w-full p-4 col-span-2">
-          <h1 className="text-3xl font-bold mb-4">The Front</h1>
-          <div className="text-gray-700 mb-4">
+        <div className='col-span-2'>
+          <div className="w-full p-4 ">
+            <h1 className="text-3xl font-bold mb-4">The Front</h1>
             <p>
               Partner with a Tilly designer to create a custom landscape design
               package for your front yard...
             </p>
             <button className="text-blue-500">Read More</button>
           </div>
-          <img
-            src="your-image-url.jpg"
-            alt="Product Image"
-            className="w-full h-auto rounded-lg mb-4"
-          />
-          {/* You can add more content and images below */}
+          <div className="text-gray-700 mb-4">
+            <img
+              src="your-image-url.jpg"
+              alt="Product Image"
+              className="w-full h-auto rounded-lg mb-4"
+            />
+            {/* You can add more content and images below */}
+          </div>
         </div>
-
         {/* Pricing and options section */}
         <div className="w-full  bg-white shadow-lg rounded-lg col-span-1">
           <Card bordered={false} className="w-full">
