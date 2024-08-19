@@ -4,6 +4,7 @@ import ProjectGallery from "@/components/pages/projectGallery/ProjectGallery";
 import Image from "next/image";
 import React from "react";
 import { Card } from "antd";
+import Link from "next/link";
 
 export default function PackageDetails() {
   return (
@@ -62,6 +63,12 @@ export default function PackageDetails() {
               <span className="text-gray-500">STYLE</span>
               <span className="font-semibold">NEOCLASSIC</span>
             </div>
+            <Link href="/serviceDetails/packageDetails/orderPage">
+              <button className="bg-[#8ABF55] text-white lg:py-3 md:py-2 py-1 lg:px-6 md:px-4 px-1 rounded-xl flex items-center">
+                <div>Go To Order</div>
+                <div className="pi pi-chevron-right ml-2 lg:text-[10px] md:text-[12px] text-[8px]"></div>
+              </button>
+            </Link>
           </Card>
         </div>
       </div>
