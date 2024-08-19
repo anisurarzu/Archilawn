@@ -23,7 +23,7 @@ export default function Slider() {
     // Fetch slider data from API
     const fetchSlides = async () => {
       try {
-        const response = await axios.get(`${API_URL}/sliders`);
+        const response = await axios.get(`${API_URL}/api/sliders`);
         setSlides(response.data);
       } catch (error) {
         console.error("Error fetching slider data:", error);
