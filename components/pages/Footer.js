@@ -1,19 +1,22 @@
-"use client";
-import Image from "next/image";
-import React, { forwardRef } from "react";
-import IconsFooter from "../icons/IconsFooter";
-
-//icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone, faMailBulk } from "@fortawesome/free-solid-svg-icons";
+import React from "react";
+import IconsFooter from "../icons/IconsFooter";
+import Image from "next/image";
+
+// //icons
+
+import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
 
-const Footer = forwardRef((props, ref) => {
+import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
+
+export default function Footer() {
   return (
-    <footer ref={ref} className="footer">
+    <div>
       <div className="bg-[#383737] w-full flex items-center justify-center">
         <div className="border border-gray-600 w-full lg:m-8 md:m-5 m-3">
           {/* start the footer */}
+
           {/* Large Start */}
           <div className="hidden md:hidden lg:grid grid-cols-4 w-full h-full">
             {/* start 1st div */}
@@ -254,18 +257,18 @@ const Footer = forwardRef((props, ref) => {
             {/* start 1st div */}
             <div className="border border-gray-600">
               <div className="mx-3 my-3 flex flex-col">
-                <div className="flex items-center justify-center">
+                <div className="flex items-center space-x-4">
                   <Image
                     src="/images/logo.png"
                     alt="Logo"
                     width={100}
                     height={100}
-                    className="w-32 h-16"
+                    className="w-24 h-12"
                   />
                 </div>
 
                 <p
-                  className="text-white text-xl text-justify mt-6"
+                  className="text-white text-sm text-justify mt-3"
                   style={{
                     fontFamily: "Poppins",
                   }}>
@@ -274,7 +277,7 @@ const Footer = forwardRef((props, ref) => {
                   quam. Sed mattis ante at massa aliquet consectetur.
                 </p>
 
-                <div className="mt-4">
+                <div className="mt-3">
                   <IconsFooter />
                 </div>
               </div>
@@ -285,7 +288,7 @@ const Footer = forwardRef((props, ref) => {
             <div className="border border-gray-600">
               <div className="mx-3 my-3 flex flex-col">
                 <p
-                  className="text-[#818181] text-xl"
+                  className="text-[#818181] text-sm"
                   style={{
                     fontFamily: "Poppins",
                   }}>
@@ -293,7 +296,7 @@ const Footer = forwardRef((props, ref) => {
                 </p>
 
                 <div
-                  className="flex flex-col gap-2 mt-2 text-xl text-white"
+                  className="flex flex-col gap-1 mt-2 text-sm text-white"
                   style={{
                     fontFamily: "Poppins",
                   }}>
@@ -310,7 +313,7 @@ const Footer = forwardRef((props, ref) => {
             <div className="border border-gray-600">
               <div className="mx-3 my-3 flex flex-col">
                 <p
-                  className="text-[#818181] text-xl uppercase"
+                  className="text-[#818181] text-sm uppercase"
                   style={{
                     fontFamily: "Poppins",
                   }}>
@@ -318,26 +321,35 @@ const Footer = forwardRef((props, ref) => {
                 </p>
 
                 <div
-                  className="flex flex-col gap-2 mt-2 text-xl text-white"
+                  className="flex flex-col gap-3 mt-1 text-sm text-white"
                   style={{
                     fontFamily: "Poppins",
                   }}>
-                  <div className="flex items-center gap-3">
-                    <FontAwesomeIcon icon={faPhone} className="text-white" />
+                  <div className="flex justify-start items-center gap-2">
+                    <FontAwesomeIcon
+                      icon={faPhone}
+                      className="text-white w-3 h-3"
+                    />
                     <p>+01 5527 6045</p>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <FontAwesomeIcon icon={faEnvelope} className="text-white" />
+                  <div className="flex justify-start items-center gap-2">
+                    <FontAwesomeIcon
+                      icon={faEnvelope}
+                      className="text-white w-3 h-3"
+                    />
                     <p>info@archilawn.com</p>
                   </div>
-                  <div className="flex items-center gap-3">
-                    <FontAwesomeIcon icon={faMailBulk} className="text-white" />
+                  <div className="flex items-center gap-2">
+                    <FontAwesomeIcon
+                      icon={faMailBulk}
+                      className="text-white w-3 h-3"
+                    />
                     <p>PO Box 6418, QLD, 9726</p>
                   </div>
                 </div>
 
                 <p
-                  className="text-[#818181] text-xl uppercase mt-6"
+                  className="text-[#818181] text-sm uppercase mt-3"
                   style={{
                     fontFamily: "Poppins",
                   }}>
@@ -345,7 +357,7 @@ const Footer = forwardRef((props, ref) => {
                 </p>
 
                 <p
-                  className="mt-2 text-xl text-white"
+                  className="mt-1 text-sm text-white"
                   style={{
                     fontFamily: "Poppins",
                   }}>
@@ -354,33 +366,30 @@ const Footer = forwardRef((props, ref) => {
               </div>
             </div>
             {/* end last div */}
-
-            {/* bottom */}
-            <div className="border border-gray-600 flex flex-col items-center py-2">
-              <p
-                className="text-white text-sm"
-                style={{
-                  fontFamily: "Poppins",
-                }}>
-                Copyright © 2024 All Rights Reserved by archilawn
-              </p>
-              <p
-                className="text-white text-sm"
-                style={{
-                  fontFamily: "Poppins",
-                }}>
-                Terms | Privacy | Cookies | Sitemap
-              </p>
-            </div>
-            {/* bottom */}
           </div>
+
+          {/* start bottom  */}
+          <div className="w-full flex md:hidden lg:hidden flex-col gap-1 justify-between items-center border border-gray-600 py-2 text-xs">
+            <p
+              className="text-white"
+              style={{
+                fontFamily: "Poppins",
+              }}>
+              Copyright © 2024 All Rights Reserved by archilawn
+            </p>
+            <p
+              className="text-white"
+              style={{
+                fontFamily: "Poppins",
+              }}>
+              Terms | Privacy | Cookies | Sitemap
+            </p>
+          </div>
+          {/* end  bottom  */}
           {/* Mobile Device End */}
         </div>
+        {/* end the footer */}
       </div>
-    </footer>
+    </div>
   );
-});
-
-Footer.displayName = "Footer";
-
-export default Footer;
+}
