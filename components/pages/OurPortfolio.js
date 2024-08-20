@@ -25,7 +25,7 @@ const OurPortfolio = () => {
     // Fetch slider data from API
     const fetchSlides = async () => {
       try {
-        const response = await axios.get(`${API_URL}/portfolios`);
+        const response = await axios.get(`${API_URL}/api/portfolios`);
         setSlides(response.data);
       } catch (error) {
         console.error("Error fetching slider data:", error);
