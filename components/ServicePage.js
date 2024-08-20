@@ -27,6 +27,7 @@ import {
   Field,
 } from "formik";
 import axios from "axios";
+import Image from "next/image";
 
 const { Panel } = Collapse;
 
@@ -167,7 +168,7 @@ const ServicePage = () => {
       dataIndex: "image",
       key: "image",
       render: (text) => (
-        <img src={text} alt="Service" style={{ width: 100, height: 60 }} />
+        <Image src={image} alt="Service" width={100} height={60} />
       ),
     },
     {

@@ -5,10 +5,8 @@ import IconsFooter from "../icons/IconsFooter";
 
 //icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faPhone } from "@fortawesome/free-solid-svg-icons";
+import { faPhone, faMailBulk } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-regular-svg-icons";
-
-import { faMailBulk } from "@fortawesome/free-solid-svg-icons";
 
 const Footer = forwardRef((props, ref) => {
   return (
@@ -16,7 +14,6 @@ const Footer = forwardRef((props, ref) => {
       <div className="bg-[#383737] w-full flex items-center justify-center">
         <div className="border border-gray-600 w-full lg:m-8 md:m-5 m-3">
           {/* start the footer */}
-
           {/* Large Start */}
           <div className="hidden md:hidden lg:grid grid-cols-4 w-full h-full">
             {/* start 1st div */}
@@ -36,8 +33,7 @@ const Footer = forwardRef((props, ref) => {
                   className="text-white text-xl pr-56 mt-6"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Quisque ipsum lorem, tempor ut ex aliquam, fringilla lacinia
                   quam. Sed mattis ante at massa aliquet consectetur.
@@ -57,8 +53,7 @@ const Footer = forwardRef((props, ref) => {
                   className="text-[#818181] text-xl"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   EXPLORE
                 </p>
 
@@ -66,8 +61,7 @@ const Footer = forwardRef((props, ref) => {
                   className="flex flex-col gap-3 mt-3 text-xl text-white"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   <p>Home</p>
                   <p>About Us</p>
                   <p>Booking</p>
@@ -84,8 +78,7 @@ const Footer = forwardRef((props, ref) => {
                   className="text-[#818181] text-xl uppercase"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   Get in Touch
                 </p>
 
@@ -93,8 +86,7 @@ const Footer = forwardRef((props, ref) => {
                   className="flex flex-col gap-3 mt-3 text-xl text-white"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   <div className="flex justify-start items-center gap-4">
                     <FontAwesomeIcon icon={faPhone} className="text-white" />
                     <p>+01 5527 6045</p>
@@ -113,8 +105,7 @@ const Footer = forwardRef((props, ref) => {
                   className="text-[#818181] text-xl uppercase mt-6"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   Address
                 </p>
 
@@ -122,8 +113,7 @@ const Footer = forwardRef((props, ref) => {
                   className="mt-3 text-xl text-white"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   20 The Esplanade Surfers Paradise, Australia
                 </p>
               </div>
@@ -151,8 +141,7 @@ const Footer = forwardRef((props, ref) => {
                   className="text-white text-xl text-justify mt-4"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Quisque ipsum lorem, tempor ut ex aliquam, fringilla lacinia
                   quam. Sed mattis ante at massa aliquet consectetur.
@@ -172,8 +161,7 @@ const Footer = forwardRef((props, ref) => {
                   className="text-[#818181] text-xl"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   EXPLORE
                 </p>
 
@@ -181,8 +169,7 @@ const Footer = forwardRef((props, ref) => {
                   className="flex flex-col gap-2 mt-4 text-xl text-white"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   <p>Home</p>
                   <p>About Us</p>
                   <p>Booking</p>
@@ -199,8 +186,7 @@ const Footer = forwardRef((props, ref) => {
                   className="text-[#818181] text-xl uppercase"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   Get in Touch
                 </p>
 
@@ -208,8 +194,7 @@ const Footer = forwardRef((props, ref) => {
                   className="flex flex-col gap-3 mt-3 text-xl text-white"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   <div className="flex justify-start items-center gap-5">
                     <FontAwesomeIcon icon={faPhone} className="text-white" />
                     <p>+01 5527 6045</p>
@@ -228,8 +213,7 @@ const Footer = forwardRef((props, ref) => {
                   className="text-[#818181] text-xl uppercase mt-6"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   Address
                 </p>
 
@@ -237,8 +221,7 @@ const Footer = forwardRef((props, ref) => {
                   className="mt-2 text-xl text-white"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   20 The Esplanade Surfers Paradise, Australia
                 </p>
               </div>
@@ -253,16 +236,14 @@ const Footer = forwardRef((props, ref) => {
               className="text-white"
               style={{
                 fontFamily: "Poppins",
-              }}
-            >
+              }}>
               Copyright © 2024 All Rights Reserved by archilawn
             </p>
             <p
               className="text-white"
               style={{
                 fontFamily: "Poppins",
-              }}
-            >
+              }}>
               Terms | Privacy | Cookies | Sitemap
             </p>
           </div>
@@ -273,28 +254,27 @@ const Footer = forwardRef((props, ref) => {
             {/* start 1st div */}
             <div className="border border-gray-600">
               <div className="mx-3 my-3 flex flex-col">
-                <div className="flex items-center space-x-4">
+                <div className="flex items-center justify-center">
                   <Image
                     src="/images/logo.png"
                     alt="Logo"
                     width={100}
                     height={100}
-                    className="w-24 h-12"
+                    className="w-32 h-16"
                   />
                 </div>
 
                 <p
-                  className="text-white text-sm text-justify mt-3"
+                  className="text-white text-xl text-justify mt-6"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                   Quisque ipsum lorem, tempor ut ex aliquam, fringilla lacinia
                   quam. Sed mattis ante at massa aliquet consectetur.
                 </p>
 
-                <div className="mt-3">
+                <div className="mt-4">
                   <IconsFooter />
                 </div>
               </div>
@@ -305,20 +285,18 @@ const Footer = forwardRef((props, ref) => {
             <div className="border border-gray-600">
               <div className="mx-3 my-3 flex flex-col">
                 <p
-                  className="text-[#818181] text-sm"
+                  className="text-[#818181] text-xl"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   EXPLORE
                 </p>
 
                 <div
-                  className="flex flex-col gap-1 mt-2 text-sm text-white"
+                  className="flex flex-col gap-2 mt-2 text-xl text-white"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   <p>Home</p>
                   <p>About Us</p>
                   <p>Booking</p>
@@ -332,91 +310,77 @@ const Footer = forwardRef((props, ref) => {
             <div className="border border-gray-600">
               <div className="mx-3 my-3 flex flex-col">
                 <p
-                  className="text-[#818181] text-sm uppercase"
+                  className="text-[#818181] text-xl uppercase"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   Get in Touch
                 </p>
 
                 <div
-                  className="flex flex-col gap-3 mt-1 text-sm text-white"
+                  className="flex flex-col gap-2 mt-2 text-xl text-white"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
-                  <div className="flex justify-start items-center gap-2">
-                    <FontAwesomeIcon
-                      icon={faPhone}
-                      className="text-white w-3 h-3"
-                    />
+                  }}>
+                  <div className="flex items-center gap-3">
+                    <FontAwesomeIcon icon={faPhone} className="text-white" />
                     <p>+01 5527 6045</p>
                   </div>
-                  <div className="flex justify-start items-center gap-2">
-                    <FontAwesomeIcon
-                      icon={faEnvelope}
-                      className="text-white w-3 h-3"
-                    />
+                  <div className="flex items-center gap-3">
+                    <FontAwesomeIcon icon={faEnvelope} className="text-white" />
                     <p>info@archilawn.com</p>
                   </div>
-                  <div className="flex items-center gap-2">
-                    <FontAwesomeIcon
-                      icon={faMailBulk}
-                      className="text-white w-3 h-3"
-                    />
+                  <div className="flex items-center gap-3">
+                    <FontAwesomeIcon icon={faMailBulk} className="text-white" />
                     <p>PO Box 6418, QLD, 9726</p>
                   </div>
                 </div>
 
                 <p
-                  className="text-[#818181] text-sm uppercase mt-3"
+                  className="text-[#818181] text-xl uppercase mt-6"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   Address
                 </p>
 
                 <p
-                  className="mt-1 text-sm text-white"
+                  className="mt-2 text-xl text-white"
                   style={{
                     fontFamily: "Poppins",
-                  }}
-                >
+                  }}>
                   20 The Esplanade Surfers Paradise, Australia
                 </p>
               </div>
             </div>
             {/* end last div */}
-          </div>
 
-          {/* start bottom  */}
-          <div className="w-full flex md:hidden lg:hidden flex-col gap-1 justify-between items-center border border-gray-600 py-2 text-xs">
-            <p
-              className="text-white"
-              style={{
-                fontFamily: "Poppins",
-              }}
-            >
-              Copyright © 2024 All Rights Reserved by archilawn
-            </p>
-            <p
-              className="text-white"
-              style={{
-                fontFamily: "Poppins",
-              }}
-            >
-              Terms | Privacy | Cookies | Sitemap
-            </p>
+            {/* bottom */}
+            <div className="border border-gray-600 flex flex-col items-center py-2">
+              <p
+                className="text-white text-sm"
+                style={{
+                  fontFamily: "Poppins",
+                }}>
+                Copyright © 2024 All Rights Reserved by archilawn
+              </p>
+              <p
+                className="text-white text-sm"
+                style={{
+                  fontFamily: "Poppins",
+                }}>
+                Terms | Privacy | Cookies | Sitemap
+              </p>
+            </div>
+            {/* bottom */}
           </div>
-          {/* end  bottom  */}
           {/* Mobile Device End */}
         </div>
-        {/* end the footer */}
       </div>
     </footer>
   );
 });
+
+Footer.displayName = "Footer";
 
 export default Footer;

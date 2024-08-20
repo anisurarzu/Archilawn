@@ -8,6 +8,7 @@ import {
   DeleteOutlined,
 } from "@ant-design/icons";
 import { v4 as uuidv4 } from "uuid";
+import Image from "next/image";
 
 const UserPage = () => {
   const [visible, setVisible] = useState(false);
@@ -75,11 +76,7 @@ const UserPage = () => {
       dataIndex: "profilePicture",
       key: "profilePicture",
       render: (text) => (
-        <img
-          src={URL.createObjectURL(text)}
-          alt="Profile"
-          style={{ width: 100, height: 100, objectFit: "cover" }}
-        />
+        <Image src={image} alt="Slider" width={100} height={60} />
       ),
     },
     {
