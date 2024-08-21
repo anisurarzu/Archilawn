@@ -53,7 +53,7 @@ export default function Slider() {
       <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-600 z-50">
         <div className="h-10 w-10 border-t-4 border-b-4 border-white rounded-full animate-spin"></div>
         <p className="text-white mt-4 text-lg animate-pulse">Loading..</p>
-        {/* <div className="mt-6">
+        <div className="mt-6">
           <Image
             src="/images/logo.png"
             alt="Logo"
@@ -61,7 +61,7 @@ export default function Slider() {
             height={100}
             className="rounded-md"
           />
-        </div> */}
+        </div>
       </div>
     );
   }
