@@ -19,6 +19,7 @@ import {
 import { useFormik } from "formik";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import Image from "next/image";
 
 const SliderPage = () => {
   const [visible, setVisible] = useState(false);
@@ -149,7 +150,7 @@ const SliderPage = () => {
       dataIndex: "image",
       key: "image",
       render: (image) => (
-        <img src={image} alt="Slider" style={{ width: 100, height: 60 }} />
+        <Image src={image} alt="Slider" width={100} height={60} />
       ),
     },
     {

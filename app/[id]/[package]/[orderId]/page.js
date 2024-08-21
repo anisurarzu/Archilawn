@@ -19,7 +19,7 @@ export default function OrderDetails() {
         />
       </div>
       <div className="grid grid-cols-3 mx-16">
-        <div className='col-span-2'>
+        <div className="col-span-2">
           <div className="w-full p-4 ">
             <h1 className="text-3xl font-bold mb-4">The Front</h1>
             <p>
@@ -29,11 +29,6 @@ export default function OrderDetails() {
             <button className="text-blue-500">Read More</button>
           </div>
           <div className="text-gray-700 mb-4">
-            <img
-              src="your-image-url.jpg"
-              alt="Product Image"
-              className="w-full h-auto rounded-lg mb-4"
-            />
             {/* You can add more content and images below */}
           </div>
         </div>

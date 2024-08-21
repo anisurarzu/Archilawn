@@ -19,6 +19,7 @@ import {
 import { useFormik } from "formik";
 import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
+import Image from "next/image";
 
 const PortfolioPage = () => {
   const [visible, setVisible] = useState(false);
@@ -50,6 +51,7 @@ const PortfolioPage = () => {
 
   useEffect(() => {
     fetchPortfolios();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const formik = useFormik({
@@ -151,7 +153,7 @@ const PortfolioPage = () => {
       dataIndex: "image",
       key: "image",
       render: (image) => (
-        <img src={image} alt="Portfolio" style={{ width: 100, height: 60 }} />
+        <Image src={image} alt="Portfolio" width={100} height={60} />
       ),
     },
     {

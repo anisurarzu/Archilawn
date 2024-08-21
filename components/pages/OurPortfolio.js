@@ -47,8 +47,7 @@ const OurPortfolio = () => {
             fontFamily: "Tinos",
             lineHeight: "41px",
             textAlign: "center",
-          }}
-        >
+          }}>
           Explore our landscape design, building design, and interior design
           samples
         </p>
@@ -66,16 +65,15 @@ const OurPortfolio = () => {
           <div className="relative w-full lg:h-[70vh] md:h-[25vh] h-[21vh]">
             {!isPlaying && (
               <div className="relative w-full h-full">
-                <img
+                {/* <img
                   src="https://img.youtube.com/vi/q1k-dVaBhdo/hqdefault.jpg" // Use YouTube video thumbnail
                   alt="Video Thumbnail"
                   className="w-full h-full rounded-[30px] object-cover"
-                />
+                /> */}
                 <div className="absolute inset-0 flex items-center justify-center z-20">
                   <button
                     onClick={handlePlayClick}
-                    className="text-white p-4 rounded-full"
-                  >
+                    className="text-white p-4 rounded-full">
                     <FontAwesomeIcon
                       icon={faCirclePlay}
                       className="lg:w-24 md:w-24 w-10 lg:h-24 md:h-24 h-10"
@@ -95,8 +93,7 @@ const OurPortfolio = () => {
                 frameBorder="0"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                 referrerPolicy="strict-origin-when-cross-origin"
-                allowFullScreen
-              ></iframe>
+                allowFullScreen></iframe>
             )}
 
             {/* Overlay div */}
