@@ -19,7 +19,7 @@ const DetailsPageOne = () => {
   const searchParams = useSearchParams();
   const id = searchParams.get("id");
 
-  console.log("Service ID:", id); // This will log the ID passed from the previous page
+  console.log("Service ID:", id);
 
   return (
     <div className="bg-white">
