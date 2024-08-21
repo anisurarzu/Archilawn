@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 
 const OurServiceCardLeft = ({
+  id,
   ServiceImage,
   secondDivBgColor,
   secondDivText,
@@ -21,25 +22,30 @@ const OurServiceCardLeft = ({
   thirdPackageColor3,
   forthDivBgColor,
 }) => {
+  console.log("ID: ", id);
   return (
     <div className="h-[40vh] md:h-[30vh] lg:h-[40vh] flex relative group">
       <Image
         src={ServiceImage}
         alt="ServiceImageOne"
-        className="z-10 absolute inset-0 h-full object-cover rounded-br-[30px] rounded-tr-[30px]"
+        className="z-10 absolute inset-0 h-full object-cover rounded-br-[30px] rounded-tr-[30px] w-96"
+        width={100}
+        height={100}
       />
 
       {/* 3rd */}
       <div
         className={`h-full rounded-[30px] flex justify-end items-center md:ml-[550px] lg:ml-[1120px] z-3 absolute transition-all duration-1000`}
-        style={{ backgroundColor: forthDivBgColor }}>
-        <Link href="/serviceDetails">
+        style={{ backgroundColor: forthDivBgColor }}
+      >
+        <Link href={`/serviceDetails?id=${id}`}>
           <div className="flex items-end justify-end w-56 cursor-pointer">
             <p
               className="text-4xl font-bold text-white text-right pt-28 -rotate-90"
               style={{
                 fontFamily: "Tinos",
-              }}>
+              }}
+            >
               View Details
             </p>
           </div>
@@ -49,7 +55,8 @@ const OurServiceCardLeft = ({
       {/* 2nd */}
       <div
         className={`hidden h-full lg:flex justify-center items-center rounded-[30px] ml-[580px] z-2 absolute transition-all duration-1000`}
-        style={{ backgroundColor: thirdDivBgColor }}>
+        style={{ backgroundColor: thirdDivBgColor }}
+      >
         <div className="pl-36 pr-12">
           <PackageText
             headerText={thirdDivHeaderText1}
@@ -86,9 +93,10 @@ const OurServiceCardLeft = ({
       {/* 1st */}
       <div
         className={`h-full flex justify-center items-center rounded-[30px] ml-[300px] z-5 absolute transition-all duration-1000`}
-        style={{ backgroundColor: secondDivBgColor }}>
+        style={{ backgroundColor: secondDivBgColor }}
+      >
         <p
-          className="text-4xl text-white pl-36 pr-[60px] lg:pr-[60px] md:pr-[50px]"
+          className="text-4xl text-white pl-36 pr-[60px] lg:pr-[60px] md:pr-[50px] w-96"
           style={{
             fontFamily: "Tinos",
           }}

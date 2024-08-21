@@ -1,5 +1,6 @@
 "use client";
 import React, { useRef } from "react";
+import { useSearchParams } from "next/navigation";
 import Footer from "@/components/pages/Footer";
 import Navbar from "@/components/pages/Navbar";
 import Slider from "@/components/pages/Slider";
@@ -14,6 +15,11 @@ const DetailsPageOne = () => {
       ourServiceRef.current.scrollIntoView({ behavior: "smooth" });
     }
   };
+
+  const searchParams = useSearchParams();
+  const id = searchParams.get("id");
+
+  console.log("Service ID:", id); // This will log the ID passed from the previous page
 
   return (
     <div className="bg-white">

@@ -38,7 +38,7 @@ const OurServiceCardLeftMobile = ({
 
       {/* 1st */}
       <div
-        className={`h-full flex justify-center items-center rounded-[30px] ml-20 z-5 absolute transition-all duration-1000`}
+        className={`h-full flex justify-center items-center rounded-[30px] ml-20 z-5 absolute transition-all duration-1000 w-[200px]`}
         style={{ backgroundColor: secondDivBgColor }}
       >
         <p

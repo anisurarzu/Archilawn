@@ -1,5 +1,6 @@
 "use client";
-import React, { forwardRef } from "react";
+import React, { forwardRef, useState, useEffect } from "react";
+import axios from "axios";
 
 // Service images
 import ServiceImageOne from "../../public/images/serviceImage/Service_Image1.png";
@@ -14,6 +15,28 @@ import OurServiceCardRight from "../cards/ourServiceCard/OurServiceCardRight";
 import OurServiceCardRightMobile from "../cards/ourServiceCard/OurServiceCardRightMobile";
 
 const OurService = forwardRef((props, ref) => {
+  // Move hooks inside the component
+  const [services, setServices] = useState([]);
+
+  // API URL
+  const API_URL = process.env.NEXT_PUBLIC_API_URL;
+
+  useEffect(() => {
+    // Fetch slider data from API
+    const fetchServices = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/api/services`);
+        setServices(response.data);
+      } catch (error) {
+        console.error("Error fetching slider data:", error);
+      }
+    };
+
+    fetchServices();
+  }, []);
+
+  console.log("Here services Data: ", services);
+
   return (
     <section className="bg-white" ref={ref}>
       <div className="pb-16 md:pb-16 lg:pb-0">
@@ -24,9 +47,10 @@ const OurService = forwardRef((props, ref) => {
         {/* START SERVICE */}
         <div className="hidden md:flex lg:flex flex-col gap-10">
           <OurServiceCardLeft
-            ServiceImage={ServiceImageOne}
+            id={1}
+            ServiceImage={services?.[0]?.image}
             secondDivBgColor="#A3C1D3"
-            secondDivText="Building <br /> Exterior <br /> 3d rendering"
+            secondDivText={services?.[0]?.title}
             thirdDivBgColor="#244B61"
             thirdDivHeaderText1="Package 1"
             thirdDivDescriptionText1="Single Storied One Elevation 3D Render $180/ 1 Week Delivery"
@@ -44,7 +68,7 @@ const OurService = forwardRef((props, ref) => {
           <OurServiceCardRight
             ServiceImage={ServiceImagetwo}
             secondDivBgColor="#CFC857"
-            secondDivText="Landscape <br /> 2d site plan & <br /> 3d rendering"
+            secondDivText="Landscape 2d site plan & 3d rendering"
             thirdDivBgColor="#7A8015"
             thirdDivHeaderText1="Package 1"
             thirdDivDescriptionText1="Front Yard 2D Site Plan & 3D Rendering $280/ 1 Week Delivery"
@@ -55,14 +79,14 @@ const OurService = forwardRef((props, ref) => {
             thirdPackageColor2="#AAB126"
             secondhrColor="#969D17"
             thirdDivHeaderText3="Package 3"
-            thirdDivDescriptionText3="Full Yard 2D Site Plan & 3D Rendering"
             thirdPackageColor3="#AAB126"
+            thirdDivDescriptionText3="Full Yard 2D Site Plan & 3D Rendering"
             forthDivBgColor="#636304"
           />
           <OurServiceCardLeft
             ServiceImage={ServiceImageThree}
             secondDivBgColor="#C69C62"
-            secondDivText="Interior <br /> Design <br /> & floor plan <br /> 3d rendering"
+            secondDivText="Interior Design & floor plan 3d rendering"
             thirdDivBgColor="#754B22"
             thirdDivHeaderText1="Package 1"
             thirdDivDescriptionText1="Small Space Design (Kitchen, Wall design) $180/ 1 Week Delivery"
@@ -72,7 +96,8 @@ const OurService = forwardRef((props, ref) => {
             thirdDivDescriptionText2="Medium Space Design (Living room, Bed Room) $280/ 2 Week Delivery"
             thirdPackageColor2="#C2874E"
             secondhrColor="#A16C39"
-            thirdDivHeaderText3="Big Space Design (Commercial Office, Big Living) $380/ 3 Week Delivery"
+            thirdDivHeaderText3="Package 3"
+            thirdDivDescriptionText3="Big Space Design (Commercial Office, Big Living) $380/ 3 Week Delivery"
             thirdPackageColor3="#C2874E"
             forthDivBgColor="#59300E"
           />
@@ -83,19 +108,19 @@ const OurService = forwardRef((props, ref) => {
           <OurServiceCardLeftMobile
             ServiceImage={ServiceImageOne}
             secondDivBgColor="#A3C1D3"
-            secondDivText="Building <br /> Exterior <br /> 3d rendering"
+            secondDivText="Building Exterior 3d rendering"
             forthDivBgColor="#123747"
           />
           <OurServiceCardRightMobile
             ServiceImage={ServiceImagetwo}
             secondDivBgColor="#CFC857"
-            secondDivText="Landscape <br /> 2d site plan & <br /> 3d rendering"
+            secondDivText="Landscape 2d site plan & 3d rendering"
             forthDivBgColor="#636304"
           />
           <OurServiceCardLeftMobile
             ServiceImage={ServiceImageThree}
             secondDivBgColor="#C69C62"
-            secondDivText="Interior <br /> Design <br /> & floor plan <br /> 3d rendering"
+            secondDivText="Interior Design & floor plan 3d rendering"
             forthDivBgColor="#59300E"
           />
         </div>
