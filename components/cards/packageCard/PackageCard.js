@@ -81,7 +81,7 @@ const PackageCard = ({
             </button>
           </Link>
         </div>
-        {/* End Large and Medium  */}
+     
         {/* Start Small  */}
         <div
           className="container mx-auto rounded-2xl bg-white lg:hidden md:hidden flex flex-col justify-between items-center gap-3 lg:text-xl md:text-xl text-base py-5 px-lg:6 md:px-6 px-3"
