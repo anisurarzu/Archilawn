@@ -67,8 +67,7 @@ export default function Navbar() {
       }`}
       style={{
         transition: "background-color 0.3s ease-in-out",
-      }}
-    >
+      }}>
       <div className="container mx-auto flex justify-between items-center lg:py-4 md:py-4 py-2 lg:pb-4 md:pb-4 pb-1">
         {/* Logo */}
 
@@ -81,13 +80,11 @@ export default function Navbar() {
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
-            } `}
-          >
+            } `}>
             <div
               className={`flex items-center rounded-md cursor-pointer ${
                 isScrolled ? "border border-gray-200" : "border-none"
-              }`}
-            >
+              }`}>
               <Image
                 src="/images/logo.png"
                 alt="Logo"
@@ -109,8 +106,7 @@ export default function Navbar() {
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
-            }`}
-          >
+            }`}>
             Packages
           </Link>
           <Link
@@ -121,9 +117,19 @@ export default function Navbar() {
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
-            } cursor-pointer`}
-          >
+            } cursor-pointer`}>
             Portfolio
+          </Link>
+          <Link
+            href="/profile"
+            smooth={true}
+            duration={500}
+            className={` ${
+              isScrolled
+                ? "text-black hover:text-[#8FE53E]"
+                : "text-white hover:text-[#8FE53E]"
+            } cursor-pointer`}>
+            Profile
           </Link>
           <Link
             to="how-it-works"
@@ -133,8 +139,7 @@ export default function Navbar() {
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
-            } cursor-pointer`}
-          >
+            } cursor-pointer`}>
             How it works
           </Link>
           <Link
@@ -145,23 +150,21 @@ export default function Navbar() {
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
-            } cursor-pointer`}
-          >
+            } cursor-pointer`}>
             About Us
           </Link>
         </div>
 
         <div className="hidden md:flex lg:space-x-4 md:space-x-4 space-x-8 lg:text-base md:text-sm text-sm cursor-pointer">
           <Link
-            to="login"
+            href="/loginPage"
             smooth={true}
             duration={500}
             className={`py-4 ${
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
-            }`}
-          >
+            }`}>
             Login
           </Link>
 
@@ -182,11 +185,9 @@ export default function Navbar() {
                 isScrolled
                   ? " border-black text-black hover:text-black hover:border-[#8FE53E]"
                   : " border-white text-white hover:text-white hover:border-[#8FE53E]"
-              }`}
-            >
+              }`}>
               <span
-                className={` py-4 ${isScrolled ? "text-black" : "text-white"}`}
-              >
+                className={` py-4 ${isScrolled ? "text-black" : "text-white"}`}>
                 Call Us
               </span>
             </Button>
@@ -201,8 +202,7 @@ export default function Navbar() {
                 ...(isHovered ? hoverStyle : {}),
               }}
               onMouseEnter={() => setIsHovered(true)}
-              onMouseLeave={() => setIsHovered(false)}
-            ></Button>
+              onMouseLeave={() => setIsHovered(false)}></Button>
           </div>
         </div>
 
@@ -235,48 +235,53 @@ export default function Navbar() {
           placement="right"
           onClose={closeDrawer}
           open={visible}
-          className="text-gray-800 text-base"
-        >
+          className="text-gray-800 text-base">
           <Link
             to="our-service"
             smooth={true}
             duration={500}
-            className="block mb-4"
-          >
+            className="block mb-4">
             Packages
           </Link>
           <Link
             to="portfolio"
             smooth={true}
             duration={500}
-            className="block mb-4"
-          >
+            className="block mb-4">
             Portfolio
+          </Link>
+          <Link
+            href="/profile"
+            smooth={true}
+            duration={500}
+            className="block mb-4">
+            Profile
           </Link>
           <Link
             to="how-it-works"
             smooth={true}
             duration={500}
-            className="block mb-4"
-          >
+            className="block mb-4">
             How it works
           </Link>
           <Link
             to="about-us"
             smooth={true}
             duration={500}
-            className="block mb-4"
-          >
+            className="block mb-4">
             About Us
           </Link>
-          <Link to="login" smooth={true} duration={500} className="block mb-4">
+          <Link
+            href="/loginPage"
+            smooth={true}
+            duration={500}
+            className="block mb-4">
             Login
           </Link>
           <Button
             type="text"
             icon={<PhoneOutlined />}
-            className="w-full border border-gray-400 hover:border-gray-600 text-black hover:text-[#8FE53E] flex justify-center items-center gap-1 text-lg font-semibold mt-4"
-          >
+            className="w-full border border-gray-400 hover:border-gray-600 text-black hover:text-[#8FE53E] flex justify-center items-center gap-1 text-lg font-semibold mt-4">
             <span>Call Us</span>
           </Button>
         </Drawer>

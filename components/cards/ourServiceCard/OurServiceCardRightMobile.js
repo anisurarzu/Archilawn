@@ -36,7 +36,7 @@ const OurServiceCardRightMobile = ({
         style={{ backgroundColor: secondDivBgColor }}
       >
         <p
-          className="text-lg text-white pr-20 pl-6"
+          className="text-lg text-white pr-16 pl-6 w-[200px]"
           style={{
             fontFamily: "Tinos",
           }}

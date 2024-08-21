@@ -86,7 +86,7 @@ const OurServiceCardRight = ({
         style={{ backgroundColor: secondDivBgColor }}
       >
         <p
-          className="text-4xl text-white pr-36 pl-[60px] lg:pl-[60px] md:pl-[45px]"
+          className="text-4xl text-white pr-32 pl-[60px] lg:pl-[60px] md:pl-[45px] w-96"
           style={{
             fontFamily: "Tinos",
           }}

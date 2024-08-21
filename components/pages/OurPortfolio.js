@@ -15,7 +15,7 @@ const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 const OurPortfolio = () => {
   const [isPlaying, setIsPlaying] = useState(false);
-  const [slides, setSlides] = useState([]);
+  const [portfolio, setPortfolio] = useState([]);
 
   const handlePlayClick = () => {
     setIsPlaying(true);
@@ -23,19 +23,19 @@ const OurPortfolio = () => {
 
   useEffect(() => {
     // Fetch slider data from API
-    const fetchSlides = async () => {
+    const fetchPortfolio = async () => {
       try {
         const response = await axios.get(`${API_URL}/api/portfolios`);
-        setSlides(response.data);
+        setPortfolio(response.data);
       } catch (error) {
         console.error("Error fetching slider data:", error);
       }
     };
 
-    fetchSlides();
+    fetchPortfolio();
   }, []);
 
-  console.log("Here Portfolio Data: ", slides);
+  console.log("Here Portfolio Data: ", portfolio);
 
   return (
     <section className="bg-white">
