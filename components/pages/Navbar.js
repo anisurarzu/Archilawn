@@ -6,7 +6,8 @@ import { MenuOutlined, MailOutlined, PhoneOutlined } from "@ant-design/icons";
 import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
-import { Link } from "react-scroll"; // Import the Link component from react-scroll
+import Link from "next/link"; // Use Next.js Link for navigation
+import { Link as ScrollLink } from "react-scroll"; // Use react-scroll Link for smooth scrolling
 
 const buttonStyle = {
   border: "1px solid white",
@@ -15,7 +16,6 @@ const buttonStyle = {
   color: "black",
   display: "flex",
   alignItems: "center",
-  spaceX: "2",
   transition: "background-color 0.2s, border-color 0.2s",
 };
 
@@ -70,10 +70,9 @@ export default function Navbar() {
       }}>
       <div className="container mx-auto flex justify-between items-center lg:py-4 md:py-4 py-2 lg:pb-4 md:pb-4 pb-1">
         {/* Logo */}
-
         <div className="lg:flex md:flex hidden">
           <Link
-            to="home"
+            href="/"
             smooth={true}
             duration={500}
             className={` ${
@@ -98,7 +97,7 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex lg:space-x-8 md:space-x-4 space-x-8 lg:text-base md:text-sm text-sm cursor-pointer">
-          <Link
+          <ScrollLink
             to="service"
             smooth={true}
             duration={500}
@@ -108,8 +107,8 @@ export default function Navbar() {
                 : "text-white hover:text-[#8FE53E]"
             }`}>
             Packages
-          </Link>
-          <Link
+          </ScrollLink>
+          <ScrollLink
             to="portfolio"
             smooth={true}
             duration={500}
@@ -119,11 +118,9 @@ export default function Navbar() {
                 : "text-white hover:text-[#8FE53E]"
             } cursor-pointer`}>
             Portfolio
-          </Link>
+          </ScrollLink>
           <Link
             href="/profile"
-            smooth={true}
-            duration={500}
             className={` ${
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
@@ -131,7 +128,7 @@ export default function Navbar() {
             } cursor-pointer`}>
             Profile
           </Link>
-          <Link
+          <ScrollLink
             to="how-it-works"
             smooth={true}
             duration={500}
@@ -141,8 +138,8 @@ export default function Navbar() {
                 : "text-white hover:text-[#8FE53E]"
             } cursor-pointer`}>
             How it works
-          </Link>
-          <Link
+          </ScrollLink>
+          <ScrollLink
             to="about-us"
             smooth={true}
             duration={500}
@@ -152,14 +149,12 @@ export default function Navbar() {
                 : "text-white hover:text-[#8FE53E]"
             } cursor-pointer`}>
             About Us
-          </Link>
+          </ScrollLink>
         </div>
 
         <div className="hidden md:flex lg:space-x-4 md:space-x-4 space-x-8 lg:text-base md:text-sm text-sm cursor-pointer">
           <Link
             href="/loginPage"
-            smooth={true}
-            duration={500}
             className={`py-4 ${
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
@@ -236,46 +231,38 @@ export default function Navbar() {
           onClose={closeDrawer}
           open={visible}
           className="text-gray-800 text-base">
-          <Link
+          <ScrollLink
             to="our-service"
             smooth={true}
             duration={500}
             className="block mb-4">
             Packages
-          </Link>
-          <Link
+          </ScrollLink>
+          <ScrollLink
             to="portfolio"
             smooth={true}
             duration={500}
             className="block mb-4">
             Portfolio
-          </Link>
-          <Link
-            href="/profile"
-            smooth={true}
-            duration={500}
-            className="block mb-4">
+          </ScrollLink>
+          <Link href="/profile" className="block mb-4">
             Profile
           </Link>
-          <Link
+          <ScrollLink
             to="how-it-works"
             smooth={true}
             duration={500}
             className="block mb-4">
             How it works
-          </Link>
-          <Link
+          </ScrollLink>
+          <ScrollLink
             to="about-us"
             smooth={true}
             duration={500}
             className="block mb-4">
             About Us
-          </Link>
-          <Link
-            href="/loginPage"
-            smooth={true}
-            duration={500}
-            className="block mb-4">
+          </ScrollLink>
+          <Link href="/loginPage" className="block mb-4">
             Login
           </Link>
           <Button
@@ -285,8 +272,6 @@ export default function Navbar() {
             <span>Call Us</span>
           </Button>
         </Drawer>
-
-        {/* Mobile Design Start */}
       </div>
     </div>
   );
