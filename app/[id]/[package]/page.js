@@ -10,24 +10,28 @@ export default function PackageDetails() {
   return (
     <div>
       <Navbar />
-      <div>
+
+      {/* Header Image */}
+      <div className="relative w-full h-40 sm:h-60 md:h-72 lg:h-96">
         <Image
-          src={"/images/projectGallerybgImage.png"}
-          width={1500}
-          height={150}
-          alt={"Test"}
+          src="/images/projectGallerybgImage.png"
+          layout="fill"
+          objectFit="cover"
+          alt="Test"
+          className="w-full h-full"
         />
       </div>
 
-      <div className="pt-8 grid grid-cols-4 gap-8  px-4 mx-[50px] my-8">
+      {/* Main Content */}
+      <div className="pt-8 grid grid-cols-1 lg:grid-cols-4 gap-8 px-4 sm:px-8 md:px-16 mx-auto my-8">
         {/* Left Text Section */}
-        <div className="col-span-3 pr-12">
+        <div className="lg:col-span-3 w-full pr-0 lg:pr-12">
           <h2 className="text-green-600 text-sm font-semibold">THE BRIEF</h2>
-          <h3 className="text-2xl font-semibold mt-2">
+          <h3 className="text-xl sm:text-2xl font-semibold mt-2">
             To provide a modern extension to a detached rural dwelling in order
             to house a private swimming pool and spa
           </h3>
-          <p className="mt-4 text-gray-700 leading-relaxed">
+          <p className="mt-4 text-gray-700 leading-relaxed text-base">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque
             ipsum lorem, tempor ut ex aliquam, fringilla lacinia quam. Sed
             mattis ante at massa aliquet consectetur. Nullam enim sapien,
@@ -41,8 +45,9 @@ export default function PackageDetails() {
         </div>
 
         {/* Right Card Section */}
-        <div className="col-span-1">
-          <Card className="border rounded-lg shadow-none">
+        <div className="w-full">
+          <Card className="border rounded-lg shadow-none p-4">
+            {/* Project Details */}
             <div className="flex justify-between items-center py-2">
               <span className="text-gray-500">PROJECT</span>
               <span className="font-semibold">C HOUSE</span>
@@ -63,18 +68,24 @@ export default function PackageDetails() {
               <span className="text-gray-500">STYLE</span>
               <span className="font-semibold">NEOCLASSIC</span>
             </div>
+
+            {/* Order Button */}
             <Link href="/serviceDetails/packageDetails/orderPage">
-              <button className="bg-[#8ABF55] text-white lg:py-3 md:py-2 py-1 lg:px-6 md:px-4 px-1 rounded-xl flex items-center">
-                <div>Go To Order</div>
-                <div className="pi pi-chevron-right ml-2 lg:text-[10px] md:text-[12px] text-[8px]"></div>
+              <button className="w-full bg-[#8ABF55] text-white py-2 lg:py-3 rounded-xl flex items-center justify-center text-xs lg:text-sm">
+                <span>Go To Order</span>
+                <i className="pi pi-chevron-right ml-2 text-[8px] lg:text-[10px]" />
               </button>
             </Link>
           </Card>
         </div>
       </div>
+
+      {/* Project Gallery */}
       <div>
         <ProjectGallery />
       </div>
+
+      {/* Footer */}
       <div className="pt-8">
         <Footer />
       </div>

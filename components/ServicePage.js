@@ -168,7 +168,7 @@ const ServicePage = () => {
       dataIndex: "image",
       key: "image",
       render: (text) => (
-        <Image src={image} alt="Service" width={100} height={60} />
+        <Image src={text?.image} alt="Service" width={100} height={60} />
       ),
     },
     {
