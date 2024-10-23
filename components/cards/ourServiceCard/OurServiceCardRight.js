@@ -26,16 +26,14 @@ const OurServiceCardRight = ({
       {/* 4th */}
       <div
         className={`h-full rounded-[30px] flex justify-end items-center lg:ml-[545px] md:ml-[32px] ml-[45px] z-3 absolute transition-all duration-1000`}
-        style={{ backgroundColor: forthDivBgColor }}
-      >
+        style={{ backgroundColor: forthDivBgColor }}>
         <Link href="/serviceDetails">
           <div className="flex items-end justify-start w-56 cursor-pointer">
             <p
               className="text-4xl font-bold text-white text-right pb-28 -rotate-90"
               style={{
                 fontFamily: "Tinos",
-              }}
-            >
+              }}>
               View Details
             </p>
           </div>
@@ -45,8 +43,7 @@ const OurServiceCardRight = ({
       {/* 2nd */}
       <div
         className={`hidden h-full lg:flex justify-center items-center rounded-[30px] ml-[650px] z-2 absolute transition-all duration-1000`}
-        style={{ backgroundColor: thirdDivBgColor }}
-      >
+        style={{ backgroundColor: thirdDivBgColor }}>
         <div className="pr-36 pl-12">
           <PackageText
             headerText={thirdDivHeaderText1}
@@ -83,8 +80,7 @@ const OurServiceCardRight = ({
       {/* 1st */}
       <div
         className={`h-full flex justify-center items-center rounded-[30px] lg:ml-[1200px] md:ml-[110px] ml-[1200px] z-5 absolute transition-all duration-1000`}
-        style={{ backgroundColor: secondDivBgColor }}
-      >
+        style={{ backgroundColor: secondDivBgColor }}>
         <p
           className="text-4xl text-white pr-32 pl-[60px] lg:pl-[60px] md:pl-[45px] w-96"
           style={{

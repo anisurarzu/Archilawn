@@ -50,15 +50,17 @@ export default function Slider() {
   // Full-page loading animation
   if (loading) {
     return (
-      <div className="fixed inset-0 flex flex-col items-center justify-center bg-gray-600 z-50">
-        <div className="h-10 w-10 border-t-4 border-b-4 border-white rounded-full animate-spin"></div>
-        <p className="text-white mt-4 text-lg animate-pulse">Loading..</p>
+      <div className="fixed inset-0 flex flex-col items-center justify-center bg-white z-50">
+        {/* Spinner animation with the same green color */}
+
+        {/* Text animation with Archilawn */}
+
         <div className="mt-6">
           <Image
-            src="/images/logo.png"
+            src="/images/animation.gif"
             alt="Logo"
-            width={100}
-            height={100}
+            width={160}
+            height={160}
             className="rounded-md"
           />
         </div>

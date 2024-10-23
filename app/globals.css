@@ -64,3 +64,50 @@ html {
 .poppins-font {
   font-family: 'Poppins', sans-serif;
 }
+
+/* Add this CSS to your globals.css or style file */
+
+/* Spinner animation */
+@keyframes fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+@keyframes showLetter {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.loading-text .letter {
+  opacity: 0;
+  display: inline-block;
+  animation: showLetter 0.5s forwards;
+}
+
+.loading-text .letter:nth-child(1) {
+  animation-delay: 0.1s;
+}
+.loading-text .letter:nth-child(2) {
+  animation-delay: 0.2s;
+}
+.loading-text .letter:nth-child(3) {
+  animation-delay: 0.3s;
+}
+.loading-text .letter:nth-child(4) {
+  animation-delay: 0.4s;
+}
+.loading-text .letter:nth-child(5) {
+  animation-delay: 0.5s;
+}
+.loading-text .letter:nth-child(6) {
+  animation-delay: 0.6s;
+}
+.loading-text .letter:nth-child(7) {
+  animation-delay: 0.7s;
+}
+.loading-text .letter:nth-child(8) {
+  animation-delay: 0.8s;
+}
+.loading-text .letter:nth-child(9) {
+  animation-delay: 0.9s;
+}

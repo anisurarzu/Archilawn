@@ -48,7 +48,7 @@ const OurServiceCardRightMobile = ({
         <Image
           src={ServiceImage}
           alt="ServiceImageOne"
-          className="z-10 absolute h-full object-cover rounded-bl-[30px] rounded-tl-[30px] w-36"
+           className="z-10 absolute inset-0 h-full object-cover rounded-br-[30px] rounded-tr-[30px] w-96 transition-transform duration-500 ease-out hover:scale-110"
         />
       </div>
 
