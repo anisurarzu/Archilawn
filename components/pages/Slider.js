@@ -19,6 +19,7 @@ export default function Slider() {
   const [slides, setSlides] = useState([]);
   const [loading, setLoading] = useState(true);
   const [showNavbar, setShowNavbar] = useState(true); // State to control navbar visibility
+  const [animating, setAnimating] = useState(false); // State to control animation timing
 
   useEffect(() => {
     const fetchSlides = async () => {
@@ -51,6 +52,14 @@ export default function Slider() {
     footerRef.current?.scrollIntoView({ behavior: "smooth" });
   };
 
+  const beforeChange = () => {
+    setAnimating(true); // Start animation when slide is about to change
+  };
+
+  const afterChange = () => {
+    setAnimating(false); // End animation after slide has changed
+  };
+
   // Full-page loading animation
   if (loading) {
     return (
@@ -74,20 +83,61 @@ export default function Slider() {
 
   return (
     <div className="relative">
-      {!showNavbar && <div className="hidden"> {/* Hide the navbar here */} </div>}
+      {!showNavbar && (
+        <div className="hidden"> {/* Hide the navbar here */} </div>
+      )}
 
-      <Carousel ref={carouselRef}>
+      {/* Auto sliding carousel with animation during transitions */}
+      <Carousel
+        ref={carouselRef}
+        autoplay
+        autoplaySpeed={5000} // Auto slide every 5 seconds
+        beforeChange={beforeChange}
+        afterChange={afterChange}>
         {slides?.map((slide) => (
           <div
             key={slide._id} // Use the unique ID from the API
-            className="relative lg:h-[92vh] md:h-[94vh] h-[88vh]">
-            <Image
-              src={slide.image}
-              alt={slide.title}
-              layout="fill"
-              objectFit="cover"
-              className="brightness-75"
-            />
+            className={`relative lg:h-[92vh] md:h-[94vh] h-[88vh] ${
+              animating ? "animated-slide" : ""
+            }`}>
+            {/* Breaking image into 4 pieces */}
+            <div className="slide-piece top-piece">
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                layout="fill"
+                objectFit="cover"
+                className="brightness-75"
+              />
+            </div>
+            <div className="slide-piece bottom-piece">
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                layout="fill"
+                objectFit="cover"
+                className="brightness-75"
+              />
+            </div>
+            <div className="slide-piece left-piece">
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                layout="fill"
+                objectFit="cover"
+                className="brightness-75"
+              />
+            </div>
+            <div className="slide-piece right-piece">
+              <Image
+                src={slide.image}
+                alt={slide.title}
+                layout="fill"
+                objectFit="cover"
+                className="brightness-75"
+              />
+            </div>
+
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 md:px-8">
               <h1 className="text-4xl md:text-6xl font-bold mb-4 max-w-4xl leading-tight">
                 {slide.title}

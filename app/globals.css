@@ -112,15 +112,48 @@ html {
   animation-delay: 0.9s;
 }
 
-@keyframes fadeIn {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+.animated-slide {
+  position: relative;
 }
 
-.animate-fade-in {
-  animation: fadeIn 1s forwards;
+.slide-piece {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: transform 1.2s ease-in-out;
 }
+
+.top-piece {
+  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
+}
+
+.bottom-piece {
+  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
+}
+
+.left-piece {
+  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+}
+
+.right-piece {
+  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+}
+
+/* When animating, pieces break apart */
+.animated-slide .top-piece {
+  transform: translateY(-100%);
+}
+
+.animated-slide .bottom-piece {
+  transform: translateY(100%);
+}
+
+.animated-slide .left-piece {
+  transform: translateX(-100%);
+}
+
+.animated-slide .right-piece {
+  transform: translateX(100%);
+}
+
+

@@ -47,9 +47,7 @@ const Home = () => {
       <div className="lg:py-12 md:py-12 py-8">
         <FeelingInspired />
       </div>
-      <div className="lg:py-12 md:py-12 py-8" id="about-us">
-        <AboutUs />
-      </div>
+
       <div className="py-8">
         <ProjectGallery id="about-us" />
       </div>
