@@ -10,6 +10,11 @@ const AboutUs = () => {
     <div className="">
       <Navbar />
       <div className="lg:w-[190vh] md:w-[62vh] w-[45vh] lg:mx-0 md:mx-4 mx-1 rounded-[30px] bg-[#F3F3F9] ">
+    <div>
+    <h2>
+    Immerse yourself in a refined fusion of architecture and interior design.
+    </h2>
+    </div>
         <div className="lg:px-16 md:px-4 px-3 lg:py-12 md:py-8 py-6 text-center rounded-lg">
           {/* start top text */}
           <h2 className="lg:text-xl md:text-2xl text-xl text-center text-[#8ABF55] font-semibold uppercase">

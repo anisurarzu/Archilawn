@@ -18,9 +18,9 @@ export default function Slider() {
   const footerRef = useRef(null);
   const [slides, setSlides] = useState([]);
   const [loading, setLoading] = useState(true);
+  const [showNavbar, setShowNavbar] = useState(true); // State to control navbar visibility
 
   useEffect(() => {
-    // Fetch slider data from API
     const fetchSlides = async () => {
       try {
         const response = await axios.get(`${API_URL}/api/sliders`);
@@ -28,7 +28,11 @@ export default function Slider() {
       } catch (error) {
         console.error("Error fetching slider data:", error);
       } finally {
-        setLoading(false); // Hide the loader once data is fetched
+        // Enforce a minimum loading time of 3 seconds
+        setTimeout(() => {
+          setLoading(false);
+          setShowNavbar(false); // Hide the navbar after loading is complete
+        }, 3000);
       }
     };
 
@@ -51,6 +55,10 @@ export default function Slider() {
   if (loading) {
     return (
       <div className="fixed inset-0 flex flex-col items-center justify-center bg-white z-50">
+        {/* Spinner animation with the same green color */}
+
+        {/* Text animation with Archilawn */}
+
         <div className="mt-6">
           <Image
             src="/images/animation.gif"
@@ -66,29 +74,27 @@ export default function Slider() {
 
   return (
     <div className="relative">
-      <Carousel
-        ref={carouselRef}
-        autoplay // Enable auto-slide change
-        autoplaySpeed={5000} // Auto slide every 5 seconds
-        effect="fade" // Add fade effect (could be 'scrollx' for slide effect)
-      >
+      {!showNavbar && <div className="hidden"> {/* Hide the navbar here */} </div>}
+
+      <Carousel ref={carouselRef}>
         {slides?.map((slide) => (
           <div
             key={slide._id} // Use the unique ID from the API
-            className="relative lg:h-[92vh] md:h-[94vh] h-[88vh] transition-opacity duration-1000 ease-in-out">
+            className="relative lg:h-[92vh] md:h-[94vh] h-[88vh]">
             <Image
               src={slide.image}
               alt={slide.title}
               layout="fill"
               objectFit="cover"
-              className="brightness-75 opacity-0 animate-fade-in" // Animation class
+              className="brightness-75"
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 md:px-8">
               <h1 className="text-4xl md:text-6xl font-bold mb-4 max-w-4xl leading-tight">
                 {slide.title}
               </h1>
               <p className="text-lg md:text-2xl max-w-2xl">
-                {slide.subtitle || slide.subTitle}
+                {slide.subtitle || slide.subTitle}{" "}
+                {/* Handle possible subtitle field name */}
               </p>
             </div>
           </div>

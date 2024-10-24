@@ -112,7 +112,7 @@ export default function Navbar() {
             } cursor-pointer`}>
             Portfolio
           </Link>
-          <Link
+          {/* <Link
             href="/profile"
             className={` ${
               isScrolled
@@ -120,7 +120,7 @@ export default function Navbar() {
                 : "text-white hover:text-[#8FE53E]"
             } cursor-pointer`}>
             Profile
-          </Link>
+          </Link> */}
           <Link
             href="/how-it-works" // Updated for Next.js navigation
             className={` ${
@@ -230,9 +230,9 @@ export default function Navbar() {
             className="block mb-4">
             Portfolio
           </Link>
-          <Link href="/profile" className="block mb-4">
+          {/* <Link href="/profile" className="block mb-4">
             Profile
-          </Link>
+          </Link> */}
           <Link
             href="/how-it-works" // Updated for Next.js navigation
             className="block mb-4">

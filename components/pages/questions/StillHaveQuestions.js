@@ -200,6 +200,72 @@ const StillHaveQuestions = () => {
       </div>
 
       {/* End Design */}
+
+      <div className="container mx-auto my-12 p-6 bg-white rounded-lg shadow-lg">
+        {/* Large screen layout: Two columns */}
+        <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 gap-6 items-center">
+          {/* Owner Image */}
+          <div className="flex justify-center lg:justify-end">
+            <div className="relative w-[300px] h-[300px] lg:w-[350px] lg:h-[350px] rounded-full overflow-hidden shadow-md">
+              <Image
+                src="/path_to_owner_image.jpg" // Replace with actual path of the owner's image
+                alt="Owner - Set A Dami"
+                layout="fill"
+                objectFit="cover"
+                className="rounded-full"
+              />
+            </div>
+          </div>
+
+          {/* Owner Description */}
+          <div className="lg:text-left text-center lg:px-6">
+            <h2 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Meet Set A Dami
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed mb-4">
+              Set A Dami, the visionary behind our success, brings over two
+              decades of expertise in landscape design. Her passion for creating
+              stunning, sustainable outdoor spaces has transformed countless
+              properties into beautiful, nature-infused environments.
+            </p>
+            <p className="text-md text-gray-500">
+              With a deep-rooted commitment to excellence and innovation, she
+              personally oversees every project, ensuring that your dream design
+              becomes a reality.
+            </p>
+          </div>
+        </div>
+
+        {/* Small screen layout: stacked */}
+        <div className="lg:hidden mt-6 text-center">
+          <div className="flex justify-center">
+            <div className="relative w-[250px] h-[250px] rounded-full overflow-hidden shadow-md">
+              <img
+                src="https://img.freepik.com/free-photo/studio-portrait-bearded-male-dressed-blue-shirt-white-jacket-bow-tie-grey-background_613910-1934.jpg?semt=ais_hybrid"
+                alt="Owner - Set A Dami"
+                width={350} // width for the image
+                height={350} // height for the image
+                className="rounded-full object-cover"></img>
+            </div>
+          </div>
+          <div className="mt-4">
+            <h2 className="text-2xl font-bold text-gray-900 mb-2">
+              Meet Set A Dami
+            </h2>
+            <p className="text-lg text-gray-600 leading-relaxed">
+              Set A Dami, the visionary behind our success, brings over two
+              decades of expertise in landscape design. Her passion for creating
+              stunning, sustainable outdoor spaces has transformed countless
+              properties into beautiful, nature-infused environments.
+            </p>
+            <p className="text-md text-gray-500 mt-2">
+              With a deep-rooted commitment to excellence and innovation, she
+              personally oversees every project, ensuring that your dream design
+              becomes a reality.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
   );
 };
