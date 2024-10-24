@@ -207,8 +207,8 @@ const StillHaveQuestions = () => {
           {/* Owner Image */}
           <div className="flex justify-center lg:justify-end">
             <div className="relative w-[300px] h-[300px] lg:w-[350px] lg:h-[350px] rounded-full overflow-hidden shadow-md">
-              <Image
-                src="/path_to_owner_image.jpg" // Replace with actual path of the owner's image
+              <img
+                src="https://i.ibb.co.com/4tHxCBJ/CEO-business-executive-professional-headshot.jpg" // Replace with actual path of the owner's image
                 alt="Owner - Set A Dami"
                 layout="fill"
                 objectFit="cover"

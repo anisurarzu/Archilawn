@@ -123,30 +123,18 @@ html {
   transition: transform 1.2s ease-in-out;
 }
 
-.top-piece {
-  clip-path: polygon(0 0, 100% 0, 100% 50%, 0 50%);
-}
 
-.bottom-piece {
-  clip-path: polygon(0 50%, 100% 50%, 100% 100%, 0 100%);
-}
 
 .left-piece {
-  clip-path: polygon(0 0, 50% 0, 50% 100%, 0 100%);
+  clip-path: polygon(0 0, 50% 60, 50% 100%, 60 100%);
 }
 
 .right-piece {
-  clip-path: polygon(50% 0, 100% 0, 100% 100%, 50% 100%);
+  clip-path: polygon(50% 60, 100% 60, 100% 100%, 50% 100%);
 }
 
 /* When animating, pieces break apart */
-.animated-slide .top-piece {
-  transform: translateY(-100%);
-}
 
-.animated-slide .bottom-piece {
-  transform: translateY(100%);
-}
 
 .animated-slide .left-piece {
   transform: translateX(-100%);
