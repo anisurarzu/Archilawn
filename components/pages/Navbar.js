@@ -7,7 +7,6 @@ import Image from "next/image";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import Link from "next/link"; // Use Next.js Link for navigation
-import { Link as ScrollLink } from "react-scroll"; // Use react-scroll Link for smooth scrolling
 
 const buttonStyle = {
   border: "1px solid white",
@@ -72,9 +71,7 @@ export default function Navbar() {
         {/* Logo */}
         <div className="lg:flex md:flex hidden">
           <Link
-            href="/"
-            smooth={true}
-            duration={500}
+            href="/" // Correct use of href for Next.js navigation
             className={` ${
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
@@ -97,28 +94,24 @@ export default function Navbar() {
 
         {/* Desktop Menu */}
         <div className="hidden md:flex lg:space-x-8 md:space-x-4 space-x-8 lg:text-base md:text-sm text-sm cursor-pointer">
-          <ScrollLink
-            to="service"
-            smooth={true}
-            duration={500}
+          <Link
+            href="/service" // Updated for Next.js navigation
             className={` ${
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
             }`}>
             Packages
-          </ScrollLink>
-          <ScrollLink
-            to="portfolio"
-            smooth={true}
-            duration={500}
+          </Link>
+          <Link
+            href="/portfolio" // Updated for Next.js navigation
             className={` ${
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
             } cursor-pointer`}>
             Portfolio
-          </ScrollLink>
+          </Link>
           <Link
             href="/profile"
             className={` ${
@@ -128,28 +121,24 @@ export default function Navbar() {
             } cursor-pointer`}>
             Profile
           </Link>
-          <ScrollLink
-            to="how-it-works"
-            smooth={true}
-            duration={500}
+          <Link
+            href="/how-it-works" // Updated for Next.js navigation
             className={` ${
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
             } cursor-pointer`}>
             How it works
-          </ScrollLink>
-          <ScrollLink
-            to="about-us"
-            smooth={true}
-            duration={500}
+          </Link>
+          <Link
+            href="/about" // Updated for Next.js navigation
             className={` ${
               isScrolled
                 ? "text-black hover:text-[#8FE53E]"
                 : "text-white hover:text-[#8FE53E]"
             } cursor-pointer`}>
             About Us
-          </ScrollLink>
+          </Link>
         </div>
 
         <div className="hidden md:flex lg:space-x-4 md:space-x-4 space-x-8 lg:text-base md:text-sm text-sm cursor-pointer">
@@ -231,37 +220,29 @@ export default function Navbar() {
           onClose={closeDrawer}
           open={visible}
           className="text-gray-800 text-base">
-          <ScrollLink
-            to="our-service"
-            smooth={true}
-            duration={500}
+          <Link
+            href="/service" // Updated for Next.js navigation
             className="block mb-4">
             Packages
-          </ScrollLink>
-          <ScrollLink
-            to="portfolio"
-            smooth={true}
-            duration={500}
+          </Link>
+          <Link
+            href="/portfolio" // Updated for Next.js navigation
             className="block mb-4">
             Portfolio
-          </ScrollLink>
+          </Link>
           <Link href="/profile" className="block mb-4">
             Profile
           </Link>
-          <ScrollLink
-            to="how-it-works"
-            smooth={true}
-            duration={500}
+          <Link
+            href="/how-it-works" // Updated for Next.js navigation
             className="block mb-4">
             How it works
-          </ScrollLink>
-          <ScrollLink
-            to="about-us"
-            smooth={true}
-            duration={500}
+          </Link>
+          <Link
+            href="/about" // Updated for Next.js navigation
             className="block mb-4">
             About Us
-          </ScrollLink>
+          </Link>
           <Link href="/loginPage" className="block mb-4">
             Login
           </Link>

@@ -51,10 +51,6 @@ export default function Slider() {
   if (loading) {
     return (
       <div className="fixed inset-0 flex flex-col items-center justify-center bg-white z-50">
-        {/* Spinner animation with the same green color */}
-
-        {/* Text animation with Archilawn */}
-
         <div className="mt-6">
           <Image
             src="/images/animation.gif"
@@ -70,25 +66,29 @@ export default function Slider() {
 
   return (
     <div className="relative">
-      <Carousel ref={carouselRef}>
+      <Carousel
+        ref={carouselRef}
+        autoplay // Enable auto-slide change
+        autoplaySpeed={5000} // Auto slide every 5 seconds
+        effect="fade" // Add fade effect (could be 'scrollx' for slide effect)
+      >
         {slides?.map((slide) => (
           <div
             key={slide._id} // Use the unique ID from the API
-            className="relative lg:h-[92vh] md:h-[94vh] h-[88vh]">
+            className="relative lg:h-[92vh] md:h-[94vh] h-[88vh] transition-opacity duration-1000 ease-in-out">
             <Image
               src={slide.image}
               alt={slide.title}
               layout="fill"
               objectFit="cover"
-              className="brightness-75"
+              className="brightness-75 opacity-0 animate-fade-in" // Animation class
             />
             <div className="absolute inset-0 flex flex-col items-center justify-center text-center text-white px-4 md:px-8">
               <h1 className="text-4xl md:text-6xl font-bold mb-4 max-w-4xl leading-tight">
                 {slide.title}
               </h1>
               <p className="text-lg md:text-2xl max-w-2xl">
-                {slide.subtitle || slide.subTitle}{" "}
-                {/* Handle possible subtitle field name */}
+                {slide.subtitle || slide.subTitle}
               </p>
             </div>
           </div>

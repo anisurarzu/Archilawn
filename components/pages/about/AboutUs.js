@@ -2,11 +2,14 @@
 import Image from "next/image";
 import React from "react";
 import AboutImage from "../../../public/images/aboutUsImage/about_us.png";
+import Navbar from "../Navbar";
+import Footer from "../Footer";
 
 const AboutUs = () => {
   return (
-    <div className="flex items-center justify-center">
-      <div className="lg:w-[190vh] md:w-[62vh] w-[45vh] lg:mx-0 md:mx-4 mx-1 rounded-[30px] bg-[#F3F3F9]">
+    <div className="">
+      <Navbar />
+      <div className="lg:w-[190vh] md:w-[62vh] w-[45vh] lg:mx-0 md:mx-4 mx-1 rounded-[30px] bg-[#F3F3F9] ">
         <div className="lg:px-16 md:px-4 px-3 lg:py-12 md:py-8 py-6 text-center rounded-lg">
           {/* start top text */}
           <h2 className="lg:text-xl md:text-2xl text-xl text-center text-[#8ABF55] font-semibold uppercase">
@@ -17,8 +20,7 @@ const AboutUs = () => {
               className="lg:text-4xl md:text-3xl text-[17px] text-center text-[#383737] lg:py-6 md:py-6 py-2 lg:w-[105vh] md:w-[50vh] w-[105vh]"
               style={{
                 fontFamily: "Tinos",
-              }}
-            >
+              }}>
               At next concept design, we offer interior design and tailored
               architecture services, guaranteeing that the final product to
               exceed your expectations.
@@ -58,8 +60,7 @@ const AboutUs = () => {
                 className="container mx-auto rounded-2xl bg-white hidden lg:flex md:hidden justify-between items-center lg:py-5 md:py-5 py-5 lg:px-6 md:px-6 px-3"
                 style={{
                   fontFamily: "Tinos",
-                }}
-              >
+                }}>
                 <p className="lg:text-2xl md:text-xl text-base">
                   Want to know more about us
                 </p>
@@ -78,8 +79,7 @@ const AboutUs = () => {
                 className="container mx-auto rounded-2xl bg-white hidden lg:hidden md:flex justify-between items-center py-5 px-3"
                 style={{
                   fontFamily: "Tinos",
-                }}
-              >
+                }}>
                 <p className="text-xl">Want to know more about us</p>
                 <button className="border border-[#383737] text-white lg:py-3 md:py-2 py-1 lg:px-6 md:px-4 px-1 rounded-2xl flex items-center">
                   <div className="text-[#383737] text-xl">Know More</div>
@@ -94,8 +94,7 @@ const AboutUs = () => {
                 className="container rounded-2xl bg-white flex flex-col gap-1 lg:hidden md:hidden justify-center items-center py-2 pb-3 px-2"
                 style={{
                   fontFamily: "Tinos",
-                }}
-              >
+                }}>
                 <p className="text-[17px] text-[#383737]">
                   Want to know more about us
                 </p>
@@ -111,6 +110,7 @@ const AboutUs = () => {
           {/* end bottom image and text */}
         </div>
       </div>
+      <Footer />
     </div>
   );
 };
