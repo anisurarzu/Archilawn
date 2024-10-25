@@ -38,7 +38,7 @@ const Login = () => {
       const data = await response.json();
       localStorage.setItem("token", data.token);
       localStorage.setItem("userInfo", JSON.stringify(data.user));
-      router.push("/dashboard");
+      // router.push("/dashboard");
     } catch (error) {
       console.error("Login failed:", error);
     } finally {
