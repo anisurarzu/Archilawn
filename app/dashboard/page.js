@@ -1,180 +1,255 @@
-"use client"; // Add this at the top
+"use client";
 
-import React, { useState, useEffect } from "react";
-import { Steps, Menu } from "antd";
+import { Layout, Menu, Button, Spin, Drawer, Avatar } from "antd";
 import {
   DashboardOutlined,
-  ProfileOutlined,
+  UsergroupAddOutlined,
   SettingOutlined,
-  ShoppingCartOutlined,
-  MenuFoldOutlined,
-  MenuUnfoldOutlined,
+  LogoutOutlined,
+  PictureOutlined,
+  AppstoreAddOutlined,
+  FolderOpenOutlined,
+  MenuOutlined,
 } from "@ant-design/icons";
-import Navbar from "@/components/pages/Navbar";
-import { useRouter } from "next/router"; // Import useRouter for redirection
+import Image from "next/image";
+import { useRouter } from "next/navigation";
+import { useState, useEffect } from "react";
+import SliderPage from "@/components/SliderPage";
+import DashboardHome from "@/components/DashboardHome";
+import ServicePage from "@/components/ServicePage";
+import PortfolioPage from "@/components/PortfolioPage";
+import UserPage from "@/components/UserPage";
 
-const description = "Order details and status.";
+const { Header, Sider, Content } = Layout;
 
-const orders = [
-  {
-    title: "Order Placed",
-    description: "Your order has been placed successfully.",
-  },
-  {
-    title: "In Progress",
-    description: "We are processing your order.",
-    subTitle: "Estimated time left: 00:00:08",
-  },
-  {
-    title: "Shipped",
-    description: "Your order has been shipped.",
-  },
-  {
-    title: "Delivered",
-    description: "Your order has been delivered.",
-  },
-];
-
-export default function Profile() {
+const Dashboard = ({ sliders }) => {
+  const router = useRouter();
   const [collapsed, setCollapsed] = useState(false);
-  const [selectedKey, setSelectedKey] = useState("1");
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-  const router = useRouter(); // Initialize the router for redirection
+  const [selectedMenu, setSelectedMenu] = useState("1");
+  const [loading, setLoading] = useState(true);
+  const [visible, setVisible] = useState(false);
+  const [userInfo, setUserInfo] = useState(null);
 
   useEffect(() => {
-    // Check for token in local storage
     const token = localStorage.getItem("token");
     if (!token) {
-      // If token is not found, redirect to login
-      router.push("/login"); // Change '/login' to your login route
-    } else {
-      setIsAuthenticated(true); // Set authentication state to true if token exists
+      router.push("/login");
+      return;
     }
-  }, [router]); // Dependency on router
 
-  const handleMenuClick = ({ key }) => {
-    setSelectedKey(key);
+    const storedUserInfo = localStorage.getItem("userInfo");
+    if (storedUserInfo) {
+      setUserInfo(JSON.parse(storedUserInfo));
+    }
+
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 1000);
+
+    return () => clearTimeout(timer);
+  }, [router, selectedMenu]);
+
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("userInfo");
+    router.push("/login");
   };
 
-  const toggleCollapsed = () => {
-    setCollapsed(!collapsed);
+  const showDrawer = () => {
+    setVisible(true);
   };
 
-  // If not authenticated, return null to prevent rendering the content
-  if (isAuthenticated) {
-    return null; // Prevent rendering of any content
-  } else {
-    return (
-      <div>
-        <Navbar />
-        <div className="bg-[#8ABF55] py-12"></div>
-        <div className="min-h-screen flex bg-gray-100">
-          <div
-            className={`bg-white ${
-              collapsed ? "w-16" : "w-64"
-            } transition-all duration-300`}>
-            <div className="bg-[#b8d75a] text-white flex items-center justify-between p-4">
-              <h1
-                className={`text-xl font-semibold ${
-                  collapsed ? "hidden" : "block"
-                }`}>
-                Profile
-              </h1>
-              <button
-                onClick={toggleCollapsed}
-                className="text-white focus:outline-none">
-                {collapsed ? <MenuUnfoldOutlined /> : <MenuFoldOutlined />}
-              </button>
-            </div>
-            <Menu
-              mode="inline"
-              selectedKeys={[selectedKey]}
-              onClick={handleMenuClick}
-              style={{ borderRight: 0 }}>
-              <Menu.Item
-                key="1"
-                icon={<DashboardOutlined />}
-                className="flex items-center">
-                Dashboard
-              </Menu.Item>
-              <Menu.Item
-                key="2"
-                icon={<ShoppingCartOutlined />}
-                className="flex items-center">
-                My Orders
-              </Menu.Item>
-              <Menu.Item
-                key="3"
-                icon={<ProfileOutlined />}
-                className="flex items-center">
-                Update Profile
-              </Menu.Item>
-              <Menu.Item
-                key="4"
-                icon={<SettingOutlined />}
-                className="flex items-center">
-                Settings
-              </Menu.Item>
-            </Menu>
+  const onClose = () => {
+    setVisible(false);
+  };
+
+  const renderContent = () => {
+    switch (selectedMenu) {
+      case "1":
+        return <DashboardHome />;
+      case "2":
+        return <SliderPage data={sliders} />;
+      case "3":
+        return <ServicePage />;
+      case "4":
+        return <UserPage />;
+      case "5":
+        return <PortfolioPage />;
+      default:
+        return (
+          <div className="text-gray-900 text-lg font-medium">
+            Welcome to your dashboard! This is the main content area where you
+            can add your dashboard widgets, charts, and more.
           </div>
-          <div className="flex-1 p-6">
-            <div className="bg-white shadow-md rounded-lg overflow-hidden">
-              <div className="bg-[#b8d75a] text-white text-center py-6">
-                <h1 className="text-2xl font-semibold">User Profile</h1>
-              </div>
-              <div className="p-6">
-                <div className="flex items-center space-x-6">
-                  <div className="w-24 h-24 rounded-full overflow-hidden border-4 border-[#8ABF55]">
-                    {/* <img
-                    src="https://via.placeholder.com/150"
-                    alt="User"
-                    className="w-full h-full object-cover"
-                  /> */}
-                  </div>
-                  <div>
-                    <h2 className="text-2xl font-semibold">John Doe</h2>
-                    <p className="text-gray-500">johndoe@example.com</p>
-                  </div>
-                </div>
-                {selectedKey === "2" && (
-                  <div className="mt-10">
-                    <h3 className="text-xl font-semibold mb-4">My Orders</h3>
-                    <Steps
-                      current={1} // Change this index to dynamically set the current step
-                      items={orders.map((order, index) => ({
-                        title: order.title,
-                        description: order.description,
-                        subTitle: order.subTitle,
-                        status: index <= 1 ? "finish" : "wait", // This is dynamic; adjust as needed
-                      }))}
-                    />
-                  </div>
-                )}
-                {selectedKey === "3" && (
-                  <div className="mt-10">
-                    <h3 className="text-xl font-semibold mb-4">
-                      Update Profile
-                    </h3>
-                    <p>Profile update form goes here.</p>
-                  </div>
-                )}
-                {selectedKey === "4" && (
-                  <div className="mt-10">
-                    <h3 className="text-xl font-semibold mb-4">Settings</h3>
-                    <p>Settings form goes here.</p>
-                  </div>
-                )}
-                {selectedKey === "1" && (
-                  <div className="mt-10">
-                    <h3 className="text-xl font-semibold mb-4">Dashboard</h3>
-                    <p>Dashboard content goes here.</p>
-                  </div>
-                )}
-              </div>
-            </div>
-          </div>
+        );
+    }
+  };
+
+  return (
+    <Layout className="min-h-screen">
+      {/* Sidebar for Desktop */}
+      <Sider
+        collapsible
+        collapsed={collapsed}
+        onCollapse={(value) => setCollapsed(value)}
+        className="site-layout-background hidden lg:block">
+        <div className="logo-container py-2 flex items-center justify-center">
+          <Image
+            src="/images/logo.png"
+            alt="Logo"
+            width={collapsed ? 50 : 90}
+            height={collapsed ? 25 : 30}
+          />
         </div>
-      </div>
-    );
-  }
-}
+        <Menu
+          theme="light"
+          mode="inline"
+          selectedKeys={[selectedMenu]}
+          onClick={(e) => setSelectedMenu(e.key)}
+          className="bg-white">
+          <Menu.Item
+            key="1"
+            icon={<DashboardOutlined style={{ color: "#8ABF55" }} />}
+            className="bg-white">
+            <span className="text-[#8ABF55] font-medium">Dashboard</span>
+          </Menu.Item>
+          <Menu.Item
+            key="2"
+            icon={<PictureOutlined style={{ color: "#8ABF55" }} />}
+            className="bg-white">
+            <span className="text-[#8ABF55] font-medium">Sliders</span>
+          </Menu.Item>
+          <Menu.Item
+            key="3"
+            icon={<AppstoreAddOutlined style={{ color: "#8ABF55" }} />}
+            className="bg-white">
+            <span className="text-[#8ABF55] font-medium">Services</span>
+          </Menu.Item>
+          <Menu.Item
+            key="4"
+            icon={<UsergroupAddOutlined style={{ color: "#8ABF55" }} />}
+            className="bg-white">
+            <span className="text-[#8ABF55] font-medium">Users</span>
+          </Menu.Item>
+          <Menu.Item
+            key="5"
+            icon={<FolderOpenOutlined style={{ color: "#8ABF55" }} />}
+            className="bg-white">
+            <span className="text-[#8ABF55] font-medium">Portfolio</span>
+          </Menu.Item>
+          <Menu.Item
+            key="6"
+            icon={<SettingOutlined style={{ color: "#8ABF55" }} />}
+            className="bg-white">
+            <span className="text-[#8ABF55] font-medium">Settings</span>
+          </Menu.Item>
+        </Menu>
+      </Sider>
+
+      {/* Drawer for Mobile */}
+      <Drawer
+        title="Menu"
+        placement="left"
+        onClose={onClose}
+        visible={visible}
+        bodyStyle={{ padding: 0 }}>
+        <Menu
+          theme="light"
+          mode="inline"
+          selectedKeys={[selectedMenu]}
+          onClick={(e) => {
+            setSelectedMenu(e.key);
+            onClose();
+          }}
+          className="bg-white">
+          <Menu.Item
+            key="1"
+            icon={<DashboardOutlined style={{ color: "#8ABF55" }} />}
+            className="bg-white">
+            <span className="text-[#8ABF55] font-medium ">Dashboard</span>
+          </Menu.Item>
+          <Menu.Item
+            key="2"
+            icon={<PictureOutlined style={{ color: "#8ABF55" }} />}
+            className="bg-white">
+            <span className="text-[#8ABF55] font-medium">Sliders</span>
+          </Menu.Item>
+          <Menu.Item
+            key="3"
+            icon={<AppstoreAddOutlined style={{ color: "#8ABF55" }} />}
+            className="bg-white">
+            <span className="text-[#8ABF55] font-medium">Services</span>
+          </Menu.Item>
+          <Menu.Item
+            key="4"
+            icon={<UsergroupAddOutlined style={{ color: "#8ABF55" }} />}
+            className="bg-white">
+            <span className="text-[#8ABF55] font-medium">Users</span>
+          </Menu.Item>
+          <Menu.Item
+            key="5"
+            icon={<FolderOpenOutlined style={{ color: "#8ABF55" }} />}
+            className="bg-white">
+            <span className="text-[#8ABF55] font-medium">Portfolio</span>
+          </Menu.Item>
+          <Menu.Item
+            key="6"
+            icon={<SettingOutlined style={{ color: "#8ABF55" }} />}
+            className="bg-white">
+            <span className="text-[#8ABF55] font-medium">Settings</span>
+          </Menu.Item>
+        </Menu>
+      </Drawer>
+
+      <Layout className="site-layout">
+        <Header className="bg-white flex justify-between items-center pr-8 py-4 shadow-md">
+          <Button
+            icon={<MenuOutlined />}
+            className="lg:hidden"
+            onClick={showDrawer}
+          />
+          <h1 className="text-2xl font-bold text-[#8ABF55] px-2">Dashboard</h1>
+          <div className="flex items-center space-x-4">
+            {userInfo && (
+              <div className="relative flex items-center space-x-2">
+                <Avatar
+                  src={userInfo.image}
+                  alt={userInfo.username}
+                  size={40}
+                  className="lg:hidden"
+                />
+                <div className="hidden lg:block">
+                  <Avatar
+                    src={userInfo.image}
+                    alt={userInfo.username}
+                    size={40}
+                  />
+                </div>
+                <div className="lg:hidden absolute top-0 left-0 mt-12 ml-2 bg-white text-[#8ABF55] rounded-md p-2 opacity-0 transition-opacity duration-300 hover:opacity-100">
+                  {userInfo.username}
+                </div>
+              </div>
+            )}
+            <Button
+              icon={<LogoutOutlined />}
+              type="primary"
+              className="bg-[#8ABF55] text-white border-none hover:bg-[#7DA54E]"
+              onClick={handleLogout}></Button>
+          </div>
+        </Header>
+
+        <Content className="m-6 p-6 bg-white rounded-lg shadow-lg">
+          {loading ? (
+            <div className="flex justify-center items-center h-full">
+              <Spin size="large" />
+            </div>
+          ) : (
+            renderContent()
+          )}
+        </Content>
+      </Layout>
+    </Layout>
+  );
+};
+
+export default Dashboard;
