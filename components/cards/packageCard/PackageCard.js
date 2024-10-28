@@ -1,4 +1,3 @@
-"use client";
 import React from "react";
 import PackageImage from "../../../public/images/packageImage/package_Image1.png";
 import Image from "next/image";
@@ -12,6 +11,11 @@ const PackageCard = ({
   packageCardheaderbg2,
   packageCardheaderbg3,
 }) => {
+  const handleAddToCart = (packageDetails) => {
+    console.log("Package added to cart:", packageDetails);
+    // Add additional cart handling logic here, e.g., state update or context dispatch
+  };
+
   return (
     <div className="flex items-center justify-center">
       <div
@@ -43,29 +47,35 @@ const PackageCard = ({
               row3="One round of design revisions"
               row4="Full-color scaled plan of project area"
               row5="$180/ 1 Week Delivery"
+              onAddToCart={() => handleAddToCart("Package 1")}
+              link="/serviceDetails/packageDetails1" 
             />
             <PackageSmallCards
               headerbgColor={packageCardheaderbg2}
-              headingText="Package 1"
+              headingText="Package 2"
               row1="Single Storied One Elevation 3D Render"
               row2="Site features inspiration images"
               row3="One round of design revisions"
               row4="Full-color scaled plan of project area"
               row5="$180/ 1 Week Delivery"
+              onAddToCart={() => handleAddToCart("Package 2")}
+              link="/serviceDetails/packageDetails2" 
             />
             <PackageSmallCards
               headerbgColor={packageCardheaderbg3}
-              headingText="Package 1"
+              headingText="Package 3"
               row1="Single Storied One Elevation 3D Render"
               row2="Site features inspiration images"
               row3="One round of design revisions"
               row4="Full-color scaled plan of project area"
               row5="$180/ 1 Week Delivery"
+              onAddToCart={() => handleAddToCart("Package 3")}
+              link="/serviceDetails/packageDetails3" 
             />
           </div>
         </div>
 
-        {/* Start Large and Medium  */}
+        {/* Start Large and Medium */}
         <div
           className="container mx-auto rounded-2xl bg-white hidden lg:flex md:flex justify-between items-center lg:text-xl md:text-xl text-base py-5 px-lg:6 md:px-6 px-3"
           style={{
@@ -81,8 +91,8 @@ const PackageCard = ({
             </button>
           </Link>
         </div>
-     
-        {/* Start Small  */}
+
+        {/* Start Small */}
         <div
           className="container mx-auto rounded-2xl bg-white lg:hidden md:hidden flex flex-col justify-between items-center gap-3 lg:text-xl md:text-xl text-base py-5 px-lg:6 md:px-6 px-3"
           style={{
@@ -91,14 +101,14 @@ const PackageCard = ({
           <p className="text-[#383737]">
             Speak with a Specialist for Package details.
           </p>
-          <Link href="/serviceDetails/packageDetails">
+          {/* <Link href="/serviceDetails/packageDetails">
             <button className="bg-[#8ABF55] text-white lg:py-3 md:py-2 py-2 lg:px-6 md:px-4 px-4 rounded-xl flex items-center">
               <div>Talk to a Specialist</div>
               <div className="pi pi-chevron-right ml-2 lg:text-[10px] md:text-[12px] text-[12px]"></div>
             </button>
-          </Link>
+          </Link> */}
         </div>
-        {/* End Small  */}
+        {/* End Small */}
       </div>
     </div>
   );

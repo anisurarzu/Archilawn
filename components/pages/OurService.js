@@ -1,4 +1,5 @@
 "use client";
+
 import React, { forwardRef, useState, useEffect } from "react";
 import axios from "axios";
 
@@ -15,14 +16,10 @@ import OurServiceCardRight from "../cards/ourServiceCard/OurServiceCardRight";
 import OurServiceCardRightMobile from "../cards/ourServiceCard/OurServiceCardRightMobile";
 
 const OurService = forwardRef((props, ref) => {
-  // Move hooks inside the component
   const [services, setServices] = useState([]);
-
-  // API URL
   const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
   useEffect(() => {
-    // Fetch slider data from API
     const fetchServices = async () => {
       try {
         const response = await axios.get(`${API_URL}/api/services`);
@@ -35,16 +32,14 @@ const OurService = forwardRef((props, ref) => {
     fetchServices();
   }, []);
 
-  console.log("Here services Data: ", services);
-
   return (
     <section className="bg-white" ref={ref}>
-      <div className="pb-16 md:pb-16 lg:pb-0">
-        <div className="lg:pt-16 md:pt-16 pt-8 lg:pb-20 md:pb-16 pb-8 px-10 md:px-0 lg:px-0">
+      <div className="pb-8 md:pb-16 lg:pb-0">
+        <div className="pt-8 lg:pt-16 px-4 lg:px-0">
           <ContainerHeader containerHeader="Our Service Packages" />
         </div>
 
-        {/* START SERVICE */}
+        {/* START DESKTOP VIEW */}
         <div className="hidden md:flex lg:flex flex-col gap-10">
           <OurServiceCardLeft
             id={1}
@@ -103,28 +98,31 @@ const OurService = forwardRef((props, ref) => {
           />
         </div>
 
-        {/* START For Small Devices */}
-        <div className="lg:hidden md:hidden flex flex-col gap-4">
+        {/* START MOBILE VIEW */}
+        <div className="lg:hidden md:hidden flex flex-col gap-4 px-4">
           <OurServiceCardLeftMobile
             ServiceImage={ServiceImageOne}
             secondDivBgColor="#A3C1D3"
             secondDivText="Building Exterior 3d rendering"
             forthDivBgColor="#123747"
           />
-          <OurServiceCardRightMobile
-            ServiceImage={ServiceImagetwo}
-            secondDivBgColor="#CFC857"
-            secondDivText="Landscape 2d site plan & 3d rendering"
-            forthDivBgColor="#636304"
-          />
-          <OurServiceCardLeftMobile
-            ServiceImage={ServiceImageThree}
-            secondDivBgColor="#C69C62"
-            secondDivText="Interior Design & floor plan 3d rendering"
-            forthDivBgColor="#59300E"
-          />
+          <div className="mt-2">
+            <OurServiceCardRightMobile
+              ServiceImage={ServiceImagetwo}
+              secondDivBgColor="#CFC857"
+              secondDivText="Landscape 2d site plan & 3d rendering"
+              forthDivBgColor="#636304"
+            />
+          </div>
+          <div className="mt-2">
+            <OurServiceCardLeftMobile
+              ServiceImage={ServiceImageThree}
+              secondDivBgColor="#C69C62"
+              secondDivText="Interior Design & floor plan 3d rendering"
+              forthDivBgColor="#59300E"
+            />
+          </div>
         </div>
-        {/* END For Small Devices */}
       </div>
     </section>
   );
