@@ -37,7 +37,7 @@ const OurServiceCardLeftMobile = ({
           className="flex items-center justify-center flex-1 w-full text-lg font-bold text-white cursor-pointer"
           style={{ backgroundColor: forthDivBgColor }}>
           <Link href="/detailsPages/DetailsPageOne">
-            <p className="rotate-0">View Details</p>
+            <p className="rotate-90">View Details</p>
           </Link>
         </div>
       </div>

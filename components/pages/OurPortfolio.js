@@ -62,18 +62,18 @@ const OurPortfolio = () => {
 
         <div className="lg:mt-12 md:mt-12 mt-6 px-1 md:px-0 lg:px-0">
           {/* Start Video */}
-          <div className="relative w-full lg:h-[70vh] md:h-[25vh] h-[21vh]">
+          <div className="relative w-full lg:h-[70vh] md:h-[25vh] h-[31vh]">
             {!isPlaying && (
               <div className="relative w-full h-full">
-                {/* <img
+                <img
                   src="https://img.youtube.com/vi/q1k-dVaBhdo/hqdefault.jpg" // Use YouTube video thumbnail
                   alt="Video Thumbnail"
                   className="w-full h-full rounded-[30px] object-cover"
-                /> */}
+                />
                 <div className="absolute inset-0 flex items-center justify-center z-20">
                   <button
                     onClick={handlePlayClick}
-                    className="text-white p-4 rounded-full">
+                    className="text-white p-4 rounded-full cursor-pointer">
                     <FontAwesomeIcon
                       icon={faCirclePlay}
                       className="lg:w-24 md:w-24 w-10 lg:h-24 md:h-24 h-10"
@@ -97,7 +97,7 @@ const OurPortfolio = () => {
             )}
 
             {/* Overlay div */}
-            <div className="absolute bottom-0 w-full bg-[#8ABF55]/75 lg:h-20 md:h-16 h-10 flex items-center justify-between px-6 z-30 rounded-bl-[30px] rounded-br-[30px]">
+            <div className="absolute bottom-0 w-full bg-[#8ABF55]/75 lg:h-20 md:h-16 h-10 flex items-center justify-between px-6 z-30 lg:rounded-bl-[30px] lg:rounded-br-[30px]">
               <p className="text-white font-bold text-[12px] md:text-base lg:text-xl">
                 Destination Wedding Resort | Germany
               </p>

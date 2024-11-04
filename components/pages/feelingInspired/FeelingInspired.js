@@ -5,15 +5,14 @@ import FeelingInspiredImage from "../../../public/images/feelingInspired/feeling
 
 const FeelingInspired = () => {
   return (
-    <div className="lg:w-[185vh] md:w-[60vh] w-[45vh]">
+    <div className="lg:w-[185vh] md:w-[60vh] w-full">
       <div className="bg-[#383737] flex items-center justify-between rounded-tr-3xl rounded-br-3xl">
         <div className="">
           <p
             className="text-white lg:text-3xl md:text-2xl text-[13px] lg:px-56 md:px-6 px-2 pb-10 text-justify sm:text-left"
             style={{
               fontFamily: "Tinos",
-            }}
-          >
+            }}>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean at
             facilisis turpis. Sed eget eleifend dui, et tristique velit.
           </p>
@@ -21,7 +20,7 @@ const FeelingInspired = () => {
 
         <div className="">
           <Image
-            className="rounded-tr-3xl rounded-br-3xl lg:h-[30vh] md:h-[20vh] h-[17vh] lg:w-[65vh] md:w-[45vh] w-[40vh]"
+            className="rounded-tr-3xl rounded-br-3xl lg:h-[30vh] md:h-[20vh] h-[17vh] lg:w-[65vh] md:w-[45vh] w-full"
             src={FeelingInspiredImage}
             alt="Feeling Inspired"
             w={40}
@@ -37,8 +36,7 @@ const FeelingInspired = () => {
             className="rounded-2xl flex justify-between items-center lg:py-5 md:py-3 py-1 lg:px-12 md:px-6 px-2"
             style={{
               fontFamily: "Tinos",
-            }}
-          >
+            }}>
             <div className="text-white flex flex-col lg:gap-3 md:gap-1 gap-1">
               <div className="flex lg:gap-7 md:gap-6 gap-2 lg:justify-between md:justify-start justify-start items-center">
                 <p className="lg:text-4xl md:text-2xl text-xl font-semibold">
@@ -69,8 +67,7 @@ const FeelingInspired = () => {
             className="rounded-2xl flex flex-col gap-1 justify-between items-center py-3 px-2"
             style={{
               fontFamily: "Tinos",
-            }}
-          >
+            }}>
             <div className="text-white flex flex-col mx-2">
               <div className="flex gap-4 justify-start items-center">
                 <p className="text-lg font-semibold">Feeling Inspired?</p>

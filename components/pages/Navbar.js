@@ -193,7 +193,7 @@ export default function Navbar() {
         {/* Mobile Design Start */}
         <div className="flex md:hidden lg:hidden justify-between items-center pl-2">
           <Image
-            src="/images/logo.png"
+            src="/images/logo.jpeg"
             alt="Logo"
             width={100}
             height={100}

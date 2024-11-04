@@ -236,35 +236,7 @@ const StillHaveQuestions = () => {
           </div>
         </div>
 
-        {/* Small screen layout: stacked */}
-        <div className="lg:hidden mt-6 text-center">
-          <div className="flex justify-center">
-            <div className="relative w-[250px] h-[250px] rounded-full overflow-hidden shadow-md">
-              <img
-                src="https://img.freepik.com/free-photo/studio-portrait-bearded-male-dressed-blue-shirt-white-jacket-bow-tie-grey-background_613910-1934.jpg?semt=ais_hybrid"
-                alt="Owner - Set A Dami"
-                width={350} // width for the image
-                height={350} // height for the image
-                className="rounded-full object-cover"></img>
-            </div>
-          </div>
-          <div className="mt-4">
-            <h2 className="text-2xl font-bold text-gray-900 mb-2">
-              Meet Set A Dami
-            </h2>
-            <p className="text-lg text-gray-600 leading-relaxed">
-              Set A Dami, the visionary behind our success, brings over two
-              decades of expertise in landscape design. Her passion for creating
-              stunning, sustainable outdoor spaces has transformed countless
-              properties into beautiful, nature-infused environments.
-            </p>
-            <p className="text-md text-gray-500 mt-2">
-              With a deep-rooted commitment to excellence and innovation, she
-              personally oversees every project, ensuring that your dream design
-              becomes a reality.
-            </p>
-          </div>
-        </div>
+        
       </div>
     </div>
   );

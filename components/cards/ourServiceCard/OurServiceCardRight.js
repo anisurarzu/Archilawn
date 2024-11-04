@@ -4,6 +4,7 @@ import Image from "next/image";
 import React from "react";
 
 const OurServiceCardRight = ({
+  id,
   ServiceImage,
   secondDivBgColor,
   secondDivText,
@@ -27,7 +28,7 @@ const OurServiceCardRight = ({
       <div
         className={`h-full rounded-[30px] flex justify-end items-center lg:ml-[545px] md:ml-[32px] ml-[45px] z-3 absolute transition-all duration-1000`}
         style={{ backgroundColor: forthDivBgColor }}>
-        <Link href="/serviceDetails">
+        <Link href={`/serviceDetails?id=${id}`}>
           <div className="flex items-end justify-start w-56 cursor-pointer">
             <p
               className="text-4xl font-bold text-white text-right pb-28 -rotate-90"
