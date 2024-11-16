@@ -85,7 +85,7 @@ export default function Navbar() {
                 src="/images/logo.png"
                 alt="Logo"
                 width={100}
-                height={100}
+                height={70}
                 className="rounded-md"
               />
             </div>
@@ -196,7 +196,7 @@ export default function Navbar() {
             src="/images/logo.jpeg"
             alt="Logo"
             width={100}
-            height={100}
+            height={70}
             className={` rounded-md ${
               isScrolled ? "border border-gray-400" : "border-none"
             }`}

@@ -81,7 +81,7 @@ export default function Slider() {
           <Image
             src="/images/logo.jpeg"
             alt="Logo"
-            width={120}
+            width={220}
             height={120}
             className="rounded-md"
           />

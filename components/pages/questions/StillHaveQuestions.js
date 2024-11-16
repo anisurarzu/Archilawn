@@ -6,6 +6,11 @@ import questionImage2 from "../../../public/images/questionsImage/question_Image
 import questionImage3 from "../../../public/images/questionsImage/question_Image3.png";
 import questionImage4 from "../../../public/images/questionsImage/question_Image4.png";
 import Image from "next/image";
+import {
+  LinkedinOutlined,
+  UpCircleOutlined,
+  InfoCircleOutlined,
+} from "@ant-design/icons";
 
 //icons
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -200,7 +205,6 @@ const StillHaveQuestions = () => {
       </div>
 
       {/* End Design */}
-
       <div className="container mx-auto my-12 p-6 bg-white rounded-lg shadow-lg">
         {/* Large screen layout: Two columns */}
         <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 gap-6 items-center">
@@ -208,7 +212,7 @@ const StillHaveQuestions = () => {
           <div className="flex justify-center lg:justify-end">
             <div className="relative w-[300px] h-[300px] lg:w-[350px] lg:h-[350px] rounded-full overflow-hidden shadow-md">
               <img
-                src="https://i.ibb.co.com/4tHxCBJ/CEO-business-executive-professional-headshot.jpg" // Replace with actual path of the owner's image
+                src="https://i.ibb.co/4tHxCBJ/CEO-business-executive-professional-headshot.jpg" // Replace with actual path of the owner's image
                 alt="Owner - Set A Dami"
                 layout="fill"
                 objectFit="cover"
@@ -228,15 +232,36 @@ const StillHaveQuestions = () => {
               stunning, sustainable outdoor spaces has transformed countless
               properties into beautiful, nature-infused environments.
             </p>
-            <p className="text-md text-gray-500">
+            <p className="text-md text-gray-500 mb-6">
               With a deep-rooted commitment to excellence and innovation, she
               personally oversees every project, ensuring that your dream design
               becomes a reality.
             </p>
+            {/* Social Media Buttons */}
+            <div className="flex justify-center lg:justify-start space-x-4">
+              <a
+                href="/about-ceo"
+                className="bg-blue-600 text-white px-4 py-2 rounded-full shadow hover:bg-blue-700 flex items-center space-x-2">
+                <InfoCircleOutlined className="text-white" />
+                <span>More About Our CEO</span>
+              </a>
+              <a
+                href="https://www.linkedin.com/" // Replace with actual LinkedIn link
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-500 text-white p-3 rounded-full shadow hover:bg-blue-600 flex items-center">
+                <LinkedinOutlined className="text-white text-lg" />
+              </a>
+              <a
+                href="https://www.upwork.com/" // Replace with actual Upwork link
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-teal-500 text-white p-3 rounded-full shadow hover:bg-teal-600 flex items-center">
+                <UpCircleOutlined className="text-white text-lg" />
+              </a>
+            </div>
           </div>
         </div>
-
-        
       </div>
     </div>
   );
