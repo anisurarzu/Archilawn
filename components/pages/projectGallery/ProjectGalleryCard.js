@@ -10,8 +10,7 @@ const ProjectGalleryCard = ({
 }) => {
   return (
     <div className="flex flex-col lg:gap-7 md:gap-6 gap-3">
-      <div className="flex justify-between items-center px-1 md:px-0 lg:px-0">
-        {/* start  */}
+      <div className="flex justify-between items-center gap-4 px-1 md:px-0 lg:px-0">
         {/* Start 1st Image */}
         <div className="lg:w-[90vh] md:w-[34vh] w-[38vh] lg:h-[50vh] md:h-[20vh] h-[20vh]">
           <Image
@@ -45,7 +44,7 @@ const ProjectGalleryCard = ({
       </div>
       {/* End 3rd Image */}
 
-      <div className="flex justify-between items-center px-1 md:px-0 lg:px-0">
+      <div className="flex justify-between items-center gap-4 px-1 md:px-0 lg:px-0">
         {/* Start 4th Image */}
         <div className="lg:w-[75vh] md:w-[26vh] w-[33vh] lg:h-[50vh] md:h-[20vh] h-[20vh]">
           <Image
@@ -66,6 +65,7 @@ const ProjectGalleryCard = ({
         </div>
         {/* End 5th Image */}
       </div>
+
       {/* End */}
     </div>
   );
