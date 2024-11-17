@@ -1,121 +1,169 @@
 "use client";
 import Image from "next/image";
 import React from "react";
-import AboutImage from "../../../public/images/aboutUsImage/about_us.png";
 import Navbar from "../Navbar";
 import Footer from "../Footer";
 
 const AboutUs = () => {
-  return (
-    <div className="">
-      <Navbar />
-      <div className="lg:w-[190vh] md:w-[62vh] w-[45vh] lg:mx-0 md:mx-4 mx-1 rounded-[30px] bg-[#F3F3F9] ">
-   
-        <div className="lg:px-16 md:px-4 px-3 lg:py-12 md:py-8 py-6 text-center rounded-lg">
-          {/* start top text */}
+  const teamMembers = [
+    {
+      name: "John Doe",
+      role: "Lead Architect",
+      description:
+        "John has over a decade of experience crafting innovative architectural solutions that blend style with functionality.",
+      image: "https://i.ibb.co/k4k9v3d/team-member1.jpg", // Replace with actual image path
+    },
+    {
+      name: "Jane Smith",
+      role: "Interior Designer",
+      description:
+        "Jane specializes in creating sophisticated interiors that resonate with modern and traditional aesthetics.",
+      image: "https://i.ibb.co/jTkLR80/team-member2.jpg", // Replace with actual image path
+    },
+    {
+      name: "Michael Johnson",
+      role: "Project Manager",
+      description:
+        "Michael ensures every project is delivered on time and exceeds expectations with his exceptional organizational skills.",
+      image: "https://i.ibb.co/6vZw7kK/team-member3.jpg", // Replace with actual image path
+    },
+    {
+      name: "Emily Davis",
+      role: "Sustainability Expert",
+      description:
+        "Emily integrates eco-friendly practices into designs, ensuring environmental responsibility.",
+      image: "https://i.ibb.co/XJxFsYN/team-member4.jpg", // Replace with actual image path
+    },
+  ];
 
-          <div>
-    <h2>
-    Immerse yourself in a refined fusion of architecture and interior design.
-    </h2>
-    </div>
-          <h2 className="lg:text-xl md:text-2xl text-xl text-center text-[#8ABF55] font-semibold uppercase">
+  return (
+    <div className="bg-gray-50 min-h-screen flex flex-col">
+      <Navbar />
+      <div className="flex-grow mt-12">
+        {/* About Us Section */}
+        <section className="container mx-auto py-12 px-6 text-center">
+          <h2 className="text-3xl font-bold text-[#8ABF55] uppercase">
             About Us
           </h2>
-          <div className="flex justify-center items-center">
-            <h2
-              className="lg:text-4xl md:text-3xl text-[17px] text-center text-[#383737] lg:py-6 md:py-6 py-2 lg:w-[105vh] md:w-[50vh] w-[105vh]"
-              style={{
-                fontFamily: "Tinos",
-              }}>
-              At next concept design, we offer interior design and tailored
-              architecture services, guaranteeing that the final product to
-              exceed your expectations.
-            </h2>
+          <p className="mt-4 text-lg text-gray-700 leading-relaxed">
+            At Next Concept Design, we merge cutting-edge architecture with
+            stunning interior design to deliver transformative spaces. Our team
+            of experts ensures every project reflects excellence,
+            sustainability, and innovation.
+          </p>
+        </section>
+
+        {/* CEO Section */}
+        <section className="container mx-auto my-12 p-6 bg-white rounded-lg shadow-lg">
+          <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 gap-6 items-center">
+            {/* CEO Image */}
+            <div className="flex justify-center lg:justify-end">
+              <div className="relative w-[300px] h-[300px] lg:w-[350px] lg:h-[350px] rounded-full overflow-hidden shadow-md">
+                <img
+                  src="https://i.ibb.co/4tHxCBJ/CEO-business-executive-professional-headshot.jpg"
+                  alt="CEO - Set A Dami"
+                  className="w-full h-full object-cover rounded-full"
+                />
+              </div>
+            </div>
+            {/* CEO Description */}
+            <div className="lg:text-left text-center lg:px-6">
+              <h2 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Meet Set A Dami
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed mb-4">
+                Set A Dami, the visionary behind our success, brings over two
+                decades of expertise in landscape design. Her passion for
+                creating stunning, sustainable outdoor spaces has transformed
+                countless properties into beautiful, nature-infused
+                environments.
+              </p>
+              <p className="text-md text-gray-500 mb-6">
+                With a deep-rooted commitment to excellence and innovation, she
+                personally oversees every project, ensuring that your dream
+                design becomes a reality.
+              </p>
+            </div>
           </div>
-          {/* end top text */}
+        </section>
 
-          {/* start bottom image and text */}
-          <div className="grid lg:grid-cols-2 md:grid-cols-1 grid-cols-1 lg:gap-4 md:gap-8 gap-6 lg:my-8 md:my-3 my-4">
-            <div className="col-span-1">
-              <Image
-                src={AboutImage}
-                alt="About Us Image"
-                className="w-full lg:h-[50vh] md:h-[30vh] h-[30vh] lg:px-6 md:px-16 px-1"
-              />
+        {/* CTO Section */}
+        <section className="container mx-auto my-12 p-6 bg-white rounded-lg shadow-lg">
+          <div className="grid lg:grid-cols-2 grid-cols-1 lg:gap-8 gap-6 items-center">
+            {/* CTO Description */}
+            <div className="lg:text-left text-center lg:px-6 order-last lg:order-first">
+              <h2 className="text-2xl lg:text-4xl font-bold text-gray-900 mb-4">
+                Meet Alex Wilson
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed mb-4">
+                Alex, our CTO, is the technical mastermind who ensures every
+                design integrates the latest technology seamlessly. With over 15
+                years of experience in architecture and innovation, Alex has led
+                multiple award-winning projects globally.
+              </p>
+              <p className="text-md text-gray-500 mb-6">
+                Alex’s commitment to leveraging technology ensures that our
+                clients enjoy state-of-the-art solutions in every project.
+              </p>
             </div>
-
-            <div className="col-span-1 flex flex-col lg:gap-0 md:gap-8 gap-0 justify-between items-end lg:px-6 md:px-16 px-1">
-              <div className="flex flex-col lg:gap-8 md:gap-8 gap-5 justify-start items-start text-left">
-                <p className="font-medium lg:text-xl md:text-2xl text-[17px] lg:tracking-wide md:tracking-wide tracking-normal text-justify sm:text-left text-[#383737]">
-                  We develop a modern architectural design for each house and at
-                  the same time use high quality and environmentally friendly
-                  materials in our work.{" "}
-                </p>
-                <p className="lg:text-xl md:text-2xl text-[17px] lg:tracking-wide md:tracking-wide tracking-normal text-justify sm:text-left text-[#383737]">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Quisque ipsum lorem, tempor ut ex aliquam, fringilla lacinia
-                  quam. Sed mattis ante at massa aliquet consectetur. Nullam
-                  enim sapien, tristique sit amet lorem lacinia, luctus molestie
-                  velit. Nam nunc quam, elementum nec neque nec, ullamcorper
-                  interdum orci.
-                </p>
-              </div>
-
-              {/* Know ME Section for Large */}
-              <div
-                className="container mx-auto rounded-2xl bg-white hidden lg:flex md:hidden justify-between items-center lg:py-5 md:py-5 py-5 lg:px-6 md:px-6 px-3"
-                style={{
-                  fontFamily: "Tinos",
-                }}>
-                <p className="lg:text-2xl md:text-xl text-base">
-                  Want to know more about us
-                </p>
-                <button className="border border-[#383737] text-white lg:py-3 md:py-2 py-1 lg:px-6 md:px-4 px-1 rounded-2xl flex items-center">
-                  <div className="text-[#383737] lg:text-xl md:text-xl text-base">
-                    Know More
-                  </div>
-                  <div className="pi pi-chevron-right ml-2 lg:text- md:text-[12px] text-[8px] text-[#383737]"></div>
-                </button>
-              </div>
-              {/* End Know ME Section for Large */}
-            </div>
-            {/* Start Know me Medium */}
-            <div className="mx-6">
-              <div
-                className="container mx-auto rounded-2xl bg-white hidden lg:hidden md:flex justify-between items-center py-5 px-3"
-                style={{
-                  fontFamily: "Tinos",
-                }}>
-                <p className="text-xl">Want to know more about us</p>
-                <button className="border border-[#383737] text-white lg:py-3 md:py-2 py-1 lg:px-6 md:px-4 px-1 rounded-2xl flex items-center">
-                  <div className="text-[#383737] text-xl">Know More</div>
-                  <div className="pi pi-chevron-right ml-2 text-[12px] text-[#383737]"></div>
-                </button>
+            {/* CTO Image */}
+            <div className="flex justify-center lg:justify-start">
+              <div className="relative w-[300px] h-[300px] lg:w-[350px] lg:h-[350px] rounded-full overflow-hidden shadow-md">
+                <img
+                  src="https://i.ibb.co/vdmZjTg/CTO-technology-expert.jpg"
+                  alt="CTO - Alex Wilson"
+                  className="w-full h-full object-cover rounded-full"
+                />
               </div>
             </div>
-            {/* End Know me Medium */}
-            {/* Start Know me Small */}
-            <div className="mx-5">
-              <div
-                className="container rounded-2xl bg-white flex flex-col gap-1 lg:hidden md:hidden justify-center items-center py-2 pb-3 px-2"
-                style={{
-                  fontFamily: "Tinos",
-                }}>
-                <p className="text-[17px] text-[#383737]">
-                  Want to know more about us
-                </p>
-                <button className="border border-[#383737] text-white py-1 px-3 drop-shadow-md rounded-xl flex items-center">
-                  <div className="text-[#383737] text-[15px]">Know More</div>
-                  <div className="pi pi-chevron-right ml-2 text-[12px] text-[#383737]"></div>
-                </button>
-              </div>
-            </div>
-            {/* End Know me Small */}
           </div>
+        </section>
 
-          {/* end bottom image and text */}
-        </div>
+        {/* Team Members Section */}
+        <section className="container mx-auto py-12">
+          <h2 className="text-3xl font-bold text-gray-800 text-center mb-8">
+            Meet Our Team
+          </h2>
+          <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 gap-8">
+            {teamMembers.map((member, index) => (
+              <div
+                key={index}
+                className="bg-white p-6 rounded-lg shadow-lg text-center">
+                <div className="relative w-[200px] h-[200px] mx-auto rounded-full overflow-hidden shadow-md mb-4">
+                  <img
+                    src={member.image}
+                    alt={member.name}
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900">
+                  {member.name}
+                </h3>
+                <p className="text-md text-[#8ABF55] font-medium">
+                  {member.role}
+                </p>
+                <p className="text-sm text-gray-600 mt-2">
+                  {member.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Company Details Section */}
+        <section className="container mx-auto my-12 p-6 bg-[#F3F3F9] rounded-lg shadow-lg text-center">
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">
+            Company Details
+          </h2>
+          <p className="text-lg text-gray-700 leading-relaxed max-w-4xl mx-auto">
+            Next Concept Design was founded with the goal of blending art,
+            technology, and sustainability in every project. We are committed to
+            creating spaces that inspire and uplift, while maintaining a strong
+            focus on eco-consciousness. Our expertise spans across residential,
+            commercial, and industrial projects, making us a trusted partner for
+            all your design needs.
+          </p>
+        </section>
       </div>
       <Footer />
     </div>
