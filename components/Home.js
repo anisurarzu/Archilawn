@@ -12,6 +12,7 @@ import FeelingInspired from "./pages/feelingInspired/FeelingInspired";
 import AboutUs from "./pages/about/AboutUs";
 import Navbar from "./pages/Navbar";
 import ProjectGallery from "./pages/projectGallery/ProjectGallery";
+import WhatsApp from "./WhatsApp";
 
 const Home = () => {
   const footerRef = useRef(null);
@@ -54,6 +55,7 @@ const Home = () => {
       <div className="py-8">
         <Footer ref={footerRef} />
       </div>
+      <WhatsApp />
     </div>
   );
 };
